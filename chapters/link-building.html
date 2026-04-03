@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Link Building Handbook - SEO Reference Guide</title>
+        <meta name="description" content="11 chapters covering digital PR, guest posting, link-worthy content, toxic link auditing, and building sustainable domain authority.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body class="font-latin">
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- SEARCH OVERLAY -->
+        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                <input id="search-input" class="search-input" type="text" placeholder="Search chapters, concepts…" autocomplete="off" spellcheck="false">
+                <button id="search-close-btn" class="search-close">ESC</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <!-- APP SHELL -->
+        <div id="app-shell" class="app-shell">
+
+            <!-- TOP NAV -->
+            <nav class="top-nav">
+                <div class="nav-hamburger-wrap">
+                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <a href="../index.html" class="nav-logo">SEO Reference Guide</a>
+                <div class="nav-right">
+                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                    </button>
+                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
+                </div>
+            </nav>
+
+            <!-- SIDEBAR -->
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-header">
+                        <p class="sidebar-title">Link Building Handbook</p>
+                    </div>
+                    <nav class="sidebar-section">
+                        <p class="sidebar-section-label">Chapters</p>
+                        <a class="sidebar-link active" href="#hero" data-section="hero" data-tooltip="Introduction">
+                            <span class="link-num">00</span>
+                            <span class="link-label">Introduction</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch01" data-section="ch01" data-tooltip="Why Links Matter">
+                            <span class="link-num">01</span>
+                            <span class="link-label">Why Links Matter</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch02" data-section="ch02" data-tooltip="Link Anatomy">
+                            <span class="link-num">02</span>
+                            <span class="link-label">Link Anatomy</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch03" data-section="ch03" data-tooltip="Link-Worthy Content">
+                            <span class="link-num">03</span>
+                            <span class="link-label">Link-Worthy Content</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch04" data-section="ch04" data-tooltip="Digital PR">
+                            <span class="link-num">04</span>
+                            <span class="link-label">Digital PR</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch05" data-section="ch05" data-tooltip="Guest Posting">
+                            <span class="link-num">05</span>
+                            <span class="link-label">Guest Posting</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch06" data-section="ch06" data-tooltip="Broken Link Building">
+                            <span class="link-num">06</span>
+                            <span class="link-label">Broken Link Building</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch07" data-section="ch07" data-tooltip="Competitor Analysis">
+                            <span class="link-num">07</span>
+                            <span class="link-label">Competitor Analysis</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch08" data-section="ch08" data-tooltip="Outreach Strategy">
+                            <span class="link-num">08</span>
+                            <span class="link-label">Outreach Strategy</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch09" data-section="ch09" data-tooltip="Black Hat vs White Hat">
+                            <span class="link-num">09</span>
+                            <span class="link-label">Black vs White Hat</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch10" data-section="ch10" data-tooltip="Toxic Link Audit">
+                            <span class="link-num">10</span>
+                            <span class="link-label">Toxic Link Audit</span>
+                        </a>
+                        <a class="sidebar-link" href="#ch11" data-section="ch11" data-tooltip="Measuring Authority">
+                            <span class="link-num">11</span>
+                            <span class="link-label">Measuring Authority</span>
+                        </a>
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">Navigation</p>
+                        <a class="sidebar-link" href="../index.html" data-tooltip="Back to Overview">
+                            <span class="link-num">←</span>
+                            <span class="link-label">SEO Overview</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <main class="main-content">
+
+                <!-- CHAPTER PAGE HERO -->
+                <section id="hero" data-section-id="hero" class="chapter-page-hero">
+                    <div class="chapter-hero-inner">
+                        <a href="../index.html" class="back-link">← Back to SEO Overview</a>
+                        <p class="chapter-hero-eyebrow">Handbook 03 — 11 Chapters</p>
+                        <h1>Link Building<br><em>Handbook</em></h1>
+                        <p class="hero-sub">The authority playbook — from understanding why backlinks matter to building a sustainable link acquisition system through digital PR, outreach, and content that earns links naturally.</p>
+                    </div>
+                </section>
+
+                <!-- CH 01 -->
+                <section id="ch01" data-section-id="ch01" class="section reveal">
+                    <p class="chapter-label">Chapter 01</p>
+                    <h2>Why Backlinks Remain Google's Strongest Ranking Signal</h2>
+                    <p>A backlink is a vote of confidence from one website to another. When Google's founders built PageRank in 1998, they modelled it on academic citation — the more credible sources cite a paper, the more authoritative it must be. Two decades later, this principle still underpins the algorithm.</p>
+                    <div class="highlight">"A link from a relevant, authoritative source is one of the single most impactful things you can acquire for a page's rankings. Nothing else scales its authority the same way."</div>
+                    <div class="card-grid">
+                        <div class="card">
+                            <span class="card-num">Authority Transfer</span>
+                            <h3>Domain Authority Flows</h3>
+                            <p>When a high-authority domain links to you, it passes "link equity" (PageRank). This equity helps your pages rank higher in competitive search results where content quality alone isn't enough.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Trust Signals</span>
+                            <h3>E-E-A-T and Links</h3>
+                            <p>Google's quality guidelines weight Experience, Expertise, Authoritativeness, and Trustworthiness. Backlinks from topic-relevant domains signal that real experts and institutions vouch for your content.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Discovery</span>
+                            <h3>Links Accelerate Crawling</h3>
+                            <p>New content gets discovered faster when authoritative pages link to it. A link from a heavily-crawled news domain can get your new page indexed within minutes of publication.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 02 -->
+                <section id="ch02" data-section-id="ch02" class="section reveal">
+                    <p class="chapter-label">Chapter 02</p>
+                    <h2>Anatomy of a Valuable Link</h2>
+                    <p>Not all links are equal. A single link from The New York Times outweighs thousands of links from low-quality directory sites. Understanding what makes a link valuable is the first step to building a strategy that actually moves rankings.</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Factor</th><th>Why It Matters</th><th>What to Look For</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Domain Authority</strong></td><td>Higher DA sites pass more equity</td><td>DR 50+ in Ahrefs or DA 40+ in Moz</td></tr>
+                                <tr><td><strong>Relevance</strong></td><td>Topically aligned links carry more weight</td><td>Same industry, topic, or audience</td></tr>
+                                <tr><td><strong>Anchor Text</strong></td><td>Tells Google what the linked page is about</td><td>Natural mix: branded, naked URL, descriptive</td></tr>
+                                <tr><td><strong>Dofollow vs Nofollow</strong></td><td>Dofollow passes equity; nofollow doesn't</td><td>Aim for dofollow; nofollow still has brand value</td></tr>
+                                <tr><td><strong>Page-Level Authority</strong></td><td>The linking page's own authority matters</td><td>Linked from within the body of a strong article</td></tr>
+                                <tr><td><strong>Link Placement</strong></td><td>Editorial body links outweigh footer/sidebar</td><td>In-content, contextual placement</td></tr>
+                                <tr><td><strong>Traffic</strong></td><td>Links from pages with real traffic are higher quality signals</td><td>Check estimated organic traffic in Ahrefs/Semrush</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- CH 03 -->
+                <section id="ch03" data-section-id="ch03" class="section reveal">
+                    <p class="chapter-label">Chapter 03</p>
+                    <h2>Creating Link-Worthy Content</h2>
+                    <p>The most scalable link building strategy is creating content so good that people link to it without being asked. This is called <strong>linkable asset creation</strong> — building resources, data, or tools that serve as natural references for your industry.</p>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">01</div>
+                            <div class="step-body">
+                                <h4>Original Research and Data</h4>
+                                <p>Survey your audience, analyse your proprietary data, or compile public datasets into original insights. Journalists, bloggers, and researchers link heavily to primary data sources. A well-publicised annual study can earn hundreds of links per year.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">02</div>
+                            <div class="step-body">
+                                <h4>Ultimate Guides and Definitive Resources</h4>
+                                <p>The most comprehensive resource on a topic becomes the default citation. Length isn't the goal — completeness is. If your guide answers every question someone could have on a topic, it earns the link every time.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">03</div>
+                            <div class="step-body">
+                                <h4>Free Tools and Calculators</h4>
+                                <p>An ROI calculator, a word counter, an SEO checker — useful tools in your niche attract natural links from anyone writing about the problem your tool solves. Utility links at scale.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">04</div>
+                            <div class="step-body">
+                                <h4>Visual Content: Infographics and Diagrams</h4>
+                                <p>Visual representations of complex data get embedded in blog posts with attribution links. Make them embeddable with an easy embed code and branded footer that links back to your site.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">05</div>
+                            <div class="step-body">
+                                <h4>Controversial Takes and Contrarian Research</h4>
+                                <p>Content that challenges conventional wisdom or reveals surprising data generates discussion — and discussion generates links. Be accurate, but don't be afraid to disagree with the prevailing consensus if your data supports it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DARK BAND -->
+                <div class="dark-section reveal" data-section-id="impact-links">
+                    <div class="dark-section-inner">
+                        <h2>The Business Case for Link Building</h2>
+                        <div class="prog-item"><div class="prog-label"><span>Correlation between backlink count and top-3 rankings</span><span>0.31</span></div><div class="prog-bar"><div class="prog-fill" data-width="62"></div></div></div>
+                        <div class="prog-item"><div class="prog-label"><span>Pages with zero backlinks that rank on page one</span><span>5.7%</span></div><div class="prog-bar"><div class="prog-fill" data-width="5.7"></div></div></div>
+                        <div class="prog-item"><div class="prog-label"><span>Traffic increase after targeted link building campaign</span><span>+27%</span></div><div class="prog-bar"><div class="prog-fill" data-width="27"></div></div></div>
+                        <div class="prog-item"><div class="prog-label"><span>Referring domains needed to maintain top-3 position in competitive niches</span><span>50+</span></div><div class="prog-bar"><div class="prog-fill" data-width="50"></div></div></div>
+                    </div>
+                </div>
+
+                <!-- CH 04 -->
+                <section id="ch04" data-section-id="ch04" class="section reveal">
+                    <p class="chapter-label">Chapter 04</p>
+                    <h2>Digital PR — Earning High-Authority Links at Scale</h2>
+                    <p>Digital PR is the intersection of public relations and SEO. You create genuinely newsworthy content — studies, campaigns, expert commentary — and pitch it to journalists who cover your industry. A single successful campaign can earn 20–100+ links from major publications.</p>
+                    <div class="accordion">
+                        <div class="acc-item">
+                            <button class="acc-trigger">The Data-Led Story — Most Reliable Format <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Journalists love data because it gives them something to report. Survey 500–1,000 people in your target demographic, find the most surprising or counterintuitive results, and frame them as a story. "48% of remote workers have never met their manager in person" is a story. "Our survey found people work remotely" is not.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">Expert Commentary and Reactive PR <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">When news breaks in your industry, journalists need expert quotes quickly. Services like HARO (Help A Reporter Out), Qwoted, and ResponseSource connect sources with journalists. Respond fast, be quotable, and you earn editorial links from major publications on a regular basis.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">The Campaign Asset — Creative Campaigns <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Interactive maps, data visualisations, calculators, or creative concepts designed specifically to earn coverage. Budget $5–15K for production but distribute to 200+ journalists. One viral data campaign can generate more links in a week than a year of guest posting.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">How to Pitch Journalists <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Subject line is everything — 7 words or fewer, lead with the data point. Email body: one short paragraph of the story, one paragraph on why it matters to their audience, and a link to the full release. Never attach PDFs. Never follow up more than once. Personalise to the journalist's beat — do not spray-and-pray.</div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 05 -->
+                <section id="ch05" data-section-id="ch05" class="section reveal">
+                    <p class="chapter-label">Chapter 05</p>
+                    <h2>Guest Posting — Still Effective, Often Abused</h2>
+                    <p>Guest posting — writing content for another site in exchange for a byline link — remains a legitimate link building tactic when done correctly. Google's issue is not with guest posts; it's with low-quality guest posts published at scale on irrelevant sites for the sole purpose of link manipulation.</p>
+                    <p>The test is simple: if you removed the link from your guest post, would the content still be worth publishing? If yes, it's white hat. If no, it's a link scheme.</p>
+                    <div class="table-wrap mt-2">
+                        <table>
+                            <thead><tr><th>Good Guest Post</th><th>Bad Guest Post</th></tr></thead>
+                            <tbody>
+                                <tr><td>Written for a site with a real audience in your niche</td><td>Published on a "write for us" farm with no editorial standards</td></tr>
+                                <tr><td>Link placed contextually within genuinely useful content</td><td>Link stuffed into generic content with exact-match anchor text</td></tr>
+                                <tr><td>Author byline with real credentials and social profile</td><td>Anonymous or clearly fake author</td></tr>
+                                <tr><td>Site has real organic traffic (verify in Ahrefs)</td><td>Site exists only to sell guest post placements</td></tr>
+                                <tr><td>One or two links per post, naturally placed</td><td>Three or more links, all to the client's commercial pages</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- CH 06 -->
+                <section id="ch06" data-section-id="ch06" class="section reveal">
+                    <p class="chapter-label">Chapter 06</p>
+                    <h2>Broken Link Building</h2>
+                    <p>Broken link building finds dead links on authoritative pages in your niche, then proposes your content as a replacement. You're solving a real problem for the webmaster while earning a link. Conversion rates are higher than cold outreach because you have a genuine reason to contact them.</p>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">01</div>
+                            <div class="step-body">
+                                <h4>Find Broken Link Opportunities</h4>
+                                <p>Use Ahrefs' Broken Backlinks report on competitor domains. Use the Check My Links Chrome extension to scan resource pages in your niche. Target pages with 10+ referring domains that link to the dead page — those are the links worth pursuing.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">02</div>
+                            <div class="step-body">
+                                <h4>Create or Identify a Replacement</h4>
+                                <p>Find the dead page in Wayback Machine to understand what it contained. If you have existing content that matches — pitch it. If not, assess whether building a replacement is worth the link's value before investing time creating new content.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">03</div>
+                            <div class="step-body">
+                                <h4>Outreach</h4>
+                                <p>Email the webmaster: "I noticed your link to [dead URL] is broken. I have content on the same topic at [your URL] that might be a useful replacement." Short, no-fluff, benefit-first. Expect a 5–15% conversion rate on well-targeted campaigns.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 07 -->
+                <section id="ch07" data-section-id="ch07" class="section reveal">
+                    <p class="chapter-label">Chapter 07</p>
+                    <h2>Competitor Backlink Analysis</h2>
+                    <p>Your competitors who rank above you have already done a significant amount of link prospecting on your behalf. Every site that links to them is a potential link for you — because they clearly publish content about your topic.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <span class="card-num">Step 01</span>
+                            <h3>Export Competitor Backlinks</h3>
+                            <p>In Ahrefs or Semrush, export the full backlink profile of your top 3–5 ranking competitors. Focus on referring domains (unique sites), not individual links — one site linking 100 times counts once.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Step 02</span>
+                            <h3>Find the Link Gap</h3>
+                            <p>Use Ahrefs' Link Intersect tool: find domains that link to 2+ competitors but not to you. These are your highest-priority targets — they already vouch for competitors on your topic.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Step 03</span>
+                            <h3>Reverse-Engineer Why</h3>
+                            <p>For each target domain, look at which competitor page they linked to and why. If they linked to a study, create a better study. If they linked to a guide, create a more comprehensive one. Match and exceed what earned the competitor the link.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 08 -->
+                <section id="ch08" data-section-id="ch08" class="section reveal">
+                    <p class="chapter-label">Chapter 08</p>
+                    <h2>Outreach Strategy — Getting Replies at Scale</h2>
+                    <p>Outreach email is one of the most abused channels in digital marketing. The average webmaster receives dozens of link requests daily. Standing out requires genuine personalisation, clear value, and a no-friction ask.</p>
+                    <div class="formula">
+                        <strong>Subject:</strong> Quick note about [specific article title or data point]<br>
+                        <strong>Line 1:</strong> Genuine observation about their content — proof you read it.<br>
+                        <strong>Line 2:</strong> The ask — one sentence, specific and direct.<br>
+                        <strong>Line 3:</strong> Why it benefits their readers — the value exchange.<br>
+                        <strong>Sign-off:</strong> Real name, real job title, real link to your site.
+                    </div>
+                    <ul class="checklist" style="margin-top:1.5rem">
+                        <li><span class="check-icon"></span><span>Find the author or editor's direct email — never use contact forms for outreach</span></li>
+                        <li><span class="check-icon"></span><span>Personalise beyond the name — reference a specific article, data point, or opinion they shared</span></li>
+                        <li><span class="check-icon"></span><span>Make your ask in one sentence — ambiguity kills conversions</span></li>
+                        <li><span class="check-icon"></span><span>Include your best content in the email, not just a domain — make it zero-friction to say yes</span></li>
+                        <li><span class="check-icon"></span><span>One follow-up only, 5–7 days later, even shorter than the original</span></li>
+                        <li><span class="check-icon"></span><span>Track opens and replies in a CRM or spreadsheet — volume and personalisation are both required</span></li>
+                    </ul>
+                </section>
+
+                <!-- CH 09 -->
+                <section id="ch09" data-section-id="ch09" class="section reveal">
+                    <p class="chapter-label">Chapter 09</p>
+                    <h2>Black Hat vs White Hat Link Building</h2>
+                    <p>Google's Webmaster Guidelines explicitly prohibit link schemes. Violating them risks manual penalties (a human review removing your site from results) or algorithmic penalties. The risk-reward calculation has shifted dramatically against black hat tactics in the modern era.</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Tactic</th><th>Classification</th><th>Risk Level</th></tr></thead>
+                            <tbody>
+                                <tr><td>Editorial links from digital PR campaigns</td><td>White Hat</td><td>None</td></tr>
+                                <tr><td>High-quality guest posting on relevant sites</td><td>White Hat</td><td>Very Low</td></tr>
+                                <tr><td>Broken link building</td><td>White Hat</td><td>None</td></tr>
+                                <tr><td>Resource page outreach</td><td>White Hat</td><td>None</td></tr>
+                                <tr><td>Paying for links (disclosed as sponsored)</td><td>Grey Hat</td><td>Low (if nofollow/sponsored tag used)</td></tr>
+                                <tr><td>PBN (Private Blog Network) links</td><td>Black Hat</td><td>Very High — manual penalty risk</td></tr>
+                                <tr><td>Link farms and automated link building</td><td>Black Hat</td><td>Very High — algorithmic devaluation</td></tr>
+                                <tr><td>Undisclosed paid links (dofollow)</td><td>Black Hat</td><td>High — violates Google guidelines</td></tr>
+                                <tr><td>Negative SEO (building spam links to competitors)</td><td>Black Hat</td><td>Illegal in many jurisdictions</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- CH 10 -->
+                <section id="ch10" data-section-id="ch10" class="section reveal">
+                    <p class="chapter-label">Chapter 10</p>
+                    <h2>Toxic Link Auditing and Disavow</h2>
+                    <p>If your site has historically used black hat tactics or has been targeted by negative SEO, you may have a toxic backlink profile dragging down your rankings. Google's Penguin algorithm (now real-time) devalues spammy links algorithmically — but severe cases can trigger manual actions requiring cleanup.</p>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">01</div>
+                            <div class="step-body">
+                                <h4>Export Your Full Backlink Profile</h4>
+                                <p>Use Ahrefs or Google Search Console's Links report. Export all referring domains. Look for patterns: large quantities of links from unrelated foreign-language sites, exact-match anchor text manipulation, or links from known link farms.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">02</div>
+                            <div class="step-body">
+                                <h4>Classify Toxic vs Low-Quality</h4>
+                                <p>Toxic links actively harm you (spam networks, irrelevant foreign directories, link farms). Low-quality links are simply worthless but benign. Only disavow toxic links — Google can ignore low-quality ones algorithmically.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">03</div>
+                            <div class="step-body">
+                                <h4>Attempt Manual Removal First</h4>
+                                <p>Contact the webmaster and request link removal before disavowing. Document your attempts. Google expects you to try manual removal before submitting a disavow file.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">04</div>
+                            <div class="step-body">
+                                <h4>Submit a Disavow File</h4>
+                                <p>Upload a .txt file via Google's Disavow Tool in Search Console. Format: one domain per line, preceded by "domain:" for whole-domain disavowal. This is a permanent instruction — be conservative. Disavowing legitimate links can hurt rankings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 11 -->
+                <section id="ch11" data-section-id="ch11" class="section reveal">
+                    <p class="chapter-label">Chapter 11</p>
+                    <h2>Measuring Link Building Success</h2>
+                    <p>Link building is a long game. Individual links rarely produce immediate ranking changes. Authority compounds over months as multiple links reinforce each other and Google recrawls and reprocesses your profile. Measure the right metrics at the right cadence.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <span class="card-num">Weekly</span>
+                            <h3>New Referring Domains</h3>
+                            <p>Track new referring domains gained (and lost) week-over-week. Growth in unique referring domains is the primary input metric. Losing links matters as much as gaining them.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Monthly</span>
+                            <h3>Domain Rating / Authority</h3>
+                            <p>Monitor your site's overall authority score (Ahrefs DR or Moz DA). Compare to top 3 competitors. The gap tells you how much work remains. Expect DR to move slowly — 2–5 points per month is strong growth.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Quarterly</span>
+                            <h3>Target Keyword Rankings</h3>
+                            <p>Correlate new link acquisition with ranking movements on your primary target keywords. 60–90 days after a significant link acquisition push is when you'd expect to see meaningful ranking gains in competitive SERPs.</p>
+                        </div>
+                    </div>
+                    <div class="highlight">"Link building without measurement is charity. Track every domain acquired, every keyword moved, every authority point gained — the data tells you which tactics to scale and which to drop."</div>
+                </section>
+
+                <footer>
+                    <p><strong>Link Building Handbook</strong> — Part of the SEO Reference Guide</p>
+                    <p style="margin-top:.4rem;"><a href="../index.html" style="color:var(--gold);text-decoration:none;">← Back to the full SEO Overview</a></p>
+                    <p style="margin-top:.4rem;">Built By <a href="#">Saeed</a></p>
+                </footer>
+
+            </main>
+        </div>
+
+        <script src="../data/translations.js"></script>
+        <script src="../js/i18n.js"></script>
+        <script src="../js/nav.js"></script>
+        <script src="../js/main.js"></script>
+        <script src="../js/search.js"></script>
+    </body>
+</html>
