@@ -1,0 +1,137 @@
+.dl-hero {
+  background: var(--dark);
+  padding:    5rem 4rem 4rem;
+  position:   relative;
+  overflow:   hidden;
+}
+
+.dl-hero::before {
+  content:  '';
+  position: absolute;
+  inset:    0;
+  background:
+    radial-gradient(ellipse 55% 60% at 10% 60%, rgba(201, 168, 76, .05) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 40% at 90% 20%, rgba(200, 80, 42,  .04) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.dl-hero-inner {
+  max-width: var(--content-max);
+  margin:    0 auto;
+  position:  relative;
+  z-index:   1;
+}
+
+.dl-grid {
+  max-width:             var(--content-max);
+  margin:                0 auto;
+  padding:               4rem 4rem 5rem;
+  display:               grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:                   1.4rem;
+}
+
+.dl-card {
+  background:     #fff;
+  border:         1px solid var(--border);
+  padding:        1.75rem 1.75rem 1.5rem;
+  display:        flex;
+  flex-direction: column;
+  gap:            .65rem;
+  position:       relative;
+  transition:     border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.dl-card:hover {
+  border-color: var(--gold);
+  transform:    translateY(-3px);
+  box-shadow:   0 8px 32px rgba(0, 0, 0, .08);
+}
+
+.dl-card-num {
+  font-family:    'DM Mono', monospace;
+  font-size:      .58rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color:          var(--gold);
+}
+
+.dl-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size:   1.1rem;
+  color:       var(--ink);
+  line-height: 1.25;
+}
+
+.dl-card-desc {
+  font-size:   .83rem;
+  color:       var(--muted);
+  line-height: 1.6;
+  flex:        1;
+}
+
+.dl-card-meta {
+  font-family:    'DM Mono', monospace;
+  font-size:      .6rem;
+  letter-spacing: .1em;
+  color:          #bbb;
+  text-transform: uppercase;
+}
+
+.dl-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             .5rem;
+  margin-top:      .35rem;
+  padding:         .62rem 1.25rem;
+  background:      var(--dark-2);
+  color:           #e8e0d0;
+  border:          1px solid var(--border-dk);
+  text-decoration: none;
+  font-family:     'DM Mono', monospace;
+  font-size:       .68rem;
+  letter-spacing:  .1em;
+  text-transform:  uppercase;
+  align-self:      flex-start;
+  transition:      background .2s, border-color .2s, color .2s;
+}
+
+.dl-btn:hover {
+  background:   var(--dark-3);
+  border-color: rgba(201, 168, 76, .3);
+  color:        var(--gold);
+}
+
+.dl-btn svg {
+  width:      13px;
+  height:     13px;
+  flex-shrink: 0;
+}
+
+.dl-note {
+  max-width: var(--content-max);
+  margin:    0 auto;
+  padding:   0 4rem 4rem;
+}
+
+.dl-note-inner {
+  background:  var(--dark-2);
+  border:      1px solid var(--border-dk);
+  padding:     1.5rem 2rem;
+  border-left: 3px solid var(--gold);
+}
+
+.dl-note-inner p {
+  font-size:   .84rem;
+  color:       #5a5550;
+  margin:      0;
+  line-height: 1.7;
+}
+
+.dl-note-inner strong { color: var(--gold); }
+
+@media (max-width: 600px) {
+  .dl-hero { padding: 3.5rem 1.5rem; }
+  .dl-grid { padding: 2.5rem 1.5rem; }
+  .dl-note { padding: 0 1.5rem 2.5rem; }
+}

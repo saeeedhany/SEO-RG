@@ -1,0 +1,50 @@
+[dir="rtl"] { font-family: 'Cairo', sans-serif; }
+
+/* Remove the right-trailing line and add a left-trailing line instead */
+[dir="rtl"] .chapter-label::after  { display: none; }
+[dir="rtl"] .chapter-label::before {
+  content:    '';
+  flex:       1;
+  height:     1px;
+  background: var(--border);
+}
+
+[dir="rtl"] .highlight {
+  border-left:  none;
+  border-right: 3px solid var(--gold);
+}
+
+[dir="rtl"] .sidebar-link          { flex-direction: row-reverse; }
+[dir="rtl"] .link-num              { text-align: center; }
+[dir="rtl"] .link-badge            { margin-left: 0; margin-right: auto; }
+
+/* Active indicator bar moves to right edge */
+[dir="rtl"] .sidebar-link.active::before { left: auto; right: 0; }
+
+/* Collapsed tooltip appears on the left of the icon */
+[dir="rtl"] .app-shell:not(.sidebar-open) .sidebar-link[data-tooltip]:hover::after {
+  left:  auto;
+  right: calc(var(--sidebar-collapsed) + 8px);
+}
+
+[dir="rtl"] .nav-logo {
+  padding-left:  0;
+  padding-right: 1.25rem;
+}
+
+[dir="rtl"] .formula {
+  border-left:  none;
+  border-right: 3px solid rgba(201, 168, 76, .3);
+}
+
+[dir="rtl"] .card,
+[dir="rtl"] .handbook-card         { text-align: right; }
+
+[dir="rtl"] .pillar-item,
+[dir="rtl"] .step-item             { direction: rtl; }
+
+[dir="rtl"] .pillar-tag            { padding-right: 0; padding-left: 2rem; }
+
+[dir="rtl"] .prog-label            { flex-direction: row-reverse; }
+
+[dir="rtl"] .chapter-page-hero .back-link { flex-direction: row-reverse; }
