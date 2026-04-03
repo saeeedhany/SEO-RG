@@ -1538,3 +1538,373 @@ footer p a {
 	margin-left: 0;
 	margin-right: auto;
 }
+
+/* ═══════════════════════════════════════════════════
+   PDF PROGRESS WIDGET
+   Floating reading-tracker + download button
+═══════════════════════════════════════════════════ */
+
+.pdf-widget {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 350;
+	width: 56px;
+	height: 56px;
+
+	/* Hidden by default — appears after first scroll */
+	opacity: 0;
+	transform: translateY(12px) scale(.88);
+	pointer-events: none;
+	transition: opacity .4s var(--ease), transform .4s var(--ease);
+}
+
+.pdf-widget.pdf-visible {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	pointer-events: all;
+}
+
+/* ── SVG Ring ── */
+.pdf-ring {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	transform: rotate(-90deg); /* start fill from top */
+}
+
+.pdf-ring-track {
+	stroke: rgba(255,255,255,.06);
+	stroke-width: 2.5;
+}
+
+.pdf-ring-fill {
+	stroke: var(--gold);
+	stroke-width: 2.5;
+	stroke-linecap: round;
+	transition: stroke-dashoffset .45s var(--ease), stroke .4s;
+}
+
+.pdf-widget.pdf-unlocked .pdf-ring-fill {
+	stroke: var(--accent);
+}
+
+/* ── Inner button ── */
+.pdf-btn {
+	position: absolute;
+	inset: 5px;
+	border-radius: 50%;
+	background: var(--dark-2);
+	border: 1px solid var(--border-dk);
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0;
+	transition: background .2s, border-color .2s, box-shadow .2s;
+}
+
+.pdf-btn:hover {
+	background: var(--dark-3);
+	border-color: rgba(201,168,76,.3);
+	box-shadow: 0 4px 24px rgba(0,0,0,.45);
+}
+
+.pdf-widget.pdf-unlocked .pdf-btn:hover {
+	border-color: rgba(200,80,42,.4);
+}
+
+/* ── Icons inside button ── */
+.pdf-icon {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	transition: opacity .25s, transform .25s;
+}
+
+.pdf-icon-lock {
+	color: #666;
+	opacity: 1;
+}
+
+.pdf-icon-dl {
+	color: var(--accent);
+	opacity: 0;
+	position: absolute;
+	transform: translateY(4px);
+}
+
+/* Locked state: show lock, hide dl */
+.pdf-widget:not(.pdf-unlocked) .pdf-icon-lock { opacity: 1; transform: none; }
+.pdf-widget:not(.pdf-unlocked) .pdf-icon-dl   { opacity: 0; transform: translateY(4px); }
+
+/* Unlocked state: hide lock, show dl */
+.pdf-widget.pdf-unlocked .pdf-icon-lock { opacity: 0; transform: translateY(-4px); }
+.pdf-widget.pdf-unlocked .pdf-icon-dl   { opacity: 1; transform: translateY(0); position: static; }
+
+/* ── Percent label ── */
+.pdf-pct {
+	font-family: 'DM Mono', monospace;
+	font-size: .44rem;
+	letter-spacing: .04em;
+	color: #666;
+	line-height: 1;
+	margin-top: 2px;
+	transition: opacity .2s;
+	display: block;
+}
+
+.pdf-widget.pdf-unlocked .pdf-pct {
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* ── Unlock animation (one-shot pulse) ── */
+@keyframes pdf-unlock-pulse {
+	0%   { box-shadow: 0 0 0 0 rgba(200,80,42,.5); }
+	60%  { box-shadow: 0 0 0 14px rgba(200,80,42,0); }
+	100% { box-shadow: 0 0 0 0 rgba(200,80,42,0); }
+}
+
+.pdf-widget.pdf-unlocked .pdf-btn {
+	animation: pdf-unlock-pulse .7s var(--ease) 1;
+}
+
+/* ── Tooltip bubble ── */
+.pdf-tooltip {
+	position: absolute;
+	bottom: calc(100% + 14px);
+	right: 0;
+	width: 230px;
+	background: var(--dark-2);
+	border: 1px solid var(--border-dk);
+	padding: 1rem 1.1rem 1rem;
+	box-shadow: 0 8px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.03);
+
+	/* Glass / smoky look */
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	background: rgba(26,21,16,.92);
+
+	/* Hidden by default */
+	opacity: 0;
+	transform: translateY(6px) scale(.96);
+	pointer-events: none;
+	transition: opacity .22s var(--ease), transform .22s var(--ease);
+	transform-origin: bottom right;
+}
+
+.pdf-tooltip.pdf-tooltip-open {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+	pointer-events: all;
+}
+
+/* Tail triangle pointing down-right */
+.pdf-tooltip-tail {
+	position: absolute;
+	bottom: -6px;
+	right: 18px;
+	width: 10px;
+	height: 10px;
+	background: rgba(26,21,16,.92);
+	border-right: 1px solid var(--border-dk);
+	border-bottom: 1px solid var(--border-dk);
+	transform: rotate(45deg);
+}
+
+.pdf-tooltip-text {
+	font-family: 'DM Sans', sans-serif;
+	font-size: .78rem;
+	color: #9a9590;
+	line-height: 1.55;
+	margin-bottom: .55rem !important;
+}
+
+.pdf-tooltip-sub {
+	font-family: 'DM Mono', monospace;
+	font-size: .64rem;
+	letter-spacing: .03em;
+	color: #555;
+	line-height: 1.5;
+	margin: 0 !important;
+}
+
+.pdf-tooltip-sub a {
+	color: var(--gold);
+	text-decoration: none;
+	transition: color .15s;
+}
+
+.pdf-tooltip-sub a:hover {
+	color: #f0e08a;
+}
+
+/* ── Unlocked label below button ── */
+.pdf-widget.pdf-unlocked::after {
+	content: 'Download PDF';
+	position: absolute;
+	bottom: -1.4rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: 'DM Mono', monospace;
+	font-size: .48rem;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: var(--accent);
+	white-space: nowrap;
+	opacity: .85;
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 600px) {
+	.pdf-widget {
+		bottom: 1.25rem;
+		right: 1.25rem;
+	}
+}
+
+/* ═══════════════════════════════════════════════════
+   DOWNLOADS PAGE
+═══════════════════════════════════════════════════ */
+
+.dl-hero {
+	background: var(--dark);
+	padding: 5rem 4rem 4rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.dl-hero::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(ellipse 55% 60% at 10% 60%, rgba(201,168,76,.05) 0%, transparent 65%),
+	            radial-gradient(ellipse 35% 40% at 90% 20%, rgba(200,80,42,.04) 0%, transparent 55%);
+	pointer-events: none;
+}
+
+.dl-hero-inner {
+	max-width: var(--content-max);
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+
+.dl-grid {
+	max-width: var(--content-max);
+	margin: 0 auto;
+	padding: 4rem 4rem 5rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.4rem;
+}
+
+.dl-card {
+	background: #fff;
+	border: 1px solid var(--border);
+	padding: 1.75rem 1.75rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: .65rem;
+	position: relative;
+	transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.dl-card:hover {
+	border-color: var(--gold);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 32px rgba(0,0,0,.08);
+}
+
+.dl-card-num {
+	font-family: 'DM Mono', monospace;
+	font-size: .58rem;
+	letter-spacing: .16em;
+	text-transform: uppercase;
+	color: var(--gold);
+}
+
+.dl-card-title {
+	font-family: 'Playfair Display', serif;
+	font-size: 1.1rem;
+	color: var(--ink);
+	line-height: 1.25;
+}
+
+.dl-card-desc {
+	font-size: .83rem;
+	color: var(--muted);
+	line-height: 1.6;
+	flex: 1;
+}
+
+.dl-card-meta {
+	font-family: 'DM Mono', monospace;
+	font-size: .6rem;
+	letter-spacing: .1em;
+	color: #bbb;
+	text-transform: uppercase;
+}
+
+.dl-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+	margin-top: .35rem;
+	padding: .62rem 1.25rem;
+	background: var(--dark-2);
+	color: #e8e0d0;
+	border: 1px solid var(--border-dk);
+	text-decoration: none;
+	font-family: 'DM Mono', monospace;
+	font-size: .68rem;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	align-self: flex-start;
+	transition: background .2s, border-color .2s, color .2s;
+}
+
+.dl-btn:hover {
+	background: var(--dark-3);
+	border-color: rgba(201,168,76,.3);
+	color: var(--gold);
+}
+
+.dl-btn svg {
+	width: 13px;
+	height: 13px;
+	flex-shrink: 0;
+}
+
+.dl-note {
+	max-width: var(--content-max);
+	margin: 0 auto;
+	padding: 0 4rem 4rem;
+}
+
+.dl-note-inner {
+	background: var(--dark-2);
+	border: 1px solid var(--border-dk);
+	padding: 1.5rem 2rem;
+	border-left: 3px solid var(--gold);
+}
+
+.dl-note-inner p {
+	font-size: .84rem;
+	color: #5a5550;
+	margin: 0;
+	line-height: 1.7;
+}
+
+.dl-note-inner strong {
+	color: var(--gold);
+}
+
+@media (max-width: 600px) {
+	.dl-hero   { padding: 3.5rem 1.5rem; }
+	.dl-grid   { padding: 2.5rem 1.5rem; }
+	.dl-note   { padding: 0 1.5rem 2.5rem; }
+}
