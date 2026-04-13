@@ -1,0 +1,45 @@
+title: SEO Reference Guide
+description: A comprehensive SEO reference covering every discipline - from fundamentals to advanced tactics.
+baseurl: "/SEO-RG"
+url: "https://saeeedhany.github.io"
+author: Saeed
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  auto_ids: false
+
+# Collections
+collections:
+  chapters:
+    output: true
+    permalink: /chapters/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Keep files (PDFs placeholder dir)
+keep_files:
+  - pdfs
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - "*.sh"
+  - node_modules
+  - vendor
+  - _chapters/*_body.html

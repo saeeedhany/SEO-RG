@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }} — {{ site.title }}</title>
+        <meta name="description" content="{{ page.description | default: site.description }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    </head>
+    <body class="font-latin">
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                <input id="search-input" class="search-input" type="text" placeholder="Search the guide…" autocomplete="off" spellcheck="false">
+                <button id="search-close-btn" class="search-close">ESC</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div id="app-shell" class="app-shell">
+
+            <nav class="top-nav">
+                <div class="nav-hamburger-wrap">
+                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <a href="{{ '/' | relative_url }}" class="nav-logo" data-i18n="navTitle">{{ site.title }}</a>
+                <div class="nav-right">
+                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                    </button>
+                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
+                </div>
+            </nav>
+
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-header">
+                        <p class="sidebar-title">Downloads</p>
+                    </div>
+                    <nav class="sidebar-section">
+                        <p class="sidebar-section-label">PDFs</p>
+                        <a class="sidebar-link active" href="#content-writing-dl" data-tooltip="Content Writing PDF">
+                            <span class="link-num">01</span>
+                            <span class="link-label">Content Writing</span>
+                        </a>
+                        <a class="sidebar-link" href="#technical-seo-dl" data-tooltip="Technical SEO PDF">
+                            <span class="link-num">02</span>
+                            <span class="link-label">Technical SEO</span>
+                        </a>
+                        <a class="sidebar-link" href="#link-building-dl" data-tooltip="Link Building PDF">
+                            <span class="link-num">03</span>
+                            <span class="link-label">Link Building</span>
+                        </a>
+                        <a class="sidebar-link" href="#local-seo-dl" data-tooltip="Local SEO PDF">
+                            <span class="link-num">04</span>
+                            <span class="link-label">Local SEO</span>
+                        </a>
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">Navigation</p>
+                        <a class="sidebar-link" href="{{ '/' | relative_url }}" data-tooltip="Back to Overview">
+                            <span class="link-num">←</span>
+                            <span class="link-label">SEO Overview</span>
+                        </a>
+                        <a class="sidebar-link" href="{{ '/chapters/content-writing/' | relative_url }}" data-tooltip="Content Writing">
+                            <span class="link-num">→</span>
+                            <span class="link-label">Read Online</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                {{ content }}
+            </main>
+        </div>
+
+        <script src="{{ '/assets/js/translations.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/i18n.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/nav.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+    </body>
+</html>

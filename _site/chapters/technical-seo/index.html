@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-pdf-href="/pdfs/technical-seo-handbook.pdf">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technical SEO Handbook — SEO Reference Guide</title>
+        <meta name="description" content="11 chapters covering crawl & index pipeline, Core Web Vitals, site architecture, structured data, JavaScript SEO, and full audit checklist.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/style.css">
+    </head>
+    <body class="font-latin">
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                <input id="search-input" class="search-input" type="text" placeholder="Search chapters, concepts…" autocomplete="off" spellcheck="false">
+                <button id="search-close-btn" class="search-close">ESC</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div id="app-shell" class="app-shell">
+
+            <nav class="top-nav">
+                <div class="nav-hamburger-wrap">
+                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <a href="/" class="nav-logo" data-i18n="navTitle">SEO Reference Guide</a>
+                <div class="nav-right">
+                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                    </button>
+                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
+                </div>
+            </nav>
+
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-header">
+                        <p class="sidebar-title">Technical SEO Handbook</p>
+                    </div>
+                    <nav class="sidebar-section">
+                        <p class="sidebar-section-label">Chapters</p>
+                        
+                        <a class="sidebar-link active" href="#hero" data-section="hero" data-tooltip="Introduction">
+                            <span class="link-num">00</span>
+                            <span class="link-label">Introduction</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch01" data-section="ch01" data-tooltip="How Google Crawls">
+                            <span class="link-num">01</span>
+                            <span class="link-label">How Google Crawls</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch02" data-section="ch02" data-tooltip="Crawl Budget">
+                            <span class="link-num">02</span>
+                            <span class="link-label">Crawl Budget</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch03" data-section="ch03" data-tooltip="Site Architecture">
+                            <span class="link-num">03</span>
+                            <span class="link-label">Site Architecture</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch04" data-section="ch04" data-tooltip="Core Web Vitals">
+                            <span class="link-num">04</span>
+                            <span class="link-label">Core Web Vitals</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch05" data-section="ch05" data-tooltip="Mobile-First">
+                            <span class="link-num">05</span>
+                            <span class="link-label">Mobile-First</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch06" data-section="ch06" data-tooltip="Structured Data">
+                            <span class="link-num">06</span>
+                            <span class="link-label">Structured Data</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch07" data-section="ch07" data-tooltip="JavaScript SEO">
+                            <span class="link-num">07</span>
+                            <span class="link-label">JavaScript SEO</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch08" data-section="ch08" data-tooltip="Canonicalisation">
+                            <span class="link-num">08</span>
+                            <span class="link-label">Canonicalisation</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch09" data-section="ch09" data-tooltip="Redirects &amp; Hreflang">
+                            <span class="link-num">09</span>
+                            <span class="link-label">Redirects &amp; Hreflang</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch10" data-section="ch10" data-tooltip="Search Console">
+                            <span class="link-num">10</span>
+                            <span class="link-label">Search Console</span>
+                        </a>
+                        
+                        <a class="sidebar-link" href="#ch11" data-section="ch11" data-tooltip="Technical Audit">
+                            <span class="link-num">11</span>
+                            <span class="link-label">Technical Audit</span>
+                        </a>
+                        
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">Navigation</p>
+                        <a class="sidebar-link" href="/downloads/" data-tooltip="Download PDFs">
+                            <span class="link-num">↓</span>
+                            <span class="link-label">Downloads</span>
+                            <span class="link-badge">PDF</span>
+                        </a>
+                        <a class="sidebar-link" href="/" data-tooltip="Back to Overview">
+                            <span class="link-num">←</span>
+                            <span class="link-label">SEO Overview</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <!-- CHAPTER HERO -->
+                <section id="hero" data-section-id="hero" class="chapter-page-hero">
+                    <div class="chapter-hero-inner">
+                        <a href="/" class="back-link">← Back to SEO Overview</a>
+                        <p class="chapter-hero-eyebrow">Handbook 02 — 11 Chapters</p>
+                        <h1>Technical SEO<br /><em>Handbook</em>
+</h1>
+                        <p class="hero-sub">The complete engineering layer of SEO — from how Googlebot crawls your site to Core Web Vitals, structured data, and resolving every indexation issue in Search Console.</p>
+                    </div>
+                </section>
+
+                <!-- CH 01 -->
+                <section id="ch01" data-section-id="ch01" class="section reveal">
+                    <p class="chapter-label">Chapter 01</p>
+                    <h2>How Google Crawls and Indexes the Web</h2>
+                    <p>Before any SEO tactic works, you need to understand the three-stage pipeline that governs every URL on the internet: <strong>Crawl → Render → Index</strong>. A failure at any stage means zero rankings, regardless of how good your content is.</p>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">01</div>
+                            <div class="step-body">
+                                <h4>Crawl</h4>
+                                <p>Googlebot discovers URLs through sitemaps and by following links. It downloads the HTML of each page and places it in a crawl queue. Pages blocked by robots.txt are never downloaded.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">02</div>
+                            <div class="step-body">
+                                <h4>Render</h4>
+                                <p>Google renders the downloaded HTML using a headless Chrome instance to execute JavaScript. This is why JavaScript-heavy SPAs can be problematic — rendering is resource-intensive and may be delayed by days or weeks.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">03</div>
+                            <div class="step-body">
+                                <h4>Index</h4>
+                                <p>After rendering, Google decides whether to index the page. Thin content, duplicate content, noindex directives, or low-quality signals can all cause a page to be crawled but never indexed.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">04</div>
+                            <div class="step-body">
+                                <h4>Rank</h4>
+                                <p>Indexed pages compete in Google's ranking algorithm across hundreds of signals. Ranking is only possible after successful crawl, render, and indexation — yet most SEO work starts here and ignores the prior three steps.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight">"If Googlebot can't crawl your page, no amount of link building or content optimization will move rankings. Fix the foundation first."</div>
+                </section>
+
+                <!-- CH 02 -->
+                <section id="ch02" data-section-id="ch02" class="section reveal">
+                    <p class="chapter-label">Chapter 02</p>
+                    <h2>Crawl Budget — What It Is and Why It Matters</h2>
+                    <p>Crawl budget is the number of pages Googlebot will crawl on your site within a given time frame. It is determined by two factors: <strong>crawl rate limit</strong> (how fast Googlebot crawls without overloading your server) and <strong>crawl demand</strong> (how much Google wants to crawl your site based on its perceived value).</p>
+                    <p>For most small sites under 1,000 pages, crawl budget is not a concern. For large e-commerce, news, or enterprise sites with hundreds of thousands of URLs, wasted crawl budget directly costs rankings.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <span class="card-num">Wasting Budget</span>
+                            <h3>Common Crawl Budget Leaks</h3>
+                            <p>Infinite scroll parameters, faceted navigation, session IDs in URLs, paginated pages beyond page 3, and staging environments accidentally exposed to Googlebot.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Saving Budget</span>
+                            <h3>How to Protect Budget</h3>
+                            <p>Block low-value URLs in robots.txt, consolidate faceted URLs with canonicals, use noindex on thin pages, and reduce redirect chains that waste crawl steps.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Monitoring</span>
+                            <h3>Track in Search Console</h3>
+                            <p>Search Console's Crawl Stats report shows daily Googlebot requests, average response time, and breakdown by file type — your primary crawl budget diagnostic tool.</p>
+                        </div>
+                    </div>
+                    <div class="table-wrap mt-2">
+                        <table>
+                            <thead><tr><th>URL Type</th><th>Crawl Budget Impact</th><th>Fix</th></tr></thead>
+                            <tbody>
+                                <tr><td>Faceted navigation URLs</td><td>Severe — can generate millions of thin pages</td><td>noindex or robots.txt block</td></tr>
+                                <tr><td>URL parameters (session IDs)</td><td>High — creates duplicate content at scale</td><td>Canonicals + Search Console parameter handling</td></tr>
+                                <tr><td>Redirect chains (3+ hops)</td><td>Medium — wastes crawl steps, dilutes link equity</td><td>Update to point directly to final destination</td></tr>
+                                <tr><td>Soft 404 pages</td><td>Medium — Google wastes budget on dead ends</td><td>Return proper 404/410 HTTP status</td></tr>
+                                <tr><td>Pagination beyond page 5</td><td>Low–Medium — diminishing indexed value</td><td>noindex deep pagination pages</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- CH 03 -->
+                <section id="ch03" data-section-id="ch03" class="section reveal">
+                    <p class="chapter-label">Chapter 03</p>
+                    <h2>Site Architecture and Internal Linking</h2>
+                    <p>Site architecture determines how link equity flows through your site and how easily Googlebot and users can navigate it. The gold standard is the <strong>flat architecture</strong>: every important page reachable within 3 clicks of the homepage.</p>
+                    <div class="highlight">"Your internal linking structure is a vote cast for which pages matter most. Every link is a signal — use them with intent."</div>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">01</div>
+                            <div class="step-body">
+                                <h4>Silo Structure</h4>
+                                <p>Group related pages into topic clusters. A central pillar page links to supporting cluster pages; clusters link back to the pillar. This signals topical depth to Google and concentrates authority.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">02</div>
+                            <div class="step-body">
+                                <h4>XML Sitemaps</h4>
+                                <p>Submit a sitemap containing only indexable, canonical URLs. Keep individual sitemaps under 50,000 URLs and 50 MB. Use a sitemap index file for large sites. Resubmit after major structural changes.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">03</div>
+                            <div class="step-body">
+                                <h4>Breadcrumbs</h4>
+                                <p>Breadcrumb navigation reinforces URL hierarchy, provides internal links, and can appear as rich results in Google SERPs. Implement them with BreadcrumbList schema markup for maximum benefit.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">04</div>
+                            <div class="step-body">
+                                <h4>Orphan Pages</h4>
+                                <p>Pages with zero internal links pointing to them are effectively invisible to Googlebot. Run a regular crawl audit (Screaming Frog) to identify and link orphan pages back into your architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 04 -->
+                <section id="ch04" data-section-id="ch04" class="section reveal">
+                    <p class="chapter-label">Chapter 04</p>
+                    <h2>Core Web Vitals — Google's Page Experience Signals</h2>
+                    <p>Core Web Vitals are Google's standardised metrics for measuring real-world user experience. They became a confirmed ranking factor in 2021 and are measured in the field (real user data via Chrome UX Report) and in the lab (Lighthouse, PageSpeed Insights).</p>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Metric</th><th>What It Measures</th><th>Good Threshold</th><th>Key Fix</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>LCP</strong> — Largest Contentful Paint</td><td>Loading performance — how fast the main content appears</td><td>≤ 2.5 seconds</td><td>Optimise hero images, reduce server response time, use CDN</td></tr>
+                                <tr><td><strong>INP</strong> — Interaction to Next Paint</td><td>Responsiveness — how fast the page responds to input</td><td>≤ 200 ms</td><td>Reduce JavaScript execution time, break up long tasks</td></tr>
+                                <tr><td><strong>CLS</strong> — Cumulative Layout Shift</td><td>Visual stability — do elements move as the page loads?</td><td>≤ 0.1</td><td>Add explicit width/height to images and embeds, avoid late-loading ads above the fold</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-grid" style="margin-top:1.5rem">
+                        <div class="card">
+                            <span class="card-num">Diagnosis</span>
+                            <h3>PageSpeed Insights</h3>
+                            <p>Shows both field data (real users, 28-day window) and lab data (controlled Lighthouse test). Field data is what Google uses for ranking. Lab data diagnoses specific issues.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Bulk Analysis</span>
+                            <h3>Search Console CWV Report</h3>
+                            <p>Shows which URLs have Poor, Needs Improvement, or Good status across your entire site. Group URLs by template type to fix issues at scale rather than one page at a time.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">LCP Quick Win</span>
+                            <h3>Image Optimisation</h3>
+                            <p>Convert images to WebP or AVIF format. Add fetchpriority="high" to your LCP image element. Use responsive images with srcset. Lazy-load below-the-fold images only.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DARK BAND -->
+                <div class="dark-section reveal" data-section-id="impact-tech">
+                    <div class="dark-section-inner">
+                        <h2>Technical SEO — Performance Impact</h2>
+                        <div class="prog-item"><div class="prog-label"><span>Sites failing Core Web Vitals that rank in top 3</span><span>18%</span></div><div class="prog-bar"><div class="prog-fill" data-width="18"></div></div></div>
+                        <div class="prog-item"><div class="prog-label"><span>Bounce rate increase per 1-second delay in load time</span><span>+32%</span></div><div class="prog-bar"><div class="prog-fill" data-width="32"></div></div></div>
+                        <div class="prog-item"><div class="prog-label"><span>Organic traffic gain after passing Core Web Vitals</span><span>+12%</span></div><div class="prog-bar"><div class="prog-fill" data-width="12"></div></div></div>
+                        <div class="prog-item"><div class="prog-label"><span>Large sites with critical crawl errors at any time</span><span>67%</span></div><div class="prog-bar"><div class="prog-fill" data-width="67"></div></div></div>
+                    </div>
+                </div>
+
+                <!-- CH 05 -->
+                <section id="ch05" data-section-id="ch05" class="section reveal">
+                    <p class="chapter-label">Chapter 05</p>
+                    <h2>Mobile-First Indexing</h2>
+                    <p>Since 2023, Google exclusively uses the <strong>mobile version</strong> of your content for indexing and ranking. If your desktop site has more content than your mobile site, you are being ranked on the stripped-down version. Desktop SEO is effectively dead.</p>
+                    <ul class="checklist">
+                        <li><span class="check-icon"></span><span>Ensure mobile and desktop show identical primary content and structured data</span></li>
+                        <li><span class="check-icon"></span><span>Use responsive design (single URL, CSS adapts) rather than separate m. subdomain</span></li>
+                        <li><span class="check-icon"></span><span>Never hide important text or headings behind "Read more" toggles on mobile only</span></li>
+                        <li><span class="check-icon"></span><span>Verify Google can render your mobile pages using the URL Inspection tool</span></li>
+                        <li><span class="check-icon"></span><span>Tap targets (buttons, links) must be at least 48×48 CSS pixels with 8px spacing</span></li>
+                        <li><span class="check-icon"></span><span>Font size must be legible without zooming — minimum 16px for body text</span></li>
+                        <li><span class="check-icon"></span><span>Avoid interstitials and intrusive pop-ups on mobile that obscure main content</span></li>
+                    </ul>
+                </section>
+
+                <!-- CH 06 -->
+                <section id="ch06" data-section-id="ch06" class="section reveal">
+                    <p class="chapter-label">Chapter 06</p>
+                    <h2>Structured Data and Schema Markup</h2>
+                    <p>Structured data is code you add to your HTML (using JSON-LD, the recommended format) that explicitly tells Google what your content <em>means</em> — not just what it says. It powers rich results: star ratings, FAQs, recipes, events, and more in the SERP.</p>
+                    <div class="highlight">"Structured data doesn't directly improve rankings — but rich results dramatically improve CTR, which is a ranking signal in itself."</div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead><tr><th>Schema Type</th><th>Rich Result Unlocked</th><th>Best For</th></tr></thead>
+                            <tbody>
+                                <tr><td>Product</td><td>Price, availability, star ratings in SERP</td><td>E-commerce product pages</td></tr>
+                                <tr><td>Article / BlogPosting</td><td>Article rich results, Top Stories carousel</td><td>Blog, news, editorial content</td></tr>
+                                <tr><td>FAQPage</td><td>Expandable FAQ accordion in SERP</td><td>Support pages, guides with Q&A</td></tr>
+                                <tr><td>HowTo</td><td>Step-by-step rich result with images</td><td>Tutorial and instructional content</td></tr>
+                                <tr><td>LocalBusiness</td><td>Knowledge panel, maps integration</td><td>Location-based businesses</td></tr>
+                                <tr><td>BreadcrumbList</td><td>Breadcrumb trail in URL shown in SERP</td><td>Any site with hierarchical content</td></tr>
+                                <tr><td>Event</td><td>Event cards with date/location</td><td>Event pages and listings</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="accordion" style="margin-top:1.5rem">
+                        <div class="acc-item">
+                            <button class="acc-trigger">JSON-LD vs Microdata — Which to Use? <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Always use JSON-LD. It sits in a separate script block, is easier to maintain, and is Google's recommended format. Microdata is embedded inline in HTML, making templates messy. RDFa is rarely used and should be avoided.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">How to Validate Structured Data <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Use Google's Rich Results Test (search.google.com/test/rich-results) to check if your markup is valid and eligible for rich results. The Schema Markup Validator (validator.schema.org) checks for broader schema.org conformance. After deployment, monitor the Enhancements section in Search Console for errors.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">Common Structured Data Mistakes <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Marking up content that isn't visible on the page (Google calls this "misleading markup"). Using review schema to add self-written reviews to your own products. Missing required properties (e.g., Product schema without name or image). These violate Google's guidelines and can result in manual actions.</div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 07 -->
+                <section id="ch07" data-section-id="ch07" class="section reveal">
+                    <p class="chapter-label">Chapter 07</p>
+                    <h2>JavaScript SEO</h2>
+                    <p>JavaScript is the single most common source of technical SEO problems for modern websites. When content is rendered by JavaScript rather than served in the initial HTML response, Googlebot may not see it — or see it only after a significant delay.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <span class="card-num">Problem</span>
+                            <h3>Client-Side Rendering</h3>
+                            <p>The server returns a near-empty HTML shell. The browser downloads and executes JavaScript to build the page. Googlebot has to do the same — and may defer rendering by hours or days.</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Better</span>
+                            <h3>Server-Side Rendering (SSR)</h3>
+                            <p>The server renders the full HTML before sending it to the browser. Googlebot receives fully formed content immediately. Best for SEO-critical pages with dynamic content (Next.js, Nuxt.js).</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Best</span>
+                            <h3>Static Generation (SSG)</h3>
+                            <p>Pages are pre-rendered at build time as static HTML. Zero rendering delay for Googlebot. Ideal for content that doesn't change frequently. Fastest for Core Web Vitals too.</p>
+                        </div>
+                    </div>
+                    <p class="mt-2">To diagnose JavaScript SEO issues: use the URL Inspection tool in Search Console and compare the "View Crawled Page" HTML against the live rendered page. Any content that appears in the live page but not the crawled HTML is invisible to Google at crawl time.</p>
+                </section>
+
+                <!-- CH 08 -->
+                <section id="ch08" data-section-id="ch08" class="section reveal">
+                    <p class="chapter-label">Chapter 08</p>
+                    <h2>Canonicalisation — Solving Duplicate Content</h2>
+                    <p>Duplicate content occurs when multiple URLs serve the same or very similar content. Google must choose one version to index — and often chooses incorrectly. The canonical tag tells Google explicitly which URL is the "master" version.</p>
+                    <div class="formula">
+                        &lt;link rel="canonical" href="<strong>https://example.com/the-correct-url/</strong>"&gt;<br>
+                        — Place in the &lt;head&gt; of every page, including the canonical page itself.
+                    </div>
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">01</div>
+                            <div class="step-body">
+                                <h4>Self-Referencing Canonicals</h4>
+                                <p>Every indexable page should carry a self-referencing canonical tag — even if no duplicate exists. This future-proofs against URL parameter injection and syndication.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">02</div>
+                            <div class="step-body">
+                                <h4>HTTP vs HTTPS / www vs non-www</h4>
+                                <p>Choose one canonical version of your domain and redirect all others. Mixed signals between HTTP and HTTPS, or www and non-www, split your link equity and confuse indexation.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">03</div>
+                            <div class="step-body">
+                                <h4>Trailing Slash Consistency</h4>
+                                <p>Pick a convention (with or without trailing slash) and canonicalise the other. /page/ and /page are treated as different URLs. Consistency across all internal links is just as important as the canonical tag.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">04</div>
+                            <div class="step-body">
+                                <h4>Syndicated Content</h4>
+                                <p>If your content appears on third-party sites, ask them to point a canonical back to your original URL. This ensures you receive indexation credit rather than the syndication partner.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 09 -->
+                <section id="ch09" data-section-id="ch09" class="section reveal">
+                    <p class="chapter-label">Chapter 09</p>
+                    <h2>Redirects and Hreflang</h2>
+                    <p>Redirects control how link equity and crawl budget flow when URLs change. Hreflang tells Google which language and region variant of a page to serve to which audience. Both are frequently misconfigured and silently damage rankings.</p>
+                    <div class="table-wrap">
+                        <thead>
+                        <table>
+                            <thead><tr><th>Redirect Type</th><th>Use Case</th><th>Link Equity Passed</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>301 Permanent</strong></td><td>Page has moved permanently, old URL retired</td><td>~99% (full equity)</td></tr>
+                                <tr><td><strong>302 Temporary</strong></td><td>Temporary redirect, old URL will return</td><td>Minimal — Google may stop crawling source</td></tr>
+                                <tr><td><strong>307 Temporary</strong></td><td>Same as 302 but method-preserving</td><td>Minimal</td></tr>
+                                <tr><td><strong>410 Gone</strong></td><td>Page permanently deleted, should be removed from index</td><td>None — removes from index faster than 404</td></tr>
+                            </tbody>
+                        </table>
+                        </thead>
+                    </div>
+                    <p class="mt-2"><strong>Hreflang</strong> is required when you publish content in multiple languages or for multiple regional audiences. It must be implemented as a complete reciprocal set — every page must reference all its variants, including itself. Errors in just one tag in the set invalidate the entire cluster.</p>
+                    <div class="formula">
+                        &lt;link rel="alternate" hreflang="<strong>en-gb</strong>" href="https://example.com/en-gb/page/"&gt;<br>
+                        &lt;link rel="alternate" hreflang="<strong>en-us</strong>" href="https://example.com/en-us/page/"&gt;<br>
+                        &lt;link rel="alternate" hreflang="<strong>x-default</strong>" href="https://example.com/page/"&gt;
+                    </div>
+                </section>
+
+                <!-- CH 10 -->
+                <section id="ch10" data-section-id="ch10" class="section reveal">
+                    <p class="chapter-label">Chapter 10</p>
+                    <h2>Google Search Console Mastery</h2>
+                    <p>Search Console is the most authoritative SEO tool available — because it's direct communication from Google about how they see your site. Most practitioners use 20% of its capabilities.</p>
+                    <div class="accordion">
+                        <div class="acc-item">
+                            <button class="acc-trigger">Performance Report — What to Actually Do With It <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Filter by page, then sort by impressions descending. Find pages with high impressions but low CTR (under 2%) — these have ranking but weak titles or meta descriptions. Rewrite them. Then find pages with good CTR but average position 8–15 — these are ranking just off page one. Improve content depth or add internal links to push them to position 1–3.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">Coverage Report — Diagnosing Index Issues <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Error URLs need immediate fixing: server errors, redirect errors, submitted-but-blocked URLs. Excluded URLs need judgement: "Crawled, currently not indexed" is the most important bucket — Google crawled but chose not to index these pages, usually due to thin content or low quality. "Discovered, currently not indexed" means Google hasn't even crawled them yet, often indicating crawl budget issues.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">URL Inspection Tool — Your X-Ray for Any URL <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">Paste any URL to see: whether it's indexed, the last crawl date, the canonical Google chose, what the rendered HTML looked like to Googlebot, and any structured data detected. Use "Request indexing" after publishing new content or making significant updates — this prioritises the URL in the crawl queue.</div></div>
+                        </div>
+                        <div class="acc-item">
+                            <button class="acc-trigger">Core Web Vitals Report — Fixing at Scale <span class="acc-icon">+</span></button>
+                            <div class="acc-body"><div class="acc-body-inner">The CWV report groups URLs by similar template type — fixing one instance of a template type often fixes thousands of URLs simultaneously. Focus on the "Poor" URLs first; "Needs Improvement" has lower ranking impact. Once fixed, it takes 28 days for field data to update, so plan improvements well in advance of deadlines.</div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CH 11 -->
+                <section id="ch11" data-section-id="ch11" class="section reveal">
+                    <p class="chapter-label">Chapter 11</p>
+                    <h2>The Technical SEO Audit — Full Checklist</h2>
+                    <p>Run this audit quarterly for established sites and after any major site migration, redesign, or CMS change. Use Screaming Frog or Sitebulb for crawl data, Search Console for field data, and PageSpeed Insights for performance.</p>
+                    <div class="card-grid">
+                        <div class="card">
+                            <span class="card-num">Crawlability</span>
+                            <h3>Access &amp; Indexation</h3>
+                            <p>robots.txt accessible · XML sitemap submitted · No important pages blocked · No noindex on pages that should rank · URL inspection passes for key pages</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Architecture</span>
+                            <h3>Structure &amp; Links</h3>
+                            <p>All key pages reachable in ≤3 clicks · No orphan pages · Breadcrumbs implemented · Internal links use descriptive anchor text · No broken internal links</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Performance</span>
+                            <h3>Core Web Vitals</h3>
+                            <p>LCP ≤ 2.5s · INP ≤ 200ms · CLS ≤ 0.1 · Images in WebP/AVIF · Render-blocking resources eliminated · CDN in use</p>
+                        </div>
+                        <div class="card">
+                            <span class="card-num">Content Signals</span>
+                            <h3>On-Page Technical</h3>
+                            <p>Unique title tags on all pages · Unique meta descriptions · One H1 per page · Canonical tags self-referencing · hreflang correct if multilingual · Schema validated</p>
+                        </div>
+                    </div>
+                    <div class="highlight">"A technical audit isn't a one-time event. It's a quarterly habit that compounds — each fix you make now is one fewer problem compounding against you in six months."</div>
+                </section>
+
+
+                <footer>
+                    <p><strong>SEO Reference Guide</strong> — Technical SEO Handbook</p>
+                    <p style="margin-top:.4rem;"><a href="/downloads/" style="color:var(--gold);text-decoration:none;">↓ Download as PDF</a></p>
+                    <p style="margin-top:.4rem;">Built By <a href="#">Saeed</a></p>
+                </footer>
+            </main>
+        </div>
+
+        <script src="/assets/js/translations.js"></script>
+        <script src="/assets/js/i18n.js"></script>
+        <script src="/assets/js/nav.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/search.js"></script>
+        <script src="/assets/js/pdf-reader.js"></script>
+    </body>
+</html>

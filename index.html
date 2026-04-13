@@ -1,466 +1,334 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SEO Reference Guide - The Complete Field Overview</title>
-        <meta name="description" content="A comprehensive SEO reference covering every discipline — from fundamentals to advanced tactics.">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body class="font-latin">
+---
+layout: default
+title: The Complete Field Overview
+description: A comprehensive SEO reference covering every discipline — from fundamentals to advanced tactics.
+search_placeholder: "Search topics, chapters, concepts…"
+permalink: /
+---
 
-        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+<!-- HERO -->
+<section id="hero" data-section-id="hero" class="hero">
+    <div class="hero-inner">
+        <p class="hero-eyebrow">The Complete Field Reference</p>
+        <h1>Search Engine<br>Optimization — <em>Start Here</em></h1>
+        <p class="hero-sub">A structured reference covering every discipline of modern SEO. Choose your depth — start with the field overview, then dive into a specialist handbook.</p>
+        <p class="hero-meta">7 core topics · 4 complete handbooks · Quick Answers reference · Updated for 2025</p>
+        <a href="#what-is-seo" class="hero-cta">Begin the Overview</a>
 
-        <!-- SEARCH OVERLAY -->
-        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
-            <div class="search-box">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
-                <input id="search-input" class="search-input" type="text" placeholder="Search topics, chapters, concepts…" autocomplete="off" spellcheck="false">
-                <button id="search-close-btn" class="search-close">ESC</button>
+        <div class="hero-pillars">
+            <a href="#pillars" class="hero-pillar linked">
+                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                <span class="hero-pillar-title">Technical SEO</span>
+                <span class="hero-pillar-sub">Crawling, indexing, speed</span>
+            </a>
+            <a href="{{ '/chapters/content-writing/' | relative_url }}" class="hero-pillar linked">
+                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                <span class="hero-pillar-title">Content & On-Page</span>
+                <span class="hero-pillar-sub">Copy, keywords, structure</span>
+            </a>
+            <a href="#pillars" class="hero-pillar linked">
+                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+                <span class="hero-pillar-title">Off-Page & Links</span>
+                <span class="hero-pillar-sub">Authority, backlinks, PR</span>
+            </a>
+            <a href="#pillars" class="hero-pillar linked">
+                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <span class="hero-pillar-title">Local & E-E-A-T</span>
+                <span class="hero-pillar-sub">Trust, expertise, location</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 01 WHAT IS SEO -->
+<section id="what-is-seo" data-section-id="what-is-seo" class="section reveal">
+    <p class="chapter-label">Section 01</p>
+    <h2>What is SEO?</h2>
+    <p>Search Engine Optimization is the discipline of making web content visible, trustworthy, and relevant to search engines — so they serve it to users who are actively looking for it. Unlike paid advertising, where visibility ends when the budget does, SEO builds compounding organic presence over time.</p>
+    <p>Modern SEO is not about fooling algorithms. Google's systems have become sophisticated enough that <strong>the fastest path to ranking is making genuinely excellent content</strong> — well-structured, authoritative, and answering real user needs. Manipulation tactics that worked in 2010 now result in penalties.</p>
+    <div class="highlight">"SEO is not a trick. It is the discipline of making your content as discoverable and as trustworthy as it deserves to be."</div>
+    <div class="card-grid">
+        <div class="card">
+            <span class="card-num">Organic Search</span>
+            <h3>The Unpaid Channel</h3>
+            <p>Organic results are earned, not bought. A top-3 ranking can generate traffic for years at zero cost-per-click.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">Compounding Returns</span>
+            <h3>The Long Game</h3>
+            <p>SEO compounds. A strong content library from 2022 can still outrank 2025 competitors who built nothing.</p>
+        </div>
+        <div class="card">
+            <span class="card-num">Ecosystem</span>
+            <h3>Beyond Google</h3>
+            <p>SEO principles apply to Bing, YouTube, Amazon, App Stores, and increasingly AI search (Perplexity, AI Overviews).</p>
+        </div>
+    </div>
+</section>
+
+<!-- 02 WHY IT MATTERS -->
+<section id="why-it-matters" data-section-id="why-it-matters" class="section reveal">
+    <p class="chapter-label">Section 02</p>
+    <h2>Why SEO Matters — The Numbers</h2>
+    <p>Search is still the primary way humans discover information online. Understanding the scale helps prioritise investment in the channel.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Metric</th><th>Stat</th><th>Source / Context</th></tr></thead>
+            <tbody>
+                <tr><td>Global search queries per day</td><td>~8.5 billion</td><td>Google, 2024 estimate</td></tr>
+                <tr><td>Share of web traffic from organic search</td><td>53%</td><td>BrightEdge, beating all other channels</td></tr>
+                <tr><td>CTR for position #1 result</td><td>27.6%</td><td>Backlinko study, desktop average</td></tr>
+                <tr><td>CTR for position #2</td><td>15.8%</td><td>Drop of ~12 points from #1</td></tr>
+                <tr><td>Pages that get zero organic traffic</td><td>90.63%</td><td>Ahrefs — most content is never discovered</td></tr>
+                <tr><td>ROI vs. paid ads (long-term)</td><td>5.3× higher</td><td>Search Engine Journal, 3-year horizon</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="mt-2">The data tells one story clearly: <strong>ranking at position #1 isn't a nice-to-have — it's a fundamentally different traffic reality than position #3</strong>. Every position gained or lost has a measurable revenue implication.</p>
+</section>
+
+<!-- 03 THE 4 PILLARS -->
+<section id="pillars" data-section-id="pillars" class="section reveal">
+    <p class="chapter-label">Section 03</p>
+    <h2>The Four Pillars of SEO</h2>
+    <p>SEO is not a single skill — it is a field composed of four distinct disciplines, each with its own specialists, tools, and career paths. Understanding how they interact is essential before diving into any one of them.</p>
+
+    <div class="pillar-list">
+        <div class="pillar-item">
+            <div class="pillar-meta">
+                <span class="pillar-tag">Pillar 01 — Technical</span>
+                <span class="pillar-num">01</span>
             </div>
-            <div id="search-results" class="search-results"></div>
+            <div class="pillar-content">
+                <h3>Technical SEO</h3>
+                <p>Ensures search engines can crawl, render, and index your pages. Covers site architecture, page speed (Core Web Vitals), mobile-friendliness, structured data (schema.org), XML sitemaps, and robots.txt. Without a solid technical foundation, no amount of great content will rank.</p>
+            </div>
         </div>
-
-        <!-- APP SHELL -->
-        <div id="app-shell" class="app-shell">
-
-            <!-- TOP NAV -->
-            <nav class="top-nav">
-                <div class="nav-hamburger-wrap">
-                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-                <a href="#hero" class="nav-logo" data-i18n="navTitle">SEO Reference Guide</a>
-                <div class="nav-right">
-                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
-                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
-                    </button>
-                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
-                </div>
-            </nav>
-
-            <!-- SIDEBAR -->
-            <aside id="sidebar" class="sidebar">
-                <div class="sidebar-inner">
-                    <div class="sidebar-header">
-                        <p class="sidebar-title" data-i18n="sidebarGuide">In This Guide</p>
-                    </div>
-                    <nav class="sidebar-section">
-                        <p class="sidebar-section-label">Overview</p>
-                        <a class="sidebar-link active" href="#hero" data-section="hero" data-tooltip="Introduction">
-                            <span class="link-num">00</span>
-                            <span class="link-label">Introduction</span>
-                        </a>
-                        <a class="sidebar-link" href="#what-is-seo" data-section="what-is-seo" data-tooltip="What is SEO?">
-                            <span class="link-num">01</span>
-                            <span class="link-label">What is SEO?</span>
-                        </a>
-                        <a class="sidebar-link" href="#why-it-matters" data-section="why-it-matters" data-tooltip="Why It Matters">
-                            <span class="link-num">02</span>
-                            <span class="link-label">Why It Matters</span>
-                        </a>
-                        <a class="sidebar-link" href="#pillars" data-section="pillars" data-tooltip="The 4 Pillars">
-                            <span class="link-num">03</span>
-                            <span class="link-label">The 4 Pillars</span>
-                        </a>
-                        <a class="sidebar-link" href="#how-google-works" data-section="how-google-works" data-tooltip="How Google Works">
-                            <span class="link-num">04</span>
-                            <span class="link-label">How Google Works</span>
-                        </a>
-                        <a class="sidebar-link" href="#ranking-factors" data-section="ranking-factors" data-tooltip="Ranking Factors">
-                            <span class="link-num">05</span>
-                            <span class="link-label">Ranking Factors</span>
-                        </a>
-                        <a class="sidebar-link" href="#roadmap" data-section="roadmap" data-tooltip="Learning Roadmap">
-                            <span class="link-num">06</span>
-                            <span class="link-label">Learning Roadmap</span>
-                        </a>
-                        <a class="sidebar-link" href="#handbooks" data-section="handbooks" data-tooltip="Topic Handbooks">
-                            <span class="link-num">07</span>
-                            <span class="link-label">Topic Handbooks</span>
-                        </a>
-                        <div class="sidebar-divider"></div>
-                        <p class="sidebar-section-label">Handbooks</p>
-                        <a class="sidebar-link" href="chapters/content-writing.html" data-tooltip="Content Writing">
-                            <span class="link-num">→</span>
-                            <span class="link-label">Content Writing</span>
-                            <span class="link-badge">Open</span>
-                        </a>
-                        <a class="sidebar-link" href="chapters/technical-seo.html" data-tooltip="Technical SEO">
-                            <span class="link-num">→</span>
-                            <span class="link-label">Technical SEO</span>
-                            <span class="link-badge">Open</span>
-                        </a>
-                        <a class="sidebar-link" href="chapters/link-building.html" data-tooltip="Link Building">
-                            <span class="link-num">→</span>
-                            <span class="link-label">Link Building</span>
-                            <span class="link-badge">Open</span>
-                        </a>
-                        <a class="sidebar-link" href="chapters/local-seo.html" data-tooltip="Local SEO">
-                            <span class="link-num">→</span>
-                            <span class="link-label">Local SEO</span>
-                            <span class="link-badge">Open</span>
-                        </a>
-                        <div class="sidebar-divider"></div>
-                        <p class="sidebar-section-label">Quick Reference</p>
-                        <a class="sidebar-link" href="chapters/quick-answers.html" data-tooltip="SEO Quick Answers">
-                            <span class="link-num">?</span>
-                            <span class="link-label">Quick Answers</span>
-                            <span class="link-badge">Open</span>
-                        </a>
-                        <div class="sidebar-divider"></div>
-                        <p class="sidebar-section-label">Sources</p>
-                        <a class="sidebar-link" href="downloads.html" data-tooltip="Download PDFs">
-                            <span class="link-num">↓</span>
-                            <span class="link-label">Downloads</span>
-                            <span class="link-badge">PDF</span>
-                        </a>
-                    </nav>
-                </div>
-            </aside>
-
-            <!-- MAIN CONTENT -->
-            <main class="main-content">
-
-                <!-- HERO -->
-                <section id="hero" data-section-id="hero" class="hero">
-                    <div class="hero-inner">
-                        <p class="hero-eyebrow">The Complete Field Reference</p>
-                        <h1>Search Engine<br>Optimization - <em>Start Here</em></h1>
-                        <p class="hero-sub">A structured reference covering every discipline of modern SEO. Choose your depth - start with the field overview, then dive into a specialist handbook.</p>
-                        <p class="hero-meta">7 core topics · 4 complete handbooks · Quick Answers reference · Updated for 2025</p>
-                        <a href="#what-is-seo" class="hero-cta">Begin the Overview</a>
-
-                        <div class="hero-pillars">
-                            <a href="#pillars" class="hero-pillar linked">
-                                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-                                <span class="hero-pillar-title">Technical SEO</span>
-                                <span class="hero-pillar-sub">Crawling, indexing, speed</span>
-                            </a>
-                            <a href="chapters/content-writing.html" class="hero-pillar linked">
-                                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-                                <span class="hero-pillar-title">Content & On-Page</span>
-                                <span class="hero-pillar-sub">Copy, keywords, structure</span>
-                            </a>
-                            <a href="#pillars" class="hero-pillar linked">
-                                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
-                                <span class="hero-pillar-title">Off-Page & Links</span>
-                                <span class="hero-pillar-sub">Authority, backlinks, PR</span>
-                            </a>
-                            <a href="#pillars" class="hero-pillar linked">
-                                <div class="hero-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-                                <span class="hero-pillar-title">Local & E-E-A-T</span>
-                                <span class="hero-pillar-sub">Trust, expertise, location</span>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 01 WHAT IS SEO -->
-                <section id="what-is-seo" data-section-id="what-is-seo" class="section reveal">
-                    <p class="chapter-label">Section 01</p>
-                    <h2>What is SEO?</h2>
-                    <p>Search Engine Optimization is the discipline of making web content visible, trustworthy, and relevant to search engines — so they serve it to users who are actively looking for it. Unlike paid advertising, where visibility ends when the budget does, SEO builds compounding organic presence over time.</p>
-                    <p>Modern SEO is not about fooling algorithms. Google's systems have become sophisticated enough that <strong>the fastest path to ranking is making genuinely excellent content</strong> — well-structured, authoritative, and answering real user needs. Manipulation tactics that worked in 2010 now result in penalties.</p>
-                    <div class="highlight">"SEO is not a trick. It is the discipline of making your content as discoverable and as trustworthy as it deserves to be."</div>
-                    <div class="card-grid">
-                        <div class="card">
-                            <span class="card-num">Organic Search</span>
-                            <h3>The Unpaid Channel</h3>
-                            <p>Organic results are earned, not bought. A top-3 ranking can generate traffic for years at zero cost-per-click.</p>
-                        </div>
-                        <div class="card">
-                            <span class="card-num">Compounding Returns</span>
-                            <h3>The Long Game</h3>
-                            <p>SEO compounds. A strong content library from 2022 can still outrank 2025 competitors who built nothing.</p>
-                        </div>
-                        <div class="card">
-                            <span class="card-num">Ecosystem</span>
-                            <h3>Beyond Google</h3>
-                            <p>SEO principles apply to Bing, YouTube, Amazon, App Stores, and increasingly AI search (Perplexity, AI Overviews).</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 02 WHY IT MATTERS -->
-                <section id="why-it-matters" data-section-id="why-it-matters" class="section reveal">
-                    <p class="chapter-label">Section 02</p>
-                    <h2>Why SEO Matters — The Numbers</h2>
-                    <p>Search is still the primary way humans discover information online. Understanding the scale helps prioritise investment in the channel.</p>
-
-                    <div class="table-wrap">
-                        <table>
-                            <thead><tr><th>Metric</th><th>Stat</th><th>Source / Context</th></tr></thead>
-                            <tbody>
-                                <tr><td>Global search queries per day</td><td>~8.5 billion</td><td>Google, 2024 estimate</td></tr>
-                                <tr><td>Share of web traffic from organic search</td><td>53%</td><td>BrightEdge, beating all other channels</td></tr>
-                                <tr><td>CTR for position #1 result</td><td>27.6%</td><td>Backlinko study, desktop average</td></tr>
-                                <tr><td>CTR for position #2</td><td>15.8%</td><td>Drop of ~12 points from #1</td></tr>
-                                <tr><td>Pages that get zero organic traffic</td><td>90.63%</td><td>Ahrefs — most content is never discovered</td></tr>
-                                <tr><td>ROI vs. paid ads (long-term)</td><td>5.3× higher</td><td>Search Engine Journal, 3-year horizon</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p class="mt-2">The data tells one story clearly: <strong>ranking at position #1 isn't a nice-to-have — it's a fundamentally different traffic reality than position #3</strong>. Every position gained or lost has a measurable revenue implication.</p>
-                </section>
-
-                <!-- 03 THE 4 PILLARS -->
-                <section id="pillars" data-section-id="pillars" class="section reveal">
-                    <p class="chapter-label">Section 03</p>
-                    <h2>The Four Pillars of SEO</h2>
-                    <p>SEO is not a single skill — it is a field composed of four distinct disciplines, each with its own specialists, tools, and career paths. Understanding how they interact is essential before diving into any one of them.</p>
-
-                    <div class="pillar-list">
-                        <div class="pillar-item">
-                            <div class="pillar-meta">
-                                <span class="pillar-tag">Pillar 01 — Technical</span>
-                                <span class="pillar-num">01</span>
-                            </div>
-                            <div class="pillar-content">
-                                <h3>Technical SEO</h3>
-                                <p>Ensures search engines can crawl, render, and index your pages. Covers site architecture, page speed (Core Web Vitals), mobile-friendliness, structured data (schema.org), XML sitemaps, and robots.txt. Without a solid technical foundation, no amount of great content will rank.</p>
-                            </div>
-                        </div>
-                        <div class="pillar-item">
-                            <div class="pillar-meta">
-                                <span class="pillar-tag">Pillar 02 — On-Page</span>
-                                <span class="pillar-num">02</span>
-                            </div>
-                            <div class="pillar-content">
-                                <h3>Content &amp; On-Page SEO</h3>
-                                <p>The words, structure, and relevance signals on each individual page. Covers keyword strategy, title tags, meta descriptions, heading hierarchy, internal linking, body copy quality, and E-E-A-T signals. This is where content writers have the most direct impact.</p>
-                            </div>
-                        </div>
-                        <div class="pillar-item">
-                            <div class="pillar-meta">
-                                <span class="pillar-tag">Pillar 03 — Off-Page</span>
-                                <span class="pillar-num">03</span>
-                            </div>
-                            <div class="pillar-content">
-                                <h3>Off-Page &amp; Link Building</h3>
-                                <p>Signals that live outside your own site — primarily backlinks from other authoritative domains. Covers digital PR, guest posting, link-worthy content creation, brand mentions, and toxic link disavow. Authority is built externally.</p>
-                            </div>
-                        </div>
-                        <div class="pillar-item">
-                            <div class="pillar-meta">
-                                <span class="pillar-tag">Pillar 04 — Local / E-E-A-T</span>
-                                <span class="pillar-num">04</span>
-                            </div>
-                            <div class="pillar-content">
-                                <h3>Local SEO &amp; Trust</h3>
-                                <p>Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) underpins all modern ranking. Local SEO adds geographic signals via Google Business Profile, local citations, and proximity. Critical for any business serving a physical location.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="highlight">"Most SEO failures are not content failures — they are technical failures that prevent great content from ever being seen."</div>
-                </section>
-
-                <!-- 04 HOW GOOGLE WORKS -->
-                <section id="how-google-works" data-section-id="how-google-works" class="section reveal">
-                    <p class="chapter-label">Section 04</p>
-                    <h2>How Google Works — A Mental Model</h2>
-                    <p>Google's system operates in three distinct phases. Understanding each phase tells you exactly where your SEO effort should focus.</p>
-
-                    <div class="steps-list">
-                        <div class="step-item">
-                            <div class="step-number">01</div>
-                            <div class="step-body">
-                                <h4>Crawling</h4>
-                                <p>Googlebot discovers URLs through links, sitemaps, and direct submission. It visits pages and downloads their HTML. If Googlebot can't reach your page — due to robots.txt blocks, noindex tags, server errors, or poor internal linking — everything downstream fails. <strong>Fix crawlability first.</strong></p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">02</div>
-                            <div class="step-body">
-                                <h4>Indexing</h4>
-                                <p>Crawled pages are processed, rendered (JavaScript executed), and stored in Google's index. Duplicate content, thin pages, and slow render times can prevent indexation. Google Search Console's Coverage report is your primary diagnostic tool here.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">03</div>
-                            <div class="step-body">
-                                <h4>Ranking</h4>
-                                <p>When a user searches, Google runs indexed pages through over 200 ranking signals to determine order. The exact algorithm is proprietary, but its publicly known inputs include: relevance to query intent, page quality, user experience signals, site authority, and freshness. <strong>You can influence all of these.</strong></p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">04</div>
-                            <div class="step-body">
-                                <h4>SERP Features</h4>
-                                <p>Modern search results pages contain far more than blue links: Featured Snippets, People Also Ask, Knowledge Panels, Local Packs, Image Carousels, and AI Overviews all compete for attention above traditional results. Each feature type requires its own optimisation strategy.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 05 RANKING FACTORS -->
-                <section id="ranking-factors" data-section-id="ranking-factors" class="section reveal">
-                    <p class="chapter-label">Section 05</p>
-                    <h2>Key Ranking Factors in 2025</h2>
-                    <p>Google has never published a complete list of ranking factors, but through official documentation, algorithm updates, and industry research, the most impactful signals are well understood. These are not equally weighted — context matters enormously.</p>
-
-                    <div class="table-wrap">
-                        <table>
-                            <thead><tr><th>Factor</th><th>Pillar</th><th>Impact Level</th><th>Why It Matters</th></tr></thead>
-                            <tbody>
-                                <tr><td>Content relevance &amp; depth</td><td>On-Page</td><td>Critical</td><td>Must comprehensively match search intent</td></tr>
-                                <tr><td>Backlink quality &amp; quantity</td><td>Off-Page</td><td>Critical</td><td>Primary authority signal, especially competitive niches</td></tr>
-                                <tr><td>Core Web Vitals (LCP, INP, CLS)</td><td>Technical</td><td>High</td><td>Google's page experience ranking signal since 2021</td></tr>
-                                <tr><td>E-E-A-T signals</td><td>Trust</td><td>High</td><td>Author credentials, citations, brand mentions</td></tr>
-                                <tr><td>Mobile usability</td><td>Technical</td><td>High</td><td>Mobile-first indexing is the default since 2023</td></tr>
-                                <tr><td>Keyword usage in title/H1</td><td>On-Page</td><td>High</td><td>Primary relevance signal; front-loading keywords helps</td></tr>
-                                <tr><td>Internal linking structure</td><td>Technical/On-Page</td><td>Medium</td><td>Distributes PageRank and communicates site hierarchy</td></tr>
-                                <tr><td>Schema / structured data</td><td>Technical</td><td>Medium</td><td>Enables rich results; indirect CTR lift</td></tr>
-                                <tr><td>Domain age &amp; history</td><td>Off-Page</td><td>Low–Medium</td><td>Trust signal, but not a substitute for quality signals</td></tr>
-                                <tr><td>Social signals</td><td>Off-Page</td><td>Indirect</td><td>Correlate with rankings; not a direct factor per Google</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <p class="mt-2"><strong>The 2024–2025 shift:</strong> Google's Helpful Content system and AI Overviews have significantly increased the weight given to genuine expertise and original research. Generic, aggregated content is losing ground rapidly to content with real first-hand experience behind it.</p>
-                </section>
-
-                <!-- IMPACT STATS DARK BAND -->
-                <div class="dark-section reveal" data-section-id="stats">
-                    <div class="dark-section-inner">
-                        <h2>The SEO Performance Gap</h2>
-                        <div class="prog-item">
-                            <div class="prog-label"><span>Share of clicks going to top 3 results</span><span>68%</span></div>
-                            <div class="prog-bar"><div class="prog-fill" data-width="68"></div></div>
-                        </div>
-                        <div class="prog-item">
-                            <div class="prog-label"><span>Pages with zero backlinks that rank in top 10</span><span>5.7%</span></div>
-                            <div class="prog-bar"><div class="prog-fill" data-width="5.7"></div></div>
-                        </div>
-                        <div class="prog-item">
-                            <div class="prog-label"><span>Traffic improvement from title tag optimisation alone</span><span>+20%</span></div>
-                            <div class="prog-bar"><div class="prog-fill" data-width="20"></div></div>
-                        </div>
-                        <div class="prog-item">
-                            <div class="prog-label"><span>Searches resulting in zero clicks (SERP answers query)</span><span>58%</span></div>
-                            <div class="prog-bar"><div class="prog-fill" data-width="58"></div></div>
-                        </div>
-                        <div class="prog-item">
-                            <div class="prog-label"><span>SEO leads with higher close rate than outbound</span><span>14.6%</span></div>
-                            <div class="prog-bar"><div class="prog-fill" data-width="14.6"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 06 ROADMAP -->
-                <section id="roadmap" data-section-id="roadmap" class="section reveal">
-                    <p class="chapter-label">Section 06</p>
-                    <h2>The SEO Learning Roadmap</h2>
-                    <p>SEO has a natural learning sequence. Skipping foundational steps leads to wasted effort — like building content on a site with crawl blocks, or optimising copy on a page that gets no links. Follow this order.</p>
-
-                    <div class="steps-list">
-                        <div class="step-item">
-                            <div class="step-number">01</div>
-                            <div class="step-body">
-                                <h4>Understand how search engines work</h4>
-                                <p>Crawl → Index → Rank. Know the difference between a crawl error and a ranking problem. This is this page.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">02</div>
-                            <div class="step-body">
-                                <h4>Audit and fix Technical SEO</h4>
-                                <p>Run a crawl with Screaming Frog or Ahrefs. Fix broken links, redirect chains, duplicate titles, missing meta, slow pages, and mobile issues. Nothing ranks if Google can't properly crawl and render it.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">03</div>
-                            <div class="step-body">
-                                <h4>Build a keyword and topic strategy</h4>
-                                <p>Map keywords to intent. Group by head terms, mid-tail, long-tail. Assign each URL a target keyword. Identify content gaps. This is the foundation of your content calendar.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">04</div>
-                            <div class="step-body">
-                                <h4>Create and optimise on-page content</h4>
-                                <p>Write titles, meta descriptions, headings, and body copy that match search intent. This is the deepest craft area — covered fully in the <a href="chapters/content-writing.html">Content Writer's Handbook →</a></p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">05</div>
-                            <div class="step-body">
-                                <h4>Build authority through links and E-E-A-T</h4>
-                                <p>Create genuinely link-worthy assets. Pursue digital PR, expert authorship, original research, and brand building. Authority compounds over months and years.</p>
-                            </div>
-                        </div>
-                        <div class="step-item">
-                            <div class="step-number">06</div>
-                            <div class="step-body">
-                                <h4>Measure, iterate, and adapt to algorithm updates</h4>
-                                <p>Track rankings (Ahrefs, Semrush), traffic (GA4), and technical health (Search Console) weekly. Google runs thousands of experiments per year — stay current.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 07 HANDBOOKS -->
-                <section id="handbooks" data-section-id="handbooks" class="section reveal">
-                    <p class="chapter-label">Section 07</p>
-                    <h2>Choose Your Specialist Handbook</h2>
-                    <p>Each handbook goes deep on a specific SEO discipline. They assume you've read this overview. Start with the one most relevant to your current role or project.</p>
-
-                    <div class="handbook-grid">
-                        <a href="chapters/content-writing.html" class="handbook-card">
-                            <span class="handbook-eyebrow">Handbook 01 — Available Now</span>
-                            <div class="handbook-title">Content Writer's Handbook</div>
-                            <p class="handbook-desc">11 chapters covering keyword research, search intent, title tags, meta descriptions, body copy rules, tone, voice, and a final publishing checklist. For writers and content strategists.</p>
-                            <span class="handbook-arrow">→ Open Handbook</span>
-                        </a>
-                        <a href="chapters/technical-seo.html" class="handbook-card">
-                            <span class="handbook-eyebrow">Handbook 02 — Available Now</span>
-                            <div class="handbook-title">Technical SEO Handbook</div>
-                            <p class="handbook-desc">Core Web Vitals, crawlability, site architecture, structured data, JavaScript SEO, and Search Console mastery. 11 chapters for developers and technical practitioners.</p>
-                            <span class="handbook-arrow">→ Open Handbook</span>
-                        </a>
-                        <a href="chapters/link-building.html" class="handbook-card">
-                            <span class="handbook-eyebrow">Handbook 03 — Available Now</span>
-                            <div class="handbook-title">Link Building Handbook</div>
-                            <p class="handbook-desc">Digital PR, guest posting strategy, link-worthy content formats, toxic link auditing, and building sustainable domain authority. 11 chapters for SEO specialists and marketers.</p>
-                            <span class="handbook-arrow">→ Open Handbook</span>
-                        </a>
-                        <a href="chapters/local-seo.html" class="handbook-card">
-                            <span class="handbook-eyebrow">Handbook 04 — Available Now</span>
-                            <div class="handbook-title">Local SEO Handbook</div>
-                            <p class="handbook-desc">Google Business Profile, local citations, review strategy, near-me optimisation, and multi-location management. 11 chapters for local and brick-and-mortar businesses.</p>
-                            <span class="handbook-arrow">→ Open Handbook</span>
-                        </a>
-                    </div>
-                    <div style="margin-top:3rem;padding:2rem 2.25rem;background:#fff9ee;border:1px solid rgba(201,168,76,.2);">
-                        <p style="font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">Quick Reference</p>
-                        <a href="chapters/quick-answers.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
-                            <div>
-                                <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:.35rem;">SEO Quick Answers</div>
-                                <p style="font-size:.87rem;color:var(--muted);max-width:520px;margin:0;">Fast, accurate answers to the most common SEO questions — audits, backlinks, algorithms, E-E-A-T, penalties, tools, AI and SEO, and the myths worth debunking. 40+ questions, 9 topics.</p>
-                            </div>
-                            <span style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--gold);white-space:nowrap;flex-shrink:0;">→ Open Reference</span>
-                        </a>
-                    </div>
-                </section>
-
-                <footer>
-                    <p><strong>SEO Reference Guide</strong></p>
-                    <p style="margin-top:.4rem;">A living reference — structured for depth, written for practitioners.</p>
-                    <p style="margin-top:.4rem;">Built By <a href="#">Saeed</a></p>
-                </footer>
-
-            </main>
+        <div class="pillar-item">
+            <div class="pillar-meta">
+                <span class="pillar-tag">Pillar 02 — On-Page</span>
+                <span class="pillar-num">02</span>
+            </div>
+            <div class="pillar-content">
+                <h3>Content &amp; On-Page SEO</h3>
+                <p>The words, structure, and relevance signals on each individual page. Covers keyword strategy, title tags, meta descriptions, heading hierarchy, internal linking, body copy quality, and E-E-A-T signals. This is where content writers have the most direct impact.</p>
+            </div>
         </div>
+        <div class="pillar-item">
+            <div class="pillar-meta">
+                <span class="pillar-tag">Pillar 03 — Off-Page</span>
+                <span class="pillar-num">03</span>
+            </div>
+            <div class="pillar-content">
+                <h3>Off-Page &amp; Link Building</h3>
+                <p>Signals that live outside your own site — primarily backlinks from other authoritative domains. Covers digital PR, guest posting, link-worthy content creation, brand mentions, and toxic link disavow. Authority is built externally.</p>
+            </div>
+        </div>
+        <div class="pillar-item">
+            <div class="pillar-meta">
+                <span class="pillar-tag">Pillar 04 — Local / E-E-A-T</span>
+                <span class="pillar-num">04</span>
+            </div>
+            <div class="pillar-content">
+                <h3>Local SEO &amp; Trust</h3>
+                <p>Google's E-E-A-T framework (Experience, Expertise, Authoritativeness, Trustworthiness) underpins all modern ranking. Local SEO adds geographic signals via Google Business Profile, local citations, and proximity. Critical for any business serving a physical location.</p>
+            </div>
+        </div>
+    </div>
+    <div class="highlight">"Most SEO failures are not content failures — they are technical failures that prevent great content from ever being seen."</div>
+</section>
 
-        <script src="data/translations.js"></script>
-        <script src="js/i18n.js"></script>
-        <script src="js/nav.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/search.js"></script>
-    </body>
-</html>
+<!-- 04 HOW GOOGLE WORKS -->
+<section id="how-google-works" data-section-id="how-google-works" class="section reveal">
+    <p class="chapter-label">Section 04</p>
+    <h2>How Google Works — A Mental Model</h2>
+    <p>Google's system operates in three distinct phases. Understanding each phase tells you exactly where your SEO effort should focus.</p>
+
+    <div class="steps-list">
+        <div class="step-item">
+            <div class="step-number">01</div>
+            <div class="step-body">
+                <h4>Crawling</h4>
+                <p>Googlebot discovers URLs through links, sitemaps, and direct submission. It visits pages and downloads their HTML. If Googlebot can't reach your page — due to robots.txt blocks, noindex tags, server errors, or poor internal linking — everything downstream fails. <strong>Fix crawlability first.</strong></p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">02</div>
+            <div class="step-body">
+                <h4>Indexing</h4>
+                <p>Crawled pages are processed, rendered (JavaScript executed), and stored in Google's index. Duplicate content, thin pages, and slow render times can prevent indexation. Google Search Console's Coverage report is your primary diagnostic tool here.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">03</div>
+            <div class="step-body">
+                <h4>Ranking</h4>
+                <p>When a user searches, Google runs indexed pages through over 200 ranking signals to determine order. The exact algorithm is proprietary, but its publicly known inputs include: relevance to query intent, page quality, user experience signals, site authority, and freshness. <strong>You can influence all of these.</strong></p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">04</div>
+            <div class="step-body">
+                <h4>SERP Features</h4>
+                <p>Modern search results pages contain far more than blue links: Featured Snippets, People Also Ask, Knowledge Panels, Local Packs, Image Carousels, and AI Overviews all compete for attention above traditional results. Each feature type requires its own optimisation strategy.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05 RANKING FACTORS -->
+<section id="ranking-factors" data-section-id="ranking-factors" class="section reveal">
+    <p class="chapter-label">Section 05</p>
+    <h2>Key Ranking Factors in 2025</h2>
+    <p>Google has never published a complete list of ranking factors, but through official documentation, algorithm updates, and industry research, the most impactful signals are well understood.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Factor</th><th>Pillar</th><th>Impact Level</th><th>Why It Matters</th></tr></thead>
+            <tbody>
+                <tr><td>Content relevance &amp; depth</td><td>On-Page</td><td>Critical</td><td>Must comprehensively match search intent</td></tr>
+                <tr><td>Backlink quality &amp; quantity</td><td>Off-Page</td><td>Critical</td><td>Primary authority signal, especially competitive niches</td></tr>
+                <tr><td>Core Web Vitals (LCP, INP, CLS)</td><td>Technical</td><td>High</td><td>Google's page experience ranking signal since 2021</td></tr>
+                <tr><td>E-E-A-T signals</td><td>Trust</td><td>High</td><td>Author credentials, citations, brand mentions</td></tr>
+                <tr><td>Mobile usability</td><td>Technical</td><td>High</td><td>Mobile-first indexing is the default since 2023</td></tr>
+                <tr><td>Keyword usage in title/H1</td><td>On-Page</td><td>High</td><td>Primary relevance signal; front-loading keywords helps</td></tr>
+                <tr><td>Internal linking structure</td><td>Technical/On-Page</td><td>Medium</td><td>Distributes PageRank and communicates site hierarchy</td></tr>
+                <tr><td>Schema / structured data</td><td>Technical</td><td>Medium</td><td>Enables rich results; indirect CTR lift</td></tr>
+                <tr><td>Domain age &amp; history</td><td>Off-Page</td><td>Low–Medium</td><td>Trust signal, but not a substitute for quality signals</td></tr>
+                <tr><td>Social signals</td><td>Off-Page</td><td>Indirect</td><td>Correlate with rankings; not a direct factor per Google</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="mt-2"><strong>The 2024–2025 shift:</strong> Google's Helpful Content system and AI Overviews have significantly increased the weight given to genuine expertise and original research.</p>
+</section>
+
+<!-- STATS DARK BAND -->
+<div class="dark-section reveal" data-section-id="stats">
+    <div class="dark-section-inner">
+        <h2>The SEO Performance Gap</h2>
+        <div class="prog-item">
+            <div class="prog-label"><span>Share of clicks going to top 3 results</span><span>68%</span></div>
+            <div class="prog-bar"><div class="prog-fill" data-width="68"></div></div>
+        </div>
+        <div class="prog-item">
+            <div class="prog-label"><span>Pages with zero backlinks that rank in top 10</span><span>5.7%</span></div>
+            <div class="prog-bar"><div class="prog-fill" data-width="5.7"></div></div>
+        </div>
+        <div class="prog-item">
+            <div class="prog-label"><span>Traffic improvement from title tag optimisation alone</span><span>+20%</span></div>
+            <div class="prog-bar"><div class="prog-fill" data-width="20"></div></div>
+        </div>
+        <div class="prog-item">
+            <div class="prog-label"><span>Searches resulting in zero clicks (SERP answers query)</span><span>58%</span></div>
+            <div class="prog-bar"><div class="prog-fill" data-width="58"></div></div>
+        </div>
+        <div class="prog-item">
+            <div class="prog-label"><span>SEO leads with higher close rate than outbound</span><span>14.6%</span></div>
+            <div class="prog-bar"><div class="prog-fill" data-width="14.6"></div></div>
+        </div>
+    </div>
+</div>
+
+<!-- 06 ROADMAP -->
+<section id="roadmap" data-section-id="roadmap" class="section reveal">
+    <p class="chapter-label">Section 06</p>
+    <h2>The SEO Learning Roadmap</h2>
+    <p>SEO has a natural learning sequence. Skipping foundational steps leads to wasted effort. Follow this order.</p>
+
+    <div class="steps-list">
+        <div class="step-item">
+            <div class="step-number">01</div>
+            <div class="step-body">
+                <h4>Understand how search engines work</h4>
+                <p>Crawl → Index → Rank. Know the difference between a crawl error and a ranking problem. This is this page.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">02</div>
+            <div class="step-body">
+                <h4>Audit and fix Technical SEO</h4>
+                <p>Run a crawl with Screaming Frog or Ahrefs. Fix broken links, redirect chains, duplicate titles, missing meta, slow pages, and mobile issues.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">03</div>
+            <div class="step-body">
+                <h4>Build a keyword and topic strategy</h4>
+                <p>Map keywords to intent. Group by head terms, mid-tail, long-tail. Assign each URL a target keyword. Identify content gaps.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">04</div>
+            <div class="step-body">
+                <h4>Create and optimise on-page content</h4>
+                <p>Write titles, meta descriptions, headings, and body copy that match search intent. Covered fully in the <a href="{{ '/chapters/content-writing/' | relative_url }}">Content Writer's Handbook →</a></p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">05</div>
+            <div class="step-body">
+                <h4>Build authority through links and E-E-A-T</h4>
+                <p>Create genuinely link-worthy assets. Pursue digital PR, expert authorship, original research, and brand building.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">06</div>
+            <div class="step-body">
+                <h4>Measure, iterate, and adapt to algorithm updates</h4>
+                <p>Track rankings (Ahrefs, Semrush), traffic (GA4), and technical health (Search Console) weekly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 07 HANDBOOKS -->
+<section id="handbooks" data-section-id="handbooks" class="section reveal">
+    <p class="chapter-label">Section 07</p>
+    <h2>Choose Your Specialist Handbook</h2>
+    <p>Each handbook goes deep on a specific SEO discipline. They assume you've read this overview. Start with the one most relevant to your current role or project.</p>
+
+    <div class="handbook-grid">
+        <a href="{{ '/chapters/content-writing/' | relative_url }}" class="handbook-card">
+            <span class="handbook-eyebrow">Handbook 01 — Available Now</span>
+            <div class="handbook-title">Content Writer's Handbook</div>
+            <p class="handbook-desc">11 chapters covering keyword research, search intent, title tags, meta descriptions, body copy rules, tone, voice, and a final publishing checklist.</p>
+            <span class="handbook-arrow">→ Open Handbook</span>
+        </a>
+        <a href="{{ '/chapters/technical-seo/' | relative_url }}" class="handbook-card">
+            <span class="handbook-eyebrow">Handbook 02 — Available Now</span>
+            <div class="handbook-title">Technical SEO Handbook</div>
+            <p class="handbook-desc">Core Web Vitals, crawlability, site architecture, structured data, JavaScript SEO, and Search Console mastery. 11 chapters for developers and technical practitioners.</p>
+            <span class="handbook-arrow">→ Open Handbook</span>
+        </a>
+        <a href="{{ '/chapters/link-building/' | relative_url }}" class="handbook-card">
+            <span class="handbook-eyebrow">Handbook 03 — Available Now</span>
+            <div class="handbook-title">Link Building Handbook</div>
+            <p class="handbook-desc">Digital PR, guest posting strategy, link-worthy content formats, toxic link auditing, and building sustainable domain authority.</p>
+            <span class="handbook-arrow">→ Open Handbook</span>
+        </a>
+        <a href="{{ '/chapters/local-seo/' | relative_url }}" class="handbook-card">
+            <span class="handbook-eyebrow">Handbook 04 — Available Now</span>
+            <div class="handbook-title">Local SEO Handbook</div>
+            <p class="handbook-desc">Google Business Profile, local citations, review strategy, near-me optimisation, and multi-location management.</p>
+            <span class="handbook-arrow">→ Open Handbook</span>
+        </a>
+    </div>
+
+    <div style="margin-top:3rem;padding:2rem 2.25rem;background:#fff9ee;border:1px solid rgba(201,168,76,.2);">
+        <p style="font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">Quick Reference</p>
+        <a href="{{ '/chapters/quick-answers/' | relative_url }}" style="text-decoration:none;color:inherit;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+            <div>
+                <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:.35rem;">SEO Quick Answers</div>
+                <p style="font-size:.87rem;color:var(--muted);max-width:520px;margin:0;">Fast, accurate answers to the most common SEO questions — audits, backlinks, algorithms, E-E-A-T, penalties, tools, AI and SEO, and the myths worth debunking.</p>
+            </div>
+            <span style="font-family:'DM Mono',monospace;font-size:.75rem;color:var(--gold);white-space:nowrap;flex-shrink:0;">→ Open Reference</span>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p><strong>SEO Reference Guide</strong></p>
+    <p style="margin-top:.4rem;">A living reference — structured for depth, written for practitioners.</p>
+    <p style="margin-top:.4rem;">Built By <a href="#">Saeed</a></p>
+</footer>
