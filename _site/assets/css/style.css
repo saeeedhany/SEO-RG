@@ -2823,11 +2823,19 @@ footer p a      { color: var(--gold); font-family: 'Playfair Display', serif; te
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: .5rem 1rem;
     flex-wrap: wrap;
 }
 
-@media (max-width: 700px) { .hb-meta-bar { padding: .5rem 1.25rem; } }
+@media (max-width: 900px) {
+    .hb-meta-bar { padding: .5rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+    .hb-meta-bar { padding: .45rem 1rem; }
+    /* keep breadcrumbs, hide right-side meta on very small screens */
+    .hb-meta-bar .hb-meta-items { display: none; }
+}
 
 .hb-breadcrumbs {
     display: flex;
@@ -2879,49 +2887,39 @@ a.hb-meta-link:hover { color: #e8c060; }
 /* ── Two-column body ──────────────────────────────────────────── */
 
 .hb-body {
-    display: grid;
-    grid-template-columns: 1fr 210px;
-    grid-template-areas: "content toc";
-    align-items: start;
-    max-width: var(--content-max);
-    margin: 0 auto;
-    /* content column already has its own padding */
+    /* No grid — content fills the full main-content width.
+       The TOC is pulled out of flow entirely via position:fixed. */
+    display: block;
 }
 
-@media (max-width: 1100px) {
-    .hb-body {
-        grid-template-columns: 1fr;
-        grid-template-areas: "content";
-    }
-    .hb-toc { display: none; }
+/* hb-toc: fixed to the right edge of the viewport, outside
+   the content column so it never compresses the text. */
+.hb-toc {
+    position: fixed !important;
+    top: calc(var(--nav-h) + 49px);
+    right: 0;
+    width: 210px;
+    max-height: calc(100vh - var(--nav-h) - 49px);
+    overflow-y: auto;
+    padding: 1.75rem 1.25rem 2rem 1rem;
+    border-left: 1px solid var(--border);
+    background: var(--paper);
+    z-index: 70;
+    scrollbar-width: thin;
+    scrollbar-color: #d4ccc0 transparent;
+}
+
+/* Hide when not enough viewport width */
+@media (max-width: 1280px) {
+    .hb-toc { display: none !important; }
 }
 
 
 /* ── Content column ───────────────────────────────────────────── */
 
-/*
-   hb-content uses the same .section class as every other page.
-   No special overrides — it looks identical to the overview page.
-   The max-width constraint comes from hb-body.
-*/
 .hb-content {
-    grid-area: content;
+    display: block; /* fills main-content naturally */
     min-width: 0;
-}
-
-
-/* ── Right TOC ────────────────────────────────────────────────── */
-
-.hb-toc {
-    grid-area: toc;
-    position: sticky;
-    top: calc(var(--nav-h) + 49px); /* nav + meta bar */
-    max-height: calc(100vh - var(--nav-h) - 49px);
-    overflow-y: auto;
-    padding: 1.75rem 0 2rem 1.25rem;
-    border-left: 1px solid var(--border);
-    scrollbar-width: thin;
-    scrollbar-color: #d4ccc0 transparent;
 }
 
 .hb-toc-inner { padding-right: .75rem; }
@@ -3301,15 +3299,19 @@ a.hb-meta-link:hover { color: #e8c060; }
     z-index: 80;
     background: var(--paper);
     border-bottom: 1px solid var(--border);
-    padding: .55rem 2.5rem;
+    padding: .55rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: .5rem 1rem;
     flex-wrap: wrap;
 }
 
-@media (max-width: 700px) { .post-meta-bar { padding: .5rem 1.25rem; } }
+@media (max-width: 600px) {
+    .post-meta-bar { padding: .45rem 1rem; }
+    /* On very small screens, hide the right-side meta items to keep it clean */
+    .post-meta-bar .hb-meta-items { display: none; }
+}
 
 .post-category {
     font-family: 'DM Mono', monospace;
@@ -3332,7 +3334,7 @@ a.hb-meta-link:hover { color: #e8c060; }
     margin: 0 auto;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     .post-body {
         grid-template-columns: 1fr;
         grid-template-areas: "content";
@@ -3342,12 +3344,16 @@ a.hb-meta-link:hover { color: #e8c060; }
 
 .post-content {
     grid-area: content;
-    padding: 3rem 2.5rem 4rem 0;
+    padding: 3rem 2.5rem 4rem 2.5rem;
     min-width: 0;
 }
 
-@media (max-width: 700px) {
-    .post-content { padding: 2rem 0 3rem; }
+@media (max-width: 900px) {
+    .post-content { padding: 2rem 1.5rem 3rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+    .post-content { padding: 1.75rem 1.25rem 3rem 1.25rem; }
 }
 
 /* Tags above title */
@@ -3360,9 +3366,9 @@ a.hb-meta-link:hover { color: #e8c060; }
 
 .post-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.15;
     color: var(--ink);
     margin-bottom: .75rem;
 }

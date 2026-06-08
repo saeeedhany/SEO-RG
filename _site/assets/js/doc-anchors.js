@@ -1,5 +1,7 @@
 /**
  * doc-anchors.js
+ * Injects a copyable anchor link icon next to every h2 inside .doc-content.
+ * Clicking it copies the full URL with the section hash to the clipboard.
  */
 (function () {
   'use strict';

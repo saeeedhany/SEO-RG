@@ -1,5 +1,7 @@
 # ─────────────────────────────────────────────────────────────
 # NAVIGATION REGISTRY
+# Top-level sidebar sections. Entries without a url are
+# section headers. Entries with pages[] get sub-items.
 # ─────────────────────────────────────────────────────────────
 
 - label: Start Here

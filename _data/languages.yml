@@ -1,5 +1,7 @@
 # ─────────────────────────────────────────────────────────────
 # LANGUAGE REGISTRY
+# Add a new language here and it automatically appears in the
+# nav dropdown and language selector across all layouts.
 # ─────────────────────────────────────────────────────────────
 
 - code: en
@@ -16,7 +18,7 @@
   dir: rtl
   status: in-progress
 
-# ── Future languages ───────────────────
+# ── Future languages — add here when ready ───────────────────
 # - code: fr
 #   label: Français
 #   short: FR

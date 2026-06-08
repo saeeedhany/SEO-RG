@@ -1,8 +1,11 @@
 /* ═══════════════════════════════════════════════════════════════════
    doc.css  —  Documentation layout styles
+   Layered on top of style.css. Keeps the same design tokens
+   (--gold, --ink, --paper, Playfair, DM Sans, DM Mono).
+   Does not override base component styles.
 ═══════════════════════════════════════════════════════════════════ */
 
-/* Layout shell */
+/* ── Layout shell ──────────────────────────────────────────────── */
 
 /* The doc shell has 3 columns: sidebar | content | toc
    The toc column collapses at narrow widths.              */
@@ -44,7 +47,7 @@
 }
 
 
-/* Breadcrumbs */
+/* ── Breadcrumbs ────────────────────────────────────────────────── */
 
 .doc-header {
     background: var(--paper);
@@ -80,7 +83,7 @@
 .doc-crumb--current         { color: var(--ink); font-weight: 500; }
 .doc-crumb-sep              { color: #bbb; font-size: .65rem; }
 
-/* Meta bar */
+/* ── Meta bar ───────────────────────────────────────────────────── */
 
 .doc-meta-bar {
     display: flex;
@@ -109,7 +112,7 @@ a.doc-meta-link {
 a.doc-meta-link:hover { color: #e8c060; }
 
 
-/* Content column */
+/* ── Content column ─────────────────────────────────────────────── */
 
 .doc-content {
     padding: 0 2.5rem 4rem;
@@ -124,7 +127,7 @@ a.doc-meta-link:hover { color: #e8c060; }
 }
 
 
-/* Doc hero (compact version for handbook pages) */
+/* ── Doc hero (compact version for handbook pages) ──────────────── */
 
 .doc-hero {
     padding: 3rem 0 2.5rem;
@@ -190,7 +193,7 @@ a.doc-meta-link:hover { color: #e8c060; }
 .doc-hero-toc-sep        { color: #ccc; }
 
 
-/* Section headings with anchor links */
+/* ── Section headings with anchor links ─────────────────────────── */
 
 .doc-content .section {
     scroll-margin-top: calc(var(--nav-h) + 56px); /* nav + sticky header */
@@ -234,7 +237,7 @@ a.doc-meta-link:hover { color: #e8c060; }
 }
 
 
-/* Right rail TOC */
+/* ── Right rail TOC ─────────────────────────────────────────────── */
 
 .doc-toc {
     position: sticky;
@@ -335,7 +338,7 @@ a.doc-meta-link:hover { color: #e8c060; }
 .doc-toc-pdf-link:hover { color: #e8c060; }
 
 
-/* Prev / Next navigation */
+/* ── Prev / Next navigation ─────────────────────────────────────── */
 
 .doc-prevnext {
     margin-top: 3.5rem;
@@ -389,7 +392,7 @@ a.doc-meta-link:hover { color: #e8c060; }
 .doc-prevnext-btn:hover .doc-prevnext-title { color: var(--gold); }
 
 
-/* Doc footer */
+/* ── Doc footer ─────────────────────────────────────────────────── */
 
 .doc-footer {
     margin-top: 2.5rem;

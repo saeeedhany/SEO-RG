@@ -10,16 +10,16 @@ checking for cpuid.h... yes
 creating Makefile
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/json-2.19.3/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-a6j1c6 sitelibdir\=./.gem.20260608-27233-a6j1c6 clean
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-54bitz sitelibdir\=./.gem.20260608-817738-54bitz clean
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/json-2.19.3/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-a6j1c6 sitelibdir\=./.gem.20260608-27233-a6j1c6
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-54bitz sitelibdir\=./.gem.20260608-817738-54bitz
 compiling parser.c
 linking shared-object json/ext/parser.so
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/json-2.19.3/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-a6j1c6 sitelibdir\=./.gem.20260608-27233-a6j1c6 install
-/usr/bin/install -c -m 0755 parser.so ./.gem.20260608-27233-a6j1c6/json/ext
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-54bitz sitelibdir\=./.gem.20260608-817738-54bitz install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20260608-817738-54bitz/json/ext
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/json-2.19.3/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-a6j1c6 sitelibdir\=./.gem.20260608-27233-a6j1c6 clean
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-54bitz sitelibdir\=./.gem.20260608-817738-54bitz clean

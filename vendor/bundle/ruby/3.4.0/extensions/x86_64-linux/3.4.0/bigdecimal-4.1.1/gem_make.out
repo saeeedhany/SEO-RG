@@ -23,17 +23,17 @@ checking for RUBY_TYPED_EMBEDDABLE in ruby.h... yes
 creating Makefile
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82 clean
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-8ifvuw sitelibdir\=./.gem.20260608-817738-8ifvuw clean
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-8ifvuw sitelibdir\=./.gem.20260608-817738-8ifvuw
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82 install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260608-27233-py0i82
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-8ifvuw sitelibdir\=./.gem.20260608-817738-8ifvuw install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260608-817738-8ifvuw
 
 current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82 clean
+make DESTDIR\= sitearchdir\=./.gem.20260608-817738-8ifvuw sitelibdir\=./.gem.20260608-817738-8ifvuw clean

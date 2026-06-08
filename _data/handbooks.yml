@@ -1,5 +1,8 @@
 # ─────────────────────────────────────────────────────────────
 # HANDBOOK REGISTRY
+# Single source of truth. Add a new handbook here and it
+# automatically appears in the sidebar, handbook grids,
+# overview page, and downloads page.
 # ─────────────────────────────────────────────────────────────
 
 - id: content-writing
@@ -70,7 +73,7 @@
   pdf_status: in-progress
   pdf_path: /pdfs/local-seo-handbook.pdf
 
-# ── Future handbooks ───────────────────
+# ── Future handbooks — add here when ready ───────────────────
 # - id: ecommerce-seo
 #   num: "H5"
 #   title: E-commerce SEO Handbook
