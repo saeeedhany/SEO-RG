@@ -1,0 +1,410 @@
+/* ═══════════════════════════════════════════════════════════════════
+   doc.css  —  Documentation layout styles
+═══════════════════════════════════════════════════════════════════ */
+
+/* Layout shell */
+
+/* The doc shell has 3 columns: sidebar | content | toc
+   The toc column collapses at narrow widths.              */
+
+.doc-shell {
+    grid-template-columns: var(--sidebar-collapsed) 1fr;
+}
+
+.doc-shell.sidebar-open {
+    grid-template-columns: var(--sidebar-expanded) 1fr;
+}
+
+/* doc-body sits in the main column and splits into content + toc */
+.doc-body {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+        "header  header"
+        "content toc"
+        "content toc";
+    column-gap: 0;
+    min-height: calc(100vh - var(--nav-h));
+    align-items: start;
+}
+
+.doc-header  { grid-area: header;  }
+.doc-content { grid-area: content; }
+.doc-toc     { grid-area: toc;     }
+
+@media (max-width: 1100px) {
+    .doc-body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "content";
+    }
+    .doc-toc { display: none; }
+}
+
+
+/* Breadcrumbs */
+
+.doc-header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding: .65rem 2.5rem;
+    position: sticky;
+    top: var(--nav-h);
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.doc-breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    flex-wrap: wrap;
+}
+
+.doc-crumb {
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .06em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.doc-crumb:hover            { color: var(--ink); }
+.doc-crumb--current         { color: var(--ink); font-weight: 500; }
+.doc-crumb-sep              { color: #bbb; font-size: .65rem; }
+
+/* Meta bar */
+
+.doc-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex-wrap: wrap;
+}
+
+.doc-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .05em;
+    color: var(--muted);
+}
+
+.doc-meta-item svg { flex-shrink: 0; opacity: .7; }
+
+a.doc-meta-link {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color .15s;
+}
+a.doc-meta-link:hover { color: #e8c060; }
+
+
+/* Content column */
+
+.doc-content {
+    padding: 0 2.5rem 4rem;
+    max-width: 760px;
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 700px) {
+    .doc-content { padding: 0 1.25rem 3rem; }
+    .doc-header  { padding: .55rem 1.25rem; }
+}
+
+
+/* Doc hero (compact version for handbook pages) */
+
+.doc-hero {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+}
+
+.doc-hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: .85rem;
+}
+
+.doc-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: .85rem;
+}
+
+.doc-hero h1 em { color: var(--gold); font-style: italic; }
+
+.doc-hero-sub {
+    font-size: .93rem;
+    color: var(--muted);
+    max-width: 600px;
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+/* Inline TOC preview below the hero */
+.doc-hero-toc-preview {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .35rem .5rem;
+    font-size: .72rem;
+}
+
+.doc-hero-toc-label {
+    font-family: 'DM Mono', monospace;
+    letter-spacing: .08em;
+    color: var(--muted);
+    font-size: .62rem;
+    text-transform: uppercase;
+}
+
+.doc-hero-toc-link {
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.doc-hero-toc-link:hover { color: #e8c060; text-decoration: underline; }
+.doc-hero-toc-sep        { color: #ccc; }
+
+
+/* Section headings with anchor links */
+
+.doc-content .section {
+    scroll-margin-top: calc(var(--nav-h) + 56px); /* nav + sticky header */
+    padding: 2.5rem 0 0;
+    border-top: 1px solid var(--border);
+    margin-top: 0;
+}
+
+.doc-content .section:first-of-type { border-top: none; }
+
+/* Anchor icon on h2 hover */
+.doc-content h2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.doc-content h2 .anchor-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: #ccc;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity .15s;
+    flex-shrink: 0;
+}
+
+.doc-content h2:hover .anchor-link,
+.doc-content h2 .anchor-link:focus { opacity: 1; }
+
+.doc-content h2 .anchor-link:hover { color: var(--gold); }
+
+/* h3 / h4 — less prominent anchors */
+.doc-content h3,
+.doc-content h4 {
+    position: relative;
+}
+
+
+/* Right rail TOC */
+
+.doc-toc {
+    position: sticky;
+    top: calc(var(--nav-h) + 56px); /* nav + sticky breadcrumb bar */
+    height: calc(100vh - var(--nav-h) - 56px);
+    overflow-y: auto;
+    border-left: 1px solid var(--border);
+    padding: 1.75rem 0 2rem;
+    /* Subtle scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+.doc-toc-inner {
+    padding: 0 1.5rem;
+}
+
+.doc-toc-title {
+    font-family: 'DM Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.doc-toc-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.doc-toc-item {
+    border-left: 2px solid transparent;
+    transition: border-color .15s;
+}
+
+.doc-toc-item.active {
+    border-left-color: var(--gold);
+}
+
+.doc-toc-link {
+    display: flex;
+    align-items: baseline;
+    gap: .55rem;
+    padding: .4rem .75rem;
+    text-decoration: none;
+    transition: background .12s;
+    border-radius: 0;
+}
+
+.doc-toc-link:hover {
+    background: rgba(0,0,0,.04);
+}
+
+.doc-toc-num {
+    font-family: 'DM Mono', monospace;
+    font-size: .55rem;
+    letter-spacing: .1em;
+    color: #bbb;
+    flex-shrink: 0;
+    width: 1.6rem;
+    text-align: right;
+}
+
+.doc-toc-item.active .doc-toc-num { color: var(--gold); }
+
+.doc-toc-label {
+    font-size: .75rem;
+    color: var(--muted);
+    line-height: 1.4;
+    transition: color .12s;
+}
+
+.doc-toc-item.active .doc-toc-label,
+.doc-toc-link:hover .doc-toc-label { color: var(--ink); }
+
+/* PDF link at bottom of TOC */
+.doc-toc-pdf {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.doc-toc-pdf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .06em;
+    color: var(--gold);
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.doc-toc-pdf-link:hover { color: #e8c060; }
+
+
+/* Prev / Next navigation */
+
+.doc-prevnext {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.doc-prevnext-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 540px) {
+    .doc-prevnext-inner { grid-template-columns: 1fr; }
+}
+
+.doc-prevnext-btn {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: border-color .15s, background .15s;
+    background: transparent;
+}
+
+.doc-prevnext-btn:hover {
+    border-color: var(--gold);
+    background: var(--gold-dim);
+}
+
+.doc-prevnext-next { text-align: right; }
+
+.doc-prevnext-dir {
+    font-family: 'DM Mono', monospace;
+    font-size: .6rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.doc-prevnext-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    transition: color .15s;
+}
+
+.doc-prevnext-btn:hover .doc-prevnext-title { color: var(--gold); }
+
+
+/* Doc footer */
+
+.doc-footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: .8rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.doc-footer a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.doc-footer a:hover { text-decoration: underline; }

@@ -1,0 +1,23 @@
+<!-- ─────────────────────────────────────────────────────────
+     LANGUAGE SWITCHER
+───────────────────────────────────────────────────────────── -->
+<div class="lang-switcher" id="lang-switcher">
+    <button class="lang-switcher-btn" aria-haspopup="listbox" aria-expanded="false" id="lang-btn">
+        <svg class="lang-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current" id="lang-current">EN</span>
+        <svg class="lang-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,3.5 5,6.5 8,3.5"/></svg>
+    </button>
+    <ul class="lang-dropdown" role="listbox" id="lang-dropdown" aria-label="Select language">
+        {% for lang in site.data.languages %}
+        <li role="option" class="lang-option{% if lang.status == 'live' %} lang-live{% else %} lang-wip{% endif %}" data-lang-code="{{ lang.code }}" data-lang-url="{{ lang.url | relative_url }}">
+            <span class="lang-option-short">{{ lang.short }}</span>
+            <span class="lang-option-label">{{ lang.label }}</span>
+            {% if lang.status == 'in-progress' %}
+            <span class="lang-option-badge">WIP</span>
+            {% elsif lang.status == 'planned' %}
+            <span class="lang-option-badge">Soon</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

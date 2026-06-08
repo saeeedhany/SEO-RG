@@ -1,4 +1,4 @@
-current directory: /home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
+current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
 /usr/bin/ruby extconf.rb
 checking for __builtin_clz()... yes
 checking for __builtin_clzl()... yes
@@ -22,18 +22,18 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 checking for RUBY_TYPED_EMBEDDABLE in ruby.h... yes
 creating Makefile
 
-current directory: /home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260413-319475-gw43e sitelibdir\=./.gem.20260413-319475-gw43e clean
+current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82 clean
 
-current directory: /home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260413-319475-gw43e sitelibdir\=./.gem.20260413-319475-gw43e
+current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
-current directory: /home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260413-319475-gw43e sitelibdir\=./.gem.20260413-319475-gw43e install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260413-319475-gw43e
+current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82 install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20260608-27233-py0i82
 
-current directory: /home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20260413-319475-gw43e sitelibdir\=./.gem.20260413-319475-gw43e clean
+current directory: /home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20260608-27233-py0i82 sitelibdir\=./.gem.20260608-27233-py0i82 clean

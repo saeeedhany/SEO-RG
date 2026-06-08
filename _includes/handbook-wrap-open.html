@@ -1,0 +1,78 @@
+<!-- BREADCRUMB + META BAR (sticky, same pattern as overview breadcrumbs) -->
+<div class="hb-meta-bar">
+    <nav class="hb-breadcrumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}" class="hb-crumb">Start Here</a>
+        <span class="hb-crumb-sep">›</span>
+        <a href="{{ '/' | relative_url }}#specializations" class="hb-crumb">Handbooks</a>
+        <span class="hb-crumb-sep">›</span>
+        <span class="hb-crumb hb-crumb--current">{{ page.sidebar_title | default: page.title }}</span>
+    </nav>
+    <div class="hb-meta-items">
+        <span class="hb-meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            {{ page.chapters | size }} chapters
+        </span>
+        {% if page.read_time %}
+        <span class="hb-meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {{ page.read_time }}
+        </span>
+        {% endif %}
+        {% if page.updated %}
+        <span class="hb-meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Updated {{ page.updated }}
+        </span>
+        {% endif %}
+        <a href="{{ '/downloads/' | relative_url }}" class="hb-meta-item hb-meta-link">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF coming soon
+        </a>
+    </div>
+</div>
+
+<!-- TWO-COLUMN WRAPPER: content | right TOC -->
+<div class="hb-body">
+
+    <!-- RIGHT TOC — sticky, desktop only, inside the content area -->
+    <aside class="hb-toc" id="hb-toc" aria-label="On this page">
+        <div class="hb-toc-inner">
+            <p class="hb-toc-title">On this page</p>
+            <ol class="hb-toc-list" id="hb-toc-list">
+                {% for ch in page.chapters %}
+                <li class="hb-toc-item" data-toc-id="{{ ch.id }}">
+                    <a href="#{{ ch.id }}" class="hb-toc-link">
+                        <span class="hb-toc-num">{{ ch.num }}</span>
+                        <span class="hb-toc-label">{{ ch.label }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ol>
+            <div class="hb-toc-pdf">
+                <a href="{{ '/downloads/' | relative_url }}" class="hb-toc-pdf-link">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download as PDF
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENT COLUMN — starts here, closed by handbook-wrap-close.html -->
+    <article class="hb-content">
+
+    <!-- COMPACT HERO — same visual language as overview/index sections -->
+    <div id="{{ page.chapters[0].id }}" data-section-id="{{ page.chapters[0].id }}" class="hb-hero section">
+        <a href="{{ '/' | relative_url }}#specializations" class="back-link" style="display:inline-block;margin-bottom:1.5rem;">← All Handbooks</a>
+        <p class="chapter-label">{{ page.eyebrow }}</p>
+        <h1 class="hb-hero-title">{{ page.hero_title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
+        <p class="hb-hero-sub">{{ page.hero_sub }}</p>
+        <!-- inline chapter list — scannable at a glance -->
+        <div class="hb-hero-chapters">
+            {% for ch in page.chapters %}{% unless forloop.first %}
+            <a href="#{{ ch.id }}" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">{{ ch.num }}</span>
+                <span class="hb-hero-ch-label">{{ ch.label }}</span>
+            </a>
+            {% endunless %}{% endfor %}
+        </div>
+    </div>

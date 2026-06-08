@@ -1,5 +1,5 @@
 title: SEO Reference Guide
-description: A comprehensive SEO reference covering every discipline - from fundamentals to advanced tactics.
+description: A comprehensive SEO reference covering every discipline — from fundamentals to advanced tactics.
 baseurl: "/SEO-RG"
 url: "https://saeeedhany.github.io"
 author: Saeed
@@ -18,19 +18,27 @@ collections:
     output: true
     permalink: /chapters/:name/
 
+# Posts
+permalink: /blog/:year/:month/:day/:title/
+
 # Defaults
 defaults:
   - scope:
       path: ""
       type: "chapters"
     values:
-      layout: "chapter"
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
   - scope:
       path: ""
     values:
       layout: "default"
 
-# Keep files (PDFs placeholder dir)
+# Keep files
 keep_files:
   - pdfs
 
@@ -42,4 +50,3 @@ exclude:
   - "*.sh"
   - node_modules
   - vendor
-  - _chapters/*_body.html

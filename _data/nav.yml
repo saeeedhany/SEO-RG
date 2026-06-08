@@ -1,0 +1,58 @@
+# ─────────────────────────────────────────────────────────────
+# NAVIGATION REGISTRY
+# ─────────────────────────────────────────────────────────────
+
+- label: Start Here
+  pages:
+    - title: Start Here
+      url: /
+      num: "00"
+      match: exact
+
+    - title: SEO Field Overview
+      url: /overview/
+      num: "Ov"
+      badge: Full
+      match: exact
+
+- label: Specialist Handbooks
+  data_source: handbooks   # tells sidebar to loop site.data.handbooks
+
+- label: Reference
+  pages:
+    - title: Quick Answers
+      url: /chapters/quick-answers/
+      num: "?"
+      badge: Ref
+      match: contains
+
+    - title: Glossary
+      url: /glossary/
+      num: "A–Z"
+      badge: Ref
+      match: contains
+
+    - title: Algorithm Updates
+      url: /algorithm-updates/
+      num: "Δ"
+      badge: Ref
+      match: contains
+
+    - title: Checklists
+      url: /checklists/
+      num: "✓"
+      badge: Ref
+      match: contains
+
+    - title: PDF Downloads
+      url: /downloads/
+      num: "↓"
+      badge: PDF
+      match: contains
+
+- label: Blog
+  pages:
+    - title: Blog
+      url: /blog/
+      num: "✍"
+      match: contains

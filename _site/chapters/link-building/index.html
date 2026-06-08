@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-pdf-href="/pdfs/link-building-handbook.pdf">
+<html lang="en" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,24 @@
         <meta name="description" content="11 chapters on digital PR, guest posting, broken link building, outreach strategy, toxic link auditing, and measuring domain authority.">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/SEO-RG/assets/css/style.css">
+        <!-- Canonical -->
+        <link rel="canonical" href="http://localhost:4000/SEO-RG/chapters/link-building/">
+        <!-- Open Graph -->
+        <meta property="og:type"        content="website">
+        <meta property="og:title"       content="Link Building Handbook — SEO Reference Guide">
+        <meta property="og:description" content="11 chapters on digital PR, guest posting, broken link building, outreach strategy, toxic link auditing, and measuring domain authority.">
+        <meta property="og:url"         content="http://localhost:4000/SEO-RG/chapters/link-building/">
     </head>
     <body class="font-latin">
 
         <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
+        <!-- SEARCH OVERLAY -->
         <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
             <div class="search-box">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
-                <input id="search-input" class="search-input" type="text" placeholder="Search chapters, concepts…" autocomplete="off" spellcheck="false">
+                <input id="search-input" class="search-input" type="text" placeholder="Search topics, concepts…" autocomplete="off" spellcheck="false">
                 <button id="search-close-btn" class="search-close">ESC</button>
             </div>
             <div id="search-results" class="search-results"></div>
@@ -24,117 +32,482 @@
 
         <div id="app-shell" class="app-shell">
 
+            <!-- TOP NAV -->
             <nav class="top-nav">
                 <div class="nav-hamburger-wrap">
                     <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
                         <span></span><span></span><span></span>
                     </button>
                 </div>
-                <a href="/" class="nav-logo" data-i18n="navTitle">SEO Reference Guide</a>
+                <a href="/SEO-RG/" class="nav-logo">SEO Reference Guide</a>
                 <div class="nav-right">
                     <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
                         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
                     </button>
-                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
+                    <!-- ─────────────────────────────────────────────────────────
+     LANGUAGE SWITCHER
+───────────────────────────────────────────────────────────── -->
+<div class="lang-switcher" id="lang-switcher">
+    <button class="lang-switcher-btn" aria-haspopup="listbox" aria-expanded="false" id="lang-btn">
+        <svg class="lang-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current" id="lang-current">EN</span>
+        <svg class="lang-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,3.5 5,6.5 8,3.5"/></svg>
+    </button>
+    <ul class="lang-dropdown" role="listbox" id="lang-dropdown" aria-label="Select language">
+        
+        <li role="option" class="lang-option lang-live" data-lang-code="en" data-lang-url="/SEO-RG/">
+            <span class="lang-option-short">EN</span>
+            <span class="lang-option-label">English</span>
+            
+        </li>
+        
+        <li role="option" class="lang-option lang-wip" data-lang-code="ar" data-lang-url="/SEO-RG/ar/">
+            <span class="lang-option-short">AR</span>
+            <span class="lang-option-label">العربية</span>
+            
+            <span class="lang-option-badge">WIP</span>
+            
+        </li>
+        
+    </ul>
+</div>
+
                 </div>
             </nav>
 
+            <!-- SIDEBAR -->
             <aside id="sidebar" class="sidebar">
-                <div class="sidebar-inner">
-                    <div class="sidebar-header">
-                        <p class="sidebar-title">Link Building Handbook</p>
-                    </div>
-                    <nav class="sidebar-section">
-                        <p class="sidebar-section-label">Chapters</p>
-                        
-                        <a class="sidebar-link active" href="#hero" data-section="hero" data-tooltip="Introduction">
-                            <span class="link-num">00</span>
-                            <span class="link-label">Introduction</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch01" data-section="ch01" data-tooltip="Why Links Matter">
-                            <span class="link-num">01</span>
-                            <span class="link-label">Why Links Matter</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch02" data-section="ch02" data-tooltip="Link Anatomy">
-                            <span class="link-num">02</span>
-                            <span class="link-label">Link Anatomy</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch03" data-section="ch03" data-tooltip="Link-Worthy Content">
-                            <span class="link-num">03</span>
-                            <span class="link-label">Link-Worthy Content</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch04" data-section="ch04" data-tooltip="Digital PR">
-                            <span class="link-num">04</span>
-                            <span class="link-label">Digital PR</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch05" data-section="ch05" data-tooltip="Guest Posting">
-                            <span class="link-num">05</span>
-                            <span class="link-label">Guest Posting</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch06" data-section="ch06" data-tooltip="Broken Link Building">
-                            <span class="link-num">06</span>
-                            <span class="link-label">Broken Link Building</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch07" data-section="ch07" data-tooltip="Competitor Analysis">
-                            <span class="link-num">07</span>
-                            <span class="link-label">Competitor Analysis</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch08" data-section="ch08" data-tooltip="Outreach Strategy">
-                            <span class="link-num">08</span>
-                            <span class="link-label">Outreach Strategy</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch09" data-section="ch09" data-tooltip="Black vs White Hat">
-                            <span class="link-num">09</span>
-                            <span class="link-label">Black vs White Hat</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch10" data-section="ch10" data-tooltip="Toxic Link Audit">
-                            <span class="link-num">10</span>
-                            <span class="link-label">Toxic Link Audit</span>
-                        </a>
-                        
-                        <a class="sidebar-link" href="#ch11" data-section="ch11" data-tooltip="Measuring Authority">
-                            <span class="link-num">11</span>
-                            <span class="link-label">Measuring Authority</span>
-                        </a>
-                        
-                        <div class="sidebar-divider"></div>
-                        <p class="sidebar-section-label">Navigation</p>
-                        <a class="sidebar-link" href="/downloads/" data-tooltip="Download PDFs">
-                            <span class="link-num">↓</span>
-                            <span class="link-label">Downloads</span>
-                            <span class="link-badge">PDF</span>
-                        </a>
-                        <a class="sidebar-link" href="/" data-tooltip="Back to Overview">
-                            <span class="link-num">←</span>
-                            <span class="link-label">SEO Overview</span>
-                        </a>
-                    </nav>
-                </div>
+                <!-- ─────────────────────────────────────────────────────────
+     SIDEBAR
+     Driven by _data/nav.yml and _data/handbooks.yml.
+     To add a page: edit those files.
+───────────────────────────────────────────────────────────── -->
+<div class="sidebar-inner">
+    <div class="sidebar-header">
+        <p class="sidebar-title">Navigation</p>
+    </div>
+    <nav class="sidebar-section">
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Start Here</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/"
+               data-tooltip="Start Here">
+                <span class="link-num">00</span>
+                <span class="link-label">Start Here</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/overview/"
+               data-tooltip="SEO Field Overview">
+                <span class="link-num">Ov</span>
+                <span class="link-label">SEO Field Overview</span>
+                
+                <span class="link-badge">Full</span>
+                
+            </a>
+            
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Specialist Handbooks</p>
+
+        
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/content-writing/"
+               data-tooltip="Content Writing">
+                <span class="link-num">H1</span>
+                <span class="link-label">Content Writing</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/technical-seo/"
+               data-tooltip="Technical SEO">
+                <span class="link-num">H2</span>
+                <span class="link-label">Technical SEO</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link active"
+               href="/SEO-RG/chapters/link-building/"
+               data-tooltip="Link Building">
+                <span class="link-num">H3</span>
+                <span class="link-label">Link Building</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/local-seo/"
+               data-tooltip="Local SEO">
+                <span class="link-num">H4</span>
+                <span class="link-label">Local SEO</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Reference</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/quick-answers/"
+               data-tooltip="Quick Answers">
+                <span class="link-num">?</span>
+                <span class="link-label">Quick Answers</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/glossary/"
+               data-tooltip="Glossary">
+                <span class="link-num">A–Z</span>
+                <span class="link-label">Glossary</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/algorithm-updates/"
+               data-tooltip="Algorithm Updates">
+                <span class="link-num">Δ</span>
+                <span class="link-label">Algorithm Updates</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/checklists/"
+               data-tooltip="Checklists">
+                <span class="link-num">✓</span>
+                <span class="link-label">Checklists</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/downloads/"
+               data-tooltip="PDF Downloads">
+                <span class="link-num">↓</span>
+                <span class="link-label">PDF Downloads</span>
+                
+                <span class="link-badge">PDF</span>
+                
+            </a>
+            
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Blog</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/blog/"
+               data-tooltip="Blog">
+                <span class="link-num">✍</span>
+                <span class="link-label">Blog</span>
+                
+            </a>
+            
+        
+
+        
+
+        <!-- Language toggle at bottom -->
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Language</p>
+        
+        <a class="sidebar-link "
+           href="/SEO-RG/"
+           data-tooltip="English"
+           >
+            <span class="link-num">EN</span>
+            <span class="link-label">English</span>
+            
+        </a>
+        
+        <a class="sidebar-link "
+           href="/SEO-RG/ar/"
+           data-tooltip="العربية"
+           lang="ar">
+            <span class="link-num">AR</span>
+            <span class="link-label">العربية</span>
+            
+            <span class="link-badge">WIP</span>
+            
+        </a>
+        
+
+    </nav>
+</div>
+
             </aside>
 
+            <!-- MAIN -->
             <main class="main-content">
-                <!-- CHAPTER HERO -->
-                <section id="hero" data-section-id="hero" class="chapter-page-hero">
-                    <div class="chapter-hero-inner">
-                        <a href="/" class="back-link">← Back to SEO Overview</a>
-                        <p class="chapter-hero-eyebrow">Handbook 03 — 11 Chapters</p>
-                        <h1>Link Building<br /><em>Handbook</em>
-</h1>
-                        <p class="hero-sub">The complete guide to acquiring high-quality backlinks — from understanding why links matter to building scalable outreach systems that earn lasting authority.</p>
-                    </div>
-                </section>
+                <!-- BREADCRUMB + META BAR (sticky, same pattern as overview breadcrumbs) -->
+<div class="hb-meta-bar">
+    <nav class="hb-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/SEO-RG/" class="hb-crumb">Start Here</a>
+        <span class="hb-crumb-sep">›</span>
+        <a href="/SEO-RG/#specializations" class="hb-crumb">Handbooks</a>
+        <span class="hb-crumb-sep">›</span>
+        <span class="hb-crumb hb-crumb--current">Link Building Handbook</span>
+    </nav>
+    <div class="hb-meta-items">
+        <span class="hb-meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            12 chapters
+        </span>
+        
+        <span class="hb-meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ~50 min
+        </span>
+        
+        
+        <span class="hb-meta-item">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Updated June 2025
+        </span>
+        
+        <a href="/SEO-RG/downloads/" class="hb-meta-item hb-meta-link">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            PDF coming soon
+        </a>
+    </div>
+</div>
 
-                <!-- CH 01 -->
+<!-- TWO-COLUMN WRAPPER: content | right TOC -->
+<div class="hb-body">
+
+    <!-- RIGHT TOC — sticky, desktop only, inside the content area -->
+    <aside class="hb-toc" id="hb-toc" aria-label="On this page">
+        <div class="hb-toc-inner">
+            <p class="hb-toc-title">On this page</p>
+            <ol class="hb-toc-list" id="hb-toc-list">
+                
+                <li class="hb-toc-item" data-toc-id="hero">
+                    <a href="#hero" class="hb-toc-link">
+                        <span class="hb-toc-num">00</span>
+                        <span class="hb-toc-label">Introduction</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch01">
+                    <a href="#ch01" class="hb-toc-link">
+                        <span class="hb-toc-num">01</span>
+                        <span class="hb-toc-label">Why Links Matter</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch02">
+                    <a href="#ch02" class="hb-toc-link">
+                        <span class="hb-toc-num">02</span>
+                        <span class="hb-toc-label">Link Anatomy</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch03">
+                    <a href="#ch03" class="hb-toc-link">
+                        <span class="hb-toc-num">03</span>
+                        <span class="hb-toc-label">Link-Worthy Content</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch04">
+                    <a href="#ch04" class="hb-toc-link">
+                        <span class="hb-toc-num">04</span>
+                        <span class="hb-toc-label">Digital PR</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch05">
+                    <a href="#ch05" class="hb-toc-link">
+                        <span class="hb-toc-num">05</span>
+                        <span class="hb-toc-label">Guest Posting</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch06">
+                    <a href="#ch06" class="hb-toc-link">
+                        <span class="hb-toc-num">06</span>
+                        <span class="hb-toc-label">Broken Link Building</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch07">
+                    <a href="#ch07" class="hb-toc-link">
+                        <span class="hb-toc-num">07</span>
+                        <span class="hb-toc-label">Competitor Analysis</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch08">
+                    <a href="#ch08" class="hb-toc-link">
+                        <span class="hb-toc-num">08</span>
+                        <span class="hb-toc-label">Outreach Strategy</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch09">
+                    <a href="#ch09" class="hb-toc-link">
+                        <span class="hb-toc-num">09</span>
+                        <span class="hb-toc-label">Black vs White Hat</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch10">
+                    <a href="#ch10" class="hb-toc-link">
+                        <span class="hb-toc-num">10</span>
+                        <span class="hb-toc-label">Toxic Link Audit</span>
+                    </a>
+                </li>
+                
+                <li class="hb-toc-item" data-toc-id="ch11">
+                    <a href="#ch11" class="hb-toc-link">
+                        <span class="hb-toc-num">11</span>
+                        <span class="hb-toc-label">Measuring Authority</span>
+                    </a>
+                </li>
+                
+            </ol>
+            <div class="hb-toc-pdf">
+                <a href="/SEO-RG/downloads/" class="hb-toc-pdf-link">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download as PDF
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONTENT COLUMN — starts here, closed by handbook-wrap-close.html -->
+    <article class="hb-content">
+
+    <!-- COMPACT HERO — same visual language as overview/index sections -->
+    <div id="hero" data-section-id="hero" class="hb-hero section">
+        <a href="/SEO-RG/#specializations" class="back-link" style="display:inline-block;margin-bottom:1.5rem;">← All Handbooks</a>
+        <p class="chapter-label">Handbook 03 — 11 Chapters</p>
+        <h1 class="hb-hero-title">Link Building<br /><em>Handbook</em>
+</h1>
+        <p class="hb-hero-sub">The complete guide to acquiring high-quality backlinks — from understanding why links matter to building scalable outreach systems that earn lasting authority.</p>
+        <!-- inline chapter list — scannable at a glance -->
+        <div class="hb-hero-chapters">
+            
+            <a href="#ch01" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">01</span>
+                <span class="hb-hero-ch-label">Why Links Matter</span>
+            </a>
+            
+            <a href="#ch02" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">02</span>
+                <span class="hb-hero-ch-label">Link Anatomy</span>
+            </a>
+            
+            <a href="#ch03" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">03</span>
+                <span class="hb-hero-ch-label">Link-Worthy Content</span>
+            </a>
+            
+            <a href="#ch04" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">04</span>
+                <span class="hb-hero-ch-label">Digital PR</span>
+            </a>
+            
+            <a href="#ch05" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">05</span>
+                <span class="hb-hero-ch-label">Guest Posting</span>
+            </a>
+            
+            <a href="#ch06" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">06</span>
+                <span class="hb-hero-ch-label">Broken Link Building</span>
+            </a>
+            
+            <a href="#ch07" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">07</span>
+                <span class="hb-hero-ch-label">Competitor Analysis</span>
+            </a>
+            
+            <a href="#ch08" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">08</span>
+                <span class="hb-hero-ch-label">Outreach Strategy</span>
+            </a>
+            
+            <a href="#ch09" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">09</span>
+                <span class="hb-hero-ch-label">Black vs White Hat</span>
+            </a>
+            
+            <a href="#ch10" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">10</span>
+                <span class="hb-hero-ch-label">Toxic Link Audit</span>
+            </a>
+            
+            <a href="#ch11" class="hb-hero-ch-link">
+                <span class="hb-hero-ch-num">11</span>
+                <span class="hb-hero-ch-label">Measuring Authority</span>
+            </a>
+            
+        </div>
+    </div>
+
+
+<!-- CH 01 -->
                 <section id="ch01" data-section-id="ch01" class="section reveal">
                     <p class="chapter-label">Chapter 01</p>
                     <h2>Why Backlinks Remain Google's Strongest Ranking Signal</h2>
@@ -441,20 +814,61 @@
                     <div class="highlight">"Link building without measurement is charity. Track every domain acquired, every keyword moved, every authority point gained — the data tells you which tactics to scale and which to drop."</div>
                 </section>
 
+<!-- ─────────────────────────────────────────────────────────────
+     HANDBOOK WRAP — close
+     Closes hb-content and hb-body opened above.
+     Also renders prev/next handbook navigation and footer.
+───────────────────────────────────────────────────────────────── -->
 
-                <footer>
-                    <p><strong>SEO Reference Guide</strong> — Link Building Handbook</p>
-                    <p style="margin-top:.4rem;"><a href="/downloads/" style="color:var(--gold);text-decoration:none;">↓ Download as PDF</a></p>
-                    <p style="margin-top:.4rem;">Built By <a href="#">Saeed</a></p>
-                </footer>
+    <!-- PREV / NEXT — driven by handbooks.yml order -->
+    <nav class="hb-prevnext section" aria-label="Handbook navigation">
+        
+        
+        
+        
+
+        <p class="chapter-label">Continue reading</p>
+        <div class="hb-prevnext-grid">
+            
+            <a href="/SEO-RG/chapters/technical-seo/" class="hb-pn-btn hb-pn-prev">
+                <span class="hb-pn-dir">← Previous</span>
+                <span class="hb-pn-title">Technical SEO</span>
+                <span class="hb-pn-meta">11 chapters · ~50 min</span>
+            </a>
+            
+
+            
+            <a href="/SEO-RG/chapters/local-seo/" class="hb-pn-btn hb-pn-next">
+                <span class="hb-pn-dir">Next →</span>
+                <span class="hb-pn-title">Local SEO</span>
+                <span class="hb-pn-meta">11 chapters · ~45 min</span>
+            </a>
+            
+        </div>
+    </nav>
+
+    </article><!-- /.hb-content -->
+</div><!-- /.hb-body -->
+
+<footer>
+    <p><strong>SEO Reference Guide</strong> — Link Building Handbook</p>
+    <p style="margin-top:.4rem;"><a href="/SEO-RG/downloads/" style="color:var(--gold);text-decoration:none;">↓ PDF coming soon</a> · <a href="/SEO-RG/" style="color:var(--gold);text-decoration:none;">← Start Here</a></p>
+    <p style="margin-top:.4rem;">Built by <a href="#">Saeed</a></p>
+</footer>
+
+<script src="/SEO-RG/assets/js/hb-toc.js"></script>
+<script src="/SEO-RG/assets/js/hb-anchors.js"></script>
+
+
             </main>
+
         </div>
 
-        <script src="/assets/js/translations.js"></script>
-        <script src="/assets/js/i18n.js"></script>
-        <script src="/assets/js/nav.js"></script>
-        <script src="/assets/js/main.js"></script>
-        <script src="/assets/js/search.js"></script>
-        <script src="/assets/js/pdf-reader.js"></script>
+        <script src="/SEO-RG/assets/js/translations.js"></script>
+        <script src="/SEO-RG/assets/js/i18n.js"></script>
+        <script src="/SEO-RG/assets/js/nav.js"></script>
+        <script src="/SEO-RG/assets/js/main.js"></script>
+        <script src="/SEO-RG/assets/js/search.js"></script>
+        <script src="/SEO-RG/assets/js/lang-switcher.js"></script>
     </body>
 </html>

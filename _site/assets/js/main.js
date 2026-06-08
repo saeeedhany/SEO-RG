@@ -72,3 +72,43 @@
     bars.forEach(b => io.observe(b));
   }
 })();
+
+
+  /* ── CHECKLIST TOGGLE ── */
+  (function initChecklists() {
+    document.querySelectorAll('.checklist-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('done');
+        // Persist to sessionStorage so state survives scroll
+        const key = 'chk-' + item.closest('section')?.id + '-' + Array.from(item.parentElement.children).indexOf(item);
+        sessionStorage.setItem(key, item.classList.contains('done') ? '1' : '0');
+      });
+    });
+
+    // Restore state
+    document.querySelectorAll('.checklist-item').forEach((item, i) => {
+      const key = 'chk-' + item.closest('section')?.id + '-' + Array.from(item.parentElement.children).indexOf(item);
+      if (sessionStorage.getItem(key) === '1') item.classList.add('done');
+    });
+  })();
+
+  /* ── GLOSSARY FILTER ── */
+  (function initGlossaryFilter() {
+    const input = document.getElementById('gloss-search');
+    if (!input) return;
+
+    input.addEventListener('input', function () {
+      const q = this.value.toLowerCase().trim();
+      document.querySelectorAll('.gloss-entry').forEach(entry => {
+        const term = entry.dataset.term || '';
+        const def  = entry.querySelector('.gloss-def')?.textContent || '';
+        const match = !q || term.includes(q) || def.toLowerCase().includes(q);
+        entry.style.display = match ? '' : 'none';
+      });
+      // Hide empty groups
+      document.querySelectorAll('.gloss-group').forEach(group => {
+        const visible = group.querySelectorAll('.gloss-entry:not([style*="none"])').length;
+        group.style.display = visible ? '' : 'none';
+      });
+    });
+  })();

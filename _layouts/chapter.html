@@ -35,16 +35,18 @@
                     <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
                         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
                     </button>
-                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
+                    <a href="{{ '/ar/' | relative_url }}" class="lang-toggle" title="النسخة العربية">عربي</a>
                 </div>
             </nav>
 
+            <!-- UNIFIED SIDEBAR — same as every other page, plus chapter-specific nav below -->
             <aside id="sidebar" class="sidebar">
                 <div class="sidebar-inner">
                     <div class="sidebar-header">
                         <p class="sidebar-title">{{ page.sidebar_title | default: page.title }}</p>
                     </div>
                     <nav class="sidebar-section">
+
                         <p class="sidebar-section-label">Chapters</p>
                         {% for chapter in page.chapters %}
                         <a class="sidebar-link{% if forloop.first %} active{% endif %}" href="#{{ chapter.id }}" data-section="{{ chapter.id }}" data-tooltip="{{ chapter.label }}">
@@ -52,17 +54,40 @@
                             <span class="link-label">{{ chapter.label }}</span>
                         </a>
                         {% endfor %}
+
                         <div class="sidebar-divider"></div>
-                        <p class="sidebar-section-label">Navigation</p>
+                        <p class="sidebar-section-label">All Handbooks</p>
+
+                        <a class="sidebar-link {% if page.url contains 'content-writing' %}active{% endif %}" href="{{ '/chapters/content-writing/' | relative_url }}" data-tooltip="Content Writing">
+                            <span class="link-num">H1</span>
+                            <span class="link-label">Content Writing</span>
+                        </a>
+                        <a class="sidebar-link {% if page.url contains 'technical-seo' %}active{% endif %}" href="{{ '/chapters/technical-seo/' | relative_url }}" data-tooltip="Technical SEO">
+                            <span class="link-num">H2</span>
+                            <span class="link-label">Technical SEO</span>
+                        </a>
+                        <a class="sidebar-link {% if page.url contains 'link-building' %}active{% endif %}" href="{{ '/chapters/link-building/' | relative_url }}" data-tooltip="Link Building">
+                            <span class="link-num">H3</span>
+                            <span class="link-label">Link Building</span>
+                        </a>
+                        <a class="sidebar-link {% if page.url contains 'local-seo' %}active{% endif %}" href="{{ '/chapters/local-seo/' | relative_url }}" data-tooltip="Local SEO">
+                            <span class="link-num">H4</span>
+                            <span class="link-label">Local SEO</span>
+                        </a>
+
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">Downloads</p>
+
                         <a class="sidebar-link" href="{{ '/downloads/' | relative_url }}" data-tooltip="Download PDFs">
                             <span class="link-num">↓</span>
-                            <span class="link-label">Downloads</span>
+                            <span class="link-label">PDF Handbooks</span>
                             <span class="link-badge">PDF</span>
                         </a>
                         <a class="sidebar-link" href="{{ '/' | relative_url }}" data-tooltip="Back to Overview">
                             <span class="link-num">←</span>
                             <span class="link-label">SEO Overview</span>
                         </a>
+
                     </nav>
                 </div>
             </aside>

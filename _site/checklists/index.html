@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" dir="/checklists/">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SEO Checklists — SEO Reference Guide</title>
+        <meta name="description" content="Practical, printable SEO checklists — pre-publish, technical audit, site migration, local SEO setup, and link building campaign launch.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/SEO-RG/assets/css/style.css">
+        <!-- Canonical -->
+        <link rel="canonical" href="http://localhost:4000/SEO-RG/checklists/">
+        <!-- Open Graph -->
+        <meta property="og:type"        content="website">
+        <meta property="og:title"       content="SEO Checklists — SEO Reference Guide">
+        <meta property="og:description" content="Practical, printable SEO checklists — pre-publish, technical audit, site migration, local SEO setup, and link building campaign launch.">
+        <meta property="og:url"         content="http://localhost:4000/SEO-RG/checklists/">
+    </head>
+    <body class="font-latin">
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- SEARCH OVERLAY -->
+        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                <input id="search-input" class="search-input" type="text" placeholder="Search topics, concepts…" autocomplete="off" spellcheck="false">
+                <button id="search-close-btn" class="search-close">ESC</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div id="app-shell" class="app-shell">
+
+            <!-- TOP NAV -->
+            <nav class="top-nav">
+                <div class="nav-hamburger-wrap">
+                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <a href="/SEO-RG/" class="nav-logo">SEO Reference Guide</a>
+                <div class="nav-right">
+                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                    </button>
+                    <!-- ─────────────────────────────────────────────────────────
+     LANGUAGE SWITCHER
+───────────────────────────────────────────────────────────── -->
+<div class="lang-switcher" id="lang-switcher">
+    <button class="lang-switcher-btn" aria-haspopup="listbox" aria-expanded="false" id="lang-btn">
+        <svg class="lang-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current" id="lang-current">EN</span>
+        <svg class="lang-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,3.5 5,6.5 8,3.5"/></svg>
+    </button>
+    <ul class="lang-dropdown" role="listbox" id="lang-dropdown" aria-label="Select language">
+        
+        <li role="option" class="lang-option lang-live" data-lang-code="en" data-lang-url="/SEO-RG/">
+            <span class="lang-option-short">EN</span>
+            <span class="lang-option-label">English</span>
+            
+        </li>
+        
+        <li role="option" class="lang-option lang-wip" data-lang-code="ar" data-lang-url="/SEO-RG/ar/">
+            <span class="lang-option-short">AR</span>
+            <span class="lang-option-label">العربية</span>
+            
+            <span class="lang-option-badge">WIP</span>
+            
+        </li>
+        
+    </ul>
+</div>
+
+                </div>
+            </nav>
+
+            <!-- SIDEBAR -->
+            <aside id="sidebar" class="sidebar">
+                <!-- ─────────────────────────────────────────────────────────
+     SIDEBAR
+     Driven by _data/nav.yml and _data/handbooks.yml.
+     To add a page: edit those files.
+───────────────────────────────────────────────────────────── -->
+<div class="sidebar-inner">
+    <div class="sidebar-header">
+        <p class="sidebar-title">Navigation</p>
+    </div>
+    <nav class="sidebar-section">
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Start Here</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/"
+               data-tooltip="Start Here">
+                <span class="link-num">00</span>
+                <span class="link-label">Start Here</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/overview/"
+               data-tooltip="SEO Field Overview">
+                <span class="link-num">Ov</span>
+                <span class="link-label">SEO Field Overview</span>
+                
+                <span class="link-badge">Full</span>
+                
+            </a>
+            
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Specialist Handbooks</p>
+
+        
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/content-writing/"
+               data-tooltip="Content Writing">
+                <span class="link-num">H1</span>
+                <span class="link-label">Content Writing</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/technical-seo/"
+               data-tooltip="Technical SEO">
+                <span class="link-num">H2</span>
+                <span class="link-label">Technical SEO</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/link-building/"
+               data-tooltip="Link Building">
+                <span class="link-num">H3</span>
+                <span class="link-label">Link Building</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/local-seo/"
+               data-tooltip="Local SEO">
+                <span class="link-num">H4</span>
+                <span class="link-label">Local SEO</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Reference</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/quick-answers/"
+               data-tooltip="Quick Answers">
+                <span class="link-num">?</span>
+                <span class="link-label">Quick Answers</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/glossary/"
+               data-tooltip="Glossary">
+                <span class="link-num">A–Z</span>
+                <span class="link-label">Glossary</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/algorithm-updates/"
+               data-tooltip="Algorithm Updates">
+                <span class="link-num">Δ</span>
+                <span class="link-label">Algorithm Updates</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link active"
+               href="/SEO-RG/checklists/"
+               data-tooltip="Checklists">
+                <span class="link-num">✓</span>
+                <span class="link-label">Checklists</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/downloads/"
+               data-tooltip="PDF Downloads">
+                <span class="link-num">↓</span>
+                <span class="link-label">PDF Downloads</span>
+                
+                <span class="link-badge">PDF</span>
+                
+            </a>
+            
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Blog</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/blog/"
+               data-tooltip="Blog">
+                <span class="link-num">✍</span>
+                <span class="link-label">Blog</span>
+                
+            </a>
+            
+        
+
+        
+
+        <!-- Language toggle at bottom -->
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Language</p>
+        
+        <a class="sidebar-link "
+           href="/SEO-RG/"
+           data-tooltip="English"
+           >
+            <span class="link-num">EN</span>
+            <span class="link-label">English</span>
+            
+        </a>
+        
+        <a class="sidebar-link "
+           href="/SEO-RG/ar/"
+           data-tooltip="العربية"
+           lang="ar">
+            <span class="link-num">AR</span>
+            <span class="link-label">العربية</span>
+            
+            <span class="link-badge">WIP</span>
+            
+        </a>
+        
+
+    </nav>
+</div>
+
+            </aside>
+
+            <!-- MAIN -->
+            <main class="main-content">
+                <section id="checklists-hero" data-section-id="checklists-hero" class="hero">
+    <div class="hero-inner">
+        <a href="/SEO-RG/" class="back-link">← Start Here</a>
+        <p class="hero-eyebrow">Reference · Checklists</p>
+        <h1>SEO <em>Checklists</em></h1>
+        <p class="hero-sub">Practical, field-tested checklists for every major SEO operation. Use them before you publish, before you migrate, before you launch a campaign. Each one is a distillation of the relevant handbook — no fluff, just the steps.</p>
+        <p class="hero-meta">5 checklists · Pre-publish · Technical Audit · Migration · Local Setup · Link Campaign</p>
+    </div>
+</section>
+
+<!-- ── CHECKLIST 01: Pre-Publish ───────────────────────────── -->
+<section id="pre-publish" data-section-id="pre-publish" class="section reveal">
+    <p class="chapter-label">Checklist 01</p>
+    <h2>Pre-Publish Checklist</h2>
+    <p>Run this before publishing any new page or article. Every item is a common failure point — missing even one can meaningfully reduce ranking potential or CTR.</p>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Keyword &amp; Intent</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Target keyword confirmed — one primary keyword per URL</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Search intent matched — informational / commercial / transactional / navigational</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>SERP studied — top 5 results reviewed for format, depth, and angle</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Content gap identified — page covers what top results miss</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Semantic keywords included naturally — related terms, synonyms, entities</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">On-Page Elements</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Title tag written — under 60 characters, target keyword front-loaded</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Meta description written — under 160 characters, includes keyword, has a clear value proposition</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>H1 present — one per page, matches or is close to title tag</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>H2–H4 hierarchy logical — no heading levels skipped</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>URL slug short and keyword-containing — no stop words, no dates unless necessary</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Canonical tag set — pointing to the preferred URL</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Open Graph tags set — title, description, image (1200×630px minimum)</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Content Quality</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Content is original — no copied or paraphrased passages from ranking pages</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Author bio included — with credentials relevant to the topic</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>External sources cited — authoritative, recent, linked correctly</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Images have descriptive alt text — includes keyword where relevant and natural</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Content reviewed for factual accuracy — statistics current and sourced</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Publish date visible — and a "last updated" date policy in place</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Technical</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Page is not blocked in robots.txt or by noindex tag</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>At least 2–3 internal links pointing to this new page from existing content</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>New page links to 2–5 relevant internal pages</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Sitemap updated or auto-regenerated</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Page speed tested in PageSpeed Insights — Core Web Vitals passing</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Mobile rendering tested — no layout issues on small screens</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Structured data added if applicable — Article, FAQ, HowTo, Product, Review</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Rich result eligibility tested in Google Rich Results Test</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Post-Publish</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>URL submitted to Google Search Console for indexing</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Ranking tracked in Ahrefs / Semrush within 48 hours</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Performance review scheduled — 30 days, 90 days</span></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ── CHECKLIST 02: Technical Audit ───────────────────────── -->
+<section id="technical-audit" data-section-id="technical-audit" class="section reveal">
+    <p class="chapter-label">Checklist 02</p>
+    <h2>Technical SEO Audit Checklist</h2>
+    <p>Run this quarterly, after any major site change, or when organic traffic drops unexpectedly. Tools needed: Google Search Console, Screaming Frog (or Ahrefs Site Audit), PageSpeed Insights.</p>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Crawlability</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>robots.txt reviewed — no critical pages or folders accidentally blocked</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>XML sitemap present, valid, and submitted to Search Console</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Sitemap contains only indexable, canonical URLs (no noindex, no redirects)</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Crawl errors reviewed in Search Console — 4xx and 5xx errors resolved</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Internal links audited — no broken internal links</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Redirect chains identified and collapsed to single hops</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Orphan pages identified — every important page reachable via internal links</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Indexation</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Coverage report reviewed in Search Console — all exclusions understood</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Duplicate content identified — parameter URLs, trailing slashes, www vs non-www</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Canonical tags correct — self-referencing canonicals on all key pages</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Pagination handled correctly — rel="next/prev" deprecated; ensure first page is self-canonical</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Hreflang tags correct if serving multiple languages or regions</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Thin content pages identified — consolidated, expanded, or noindexed</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Page Speed &amp; Core Web Vitals</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>LCP under 2.5s on mobile — largest element identified and optimised</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>INP under 200ms — no blocking JavaScript on critical interaction paths</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>CLS under 0.1 — no layout shifts from images without dimensions, fonts, or ads</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Images served in WebP or AVIF format, with width/height attributes set</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Server response time (TTFB) under 600ms</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Render-blocking resources minimised — CSS inlined for critical, JS deferred</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">On-Page Technical</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Every page has a unique title tag — no duplicates across the site</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Every page has a unique meta description</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Every page has exactly one H1</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>All images have non-empty alt attributes</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Structured data validated — no errors in Rich Results Test</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>HTTPS across entire site — no mixed content warnings</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Mobile usability — no touch targets too small, no viewport issues</span></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ── CHECKLIST 03: Site Migration ────────────────────────── -->
+<section id="migration" data-section-id="migration" class="section reveal">
+    <p class="chapter-label">Checklist 03</p>
+    <h2>Site Migration Checklist</h2>
+    <p>Site migrations are the highest-risk SEO operation. A poorly executed migration can destroy years of accumulated authority in days. Run this before, during, and after any domain change, redesign, or CMS switch.</p>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Pre-Migration</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Full crawl of current site — export all URLs, titles, meta, H1, and inbound link counts</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Current rankings exported — snapshot of all tracked keywords and their positions</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Top traffic pages identified from GA4 — these are your highest-priority URLs to protect</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Redirect map created — every old URL mapped to its new equivalent (1:1 where possible)</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Redirect map reviewed — no chains, no loops, no missing entries for top pages</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>New site crawled in staging — validate all new URLs and on-page elements before launch</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Migration Day</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Redirects deployed and tested — spot-check 20+ critical URLs manually</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>New sitemap submitted immediately in Search Console</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Search Console change of address tool used (domain migrations only)</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Robots.txt on new site confirmed — not blocking Googlebot</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Analytics verified — GA4 firing correctly on new site</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Old site not fully taken down for minimum 6 months — redirects must remain active</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Post-Migration (30–90 days)</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Coverage report monitored daily for first 2 weeks — watch for unexpected exclusions</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Rankings monitored daily — expect some fluctuation; sustained drops need investigation</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Crawl errors reviewed weekly — fix any 404s appearing from broken redirects</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Backlinks on old domain checked — high-value links updated to point directly to new URLs</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Internal links updated — no internal links still pointing to old URLs through redirects</span></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ── CHECKLIST 04: Local SEO Setup ───────────────────────── -->
+<section id="local-setup" data-section-id="local-setup" class="section reveal">
+    <p class="chapter-label">Checklist 04</p>
+    <h2>Local SEO Setup Checklist</h2>
+    <p>For any business with a physical location or service area. Run once at launch, then use as a quarterly review framework.</p>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Google Business Profile</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>GBP claimed and verified — via postcard, phone, or video</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Business name exactly matches real-world signage — no keyword stuffing</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Primary category selected — the most specific category available</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Secondary categories added — up to 9 additional relevant categories</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Business description written — 750 characters max, includes primary keyword naturally</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Opening hours accurate — including special hours for holidays</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Phone number correct — tracked number acceptable, must be local format</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Website URL added — pointing to most relevant landing page</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Services / products added — with descriptions and prices where applicable</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Photos uploaded — exterior, interior, team, products (minimum 10, ideally 20+)</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>GBP posts scheduled — weekly updates, offers, events</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Q&amp;A section populated — answer the most common questions proactively</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">NAP Consistency</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>NAP (Name, Address, Phone) defined — exact format decided and documented</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>NAP on website matches GBP exactly — including suite numbers, punctuation</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Top 10 local directories checked — Yelp, Apple Maps, Bing Places, TripAdvisor, Facebook</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Industry-specific directories added — legal, medical, hospitality directories as relevant</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Schema LocalBusiness markup added to website — with matching NAP</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Reviews</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Review request process established — email or SMS follow-up sequence</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Direct GBP review link created and tested — share with customers</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>All existing reviews responded to — positive and negative</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Review monitoring set up — Google Alerts or tool notification for new reviews</span></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ── CHECKLIST 05: Link Building Campaign ─────────────────── -->
+<section id="link-campaign" data-section-id="link-campaign" class="section reveal">
+    <p class="chapter-label">Checklist 05</p>
+    <h2>Link Building Campaign Checklist</h2>
+    <p>Before launching any outreach campaign or link building initiative. Prevents common mistakes that waste effort or damage the link profile.</p>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Foundation</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Target pages identified — which specific URLs on your site need more authority?</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Competitor backlink gap analysed — which sites link to competitors but not you?</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Current link profile audited — toxic links identified, disavow file reviewed</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Link-worthy asset created — what will make sites want to link?</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Target prospect list built — minimum DR 40, topically relevant, real traffic</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Outreach</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>Email template personalised — references specific content on their site</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Clear value proposition — why should they link? What's in it for their readers?</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>From address matches domain — no generic Gmail addresses</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Follow-up sequence limited to 2 emails maximum — one initial, one follow-up</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>CRM or spreadsheet tracking all outreach — prospect, status, date, response</span></li>
+        </ul>
+    </div>
+
+    <div class="checklist-group">
+        <h3 class="checklist-group-title">Quality Control</h3>
+        <ul class="checklist">
+            <li class="checklist-item"><span class="check-box"></span><span>All acquired links checked — contextual placement, no site-wide footer links</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>Anchor text varied — no more than 20% exact-match keyword anchors</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>No paid links without nofollow or sponsored attributes — Google guidelines compliance</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>New links logged in Ahrefs / Semrush — DR, traffic, and anchor text recorded</span></li>
+            <li class="checklist-item"><span class="check-box"></span><span>30-day ranking movement reviewed — correlate link acquisition with position changes</span></li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p><strong>SEO Reference Guide</strong> — SEO Checklists</p>
+    <p style="margin-top:.4rem;"><a href="/SEO-RG/" style="color:var(--gold);text-decoration:none;">← Start Here</a> · <a href="/SEO-RG/overview/" style="color:var(--gold);text-decoration:none;">Field Overview</a> · <a href="/SEO-RG/downloads/" style="color:var(--gold);text-decoration:none;">↓ Downloads</a></p>
+    <p style="margin-top:.4rem;">Built by <a href="#">Saeed</a></p>
+</footer>
+
+            </main>
+
+        </div>
+
+        <script src="/SEO-RG/assets/js/translations.js"></script>
+        <script src="/SEO-RG/assets/js/i18n.js"></script>
+        <script src="/SEO-RG/assets/js/nav.js"></script>
+        <script src="/SEO-RG/assets/js/main.js"></script>
+        <script src="/SEO-RG/assets/js/search.js"></script>
+        <script src="/SEO-RG/assets/js/lang-switcher.js"></script>
+    </body>
+</html>

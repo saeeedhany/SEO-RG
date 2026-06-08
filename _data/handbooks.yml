@@ -1,0 +1,80 @@
+# ─────────────────────────────────────────────────────────────
+# HANDBOOK REGISTRY
+# ─────────────────────────────────────────────────────────────
+
+- id: content-writing
+  num: "H1"
+  title: Content Writer's Handbook
+  short_title: Content Writing
+  eyebrow: Handbook 01
+  status: open          # open | coming-soon | draft
+  url: /chapters/content-writing/
+  description: >
+    Keyword research, search intent, title tags, meta descriptions,
+    body copy rules, tone and voice, and the final publishing checklist.
+  chapters: 11
+  read_time: "~45 min"
+  audience: Writers · Content Strategists · Editors
+  icon: edit
+  pdf_status: in-progress   # available | in-progress
+  pdf_path: /pdfs/content-writing-handbook.pdf
+
+- id: technical-seo
+  num: "H2"
+  title: Technical SEO Handbook
+  short_title: Technical SEO
+  eyebrow: Handbook 02
+  status: open
+  url: /chapters/technical-seo/
+  description: >
+    Core Web Vitals, crawlability, site architecture, structured data,
+    JavaScript SEO, and Search Console mastery.
+  chapters: 11
+  read_time: "~50 min"
+  audience: Developers · Technical SEOs · Site Owners
+  icon: settings
+  pdf_status: in-progress
+  pdf_path: /pdfs/technical-seo-handbook.pdf
+
+- id: link-building
+  num: "H3"
+  title: Link Building Handbook
+  short_title: Link Building
+  eyebrow: Handbook 03
+  status: open
+  url: /chapters/link-building/
+  description: >
+    Digital PR, guest posting, link-worthy assets, toxic link auditing,
+    and building sustainable domain authority.
+  chapters: 11
+  read_time: "~50 min"
+  audience: PR Specialists · SEO Managers · Marketers
+  icon: link
+  pdf_status: in-progress
+  pdf_path: /pdfs/link-building-handbook.pdf
+
+- id: local-seo
+  num: "H4"
+  title: Local SEO Handbook
+  short_title: Local SEO
+  eyebrow: Handbook 04
+  status: open
+  url: /chapters/local-seo/
+  description: >
+    Google Business Profile, local citations, review strategy,
+    near-me optimisation, and multi-location management.
+  chapters: 11
+  read_time: "~45 min"
+  audience: Local Businesses · Agencies · Franchises
+  icon: map-pin
+  pdf_status: in-progress
+  pdf_path: /pdfs/local-seo-handbook.pdf
+
+# ── Future handbooks ───────────────────
+# - id: ecommerce-seo
+#   num: "H5"
+#   title: E-commerce SEO Handbook
+#   short_title: E-commerce SEO
+#   status: coming-soon
+#   url: /chapters/ecommerce-seo/
+#   ...

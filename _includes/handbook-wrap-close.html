@@ -1,0 +1,60 @@
+<!-- ─────────────────────────────────────────────────────────────
+     HANDBOOK WRAP — close
+     Closes hb-content and hb-body opened above.
+     Also renders prev/next handbook navigation and footer.
+───────────────────────────────────────────────────────────────── -->
+
+    <!-- PREV / NEXT — driven by handbooks.yml order -->
+    <nav class="hb-prevnext section" aria-label="Handbook navigation">
+        {% assign prev_hb = nil %}
+        {% assign next_hb = nil %}
+        {% assign found   = false %}
+        {% for hb in site.data.handbooks %}
+            {% if found and next_hb == nil %}{% assign next_hb = hb %}{% endif %}
+            {% if page.url contains hb.id %}{% assign found = true %}{% endif %}
+            {% unless found %}{% assign prev_hb = hb %}{% endunless %}
+        {% endfor %}
+
+        <p class="chapter-label">Continue reading</p>
+        <div class="hb-prevnext-grid">
+            {% if prev_hb %}
+            <a href="{{ prev_hb.url | relative_url }}" class="hb-pn-btn hb-pn-prev">
+                <span class="hb-pn-dir">← Previous</span>
+                <span class="hb-pn-title">{{ prev_hb.short_title }}</span>
+                <span class="hb-pn-meta">{{ prev_hb.chapters }} chapters · {{ prev_hb.read_time }}</span>
+            </a>
+            {% else %}
+            <a href="{{ '/overview/' | relative_url }}" class="hb-pn-btn hb-pn-prev">
+                <span class="hb-pn-dir">← Return to</span>
+                <span class="hb-pn-title">SEO Field Overview</span>
+                <span class="hb-pn-meta">The general reference</span>
+            </a>
+            {% endif %}
+
+            {% if next_hb %}
+            <a href="{{ next_hb.url | relative_url }}" class="hb-pn-btn hb-pn-next">
+                <span class="hb-pn-dir">Next →</span>
+                <span class="hb-pn-title">{{ next_hb.short_title }}</span>
+                <span class="hb-pn-meta">{{ next_hb.chapters }} chapters · {{ next_hb.read_time }}</span>
+            </a>
+            {% else %}
+            <a href="{{ '/overview/' | relative_url }}" class="hb-pn-btn hb-pn-next">
+                <span class="hb-pn-dir">Finished? →</span>
+                <span class="hb-pn-title">SEO Field Overview</span>
+                <span class="hb-pn-meta">The complete general reference</span>
+            </a>
+            {% endif %}
+        </div>
+    </nav>
+
+    </article><!-- /.hb-content -->
+</div><!-- /.hb-body -->
+
+<footer>
+    <p><strong>{{ site.title }}</strong> — {{ page.sidebar_title | default: page.title }}</p>
+    <p style="margin-top:.4rem;"><a href="{{ '/downloads/' | relative_url }}" style="color:var(--gold);text-decoration:none;">↓ PDF coming soon</a> · <a href="{{ '/' | relative_url }}" style="color:var(--gold);text-decoration:none;">← Start Here</a></p>
+    <p style="margin-top:.4rem;">Built by <a href="#">Saeed</a></p>
+</footer>
+
+<script src="{{ '/assets/js/hb-toc.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/hb-anchors.js' | relative_url }}"></script>

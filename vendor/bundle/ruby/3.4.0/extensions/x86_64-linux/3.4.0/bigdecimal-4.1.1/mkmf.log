@@ -111,8 +111,8 @@ checked program was:
 have_func: checking for _lzcnt_u32() in x86intrin.h... -------------------- no
 
 LD_LIBRARY_PATH=.:/usr/lib ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/usr/include/ruby-3.4.0/x86_64-linux -I/usr/include/ruby-3.4.0/ruby/backward -I/usr/include/ruby-3.4.0 -I.    -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -g -ffile-prefix-map=/build/ruby/src=/usr/src/debug/ruby -flto=auto -fPIC conftest.c -L. -L/usr/lib -L. -Wl,-O1 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now          -Wl,-z,pack-relative-relocs -flto=auto -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -lruby  -lm -lpthread  -lc"
-/usr/bin/ld: /tmp/cc1oYXFm.ltrans0.ltrans.o: in function `t':
-/home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal/conftest.c:16:(.text+0xb): undefined reference to `_lzcnt_u32'
+/usr/bin/ld: /tmp/ccOXMeSH.ltrans0.ltrans.o: in function `t':
+/home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal/conftest.c:16:(.text+0xb): undefined reference to `_lzcnt_u32'
 collect2: error: ld returned 1 exit status
 checked program was:
 /* begin */
@@ -138,10 +138,10 @@ LD_LIBRARY_PATH=.:/usr/lib ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/usr/i
 conftest.c:16:13: error: conflicting types for ‘_lzcnt_u32’; have ‘void(void)’
    16 | extern void _lzcnt_u32();
       |             ^~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/x86gprintrin.h:61,
-                 from /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/x86intrin.h:27,
+In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/x86gprintrin.h:61,
+                 from /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/x86intrin.h:27,
                  from conftest.c:3:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/lzcntintrin.h:51:1: note: previous definition of ‘_lzcnt_u32’ with type ‘unsigned int(unsigned int)’
+/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/lzcntintrin.h:51:1: note: previous definition of ‘_lzcnt_u32’ with type ‘unsigned int(unsigned int)’
    51 | _lzcnt_u32 (unsigned int __X)
       | ^~~~~~~~~~
 checked program was:
@@ -170,8 +170,8 @@ checked program was:
 have_func: checking for _lzcnt_u64() in x86intrin.h... -------------------- no
 
 LD_LIBRARY_PATH=.:/usr/lib ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/usr/include/ruby-3.4.0/x86_64-linux -I/usr/include/ruby-3.4.0/ruby/backward -I/usr/include/ruby-3.4.0 -I.    -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection         -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -g -ffile-prefix-map=/build/ruby/src=/usr/src/debug/ruby -flto=auto -fPIC conftest.c -L. -L/usr/lib -L. -Wl,-O1 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now          -Wl,-z,pack-relative-relocs -flto=auto -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -lruby  -lm -lpthread  -lc"
-/usr/bin/ld: /tmp/cc6XvSur.ltrans0.ltrans.o: in function `t':
-/home/saeed/Downloads/tests/seo-guide-jekyll/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal/conftest.c:16:(.text+0xb): undefined reference to `_lzcnt_u64'
+/usr/bin/ld: /tmp/ccM0B7Kl.ltrans0.ltrans.o: in function `t':
+/home/saeed/gits/websites/seo_v2/vendor/bundle/ruby/3.4.0/gems/bigdecimal-4.1.1/ext/bigdecimal/conftest.c:16:(.text+0xb): undefined reference to `_lzcnt_u64'
 collect2: error: ld returned 1 exit status
 checked program was:
 /* begin */
@@ -197,10 +197,10 @@ LD_LIBRARY_PATH=.:/usr/lib ASAN_OPTIONS=detect_leaks=0 "gcc -o conftest -I/usr/i
 conftest.c:16:13: error: conflicting types for ‘_lzcnt_u64’; have ‘void(void)’
    16 | extern void _lzcnt_u64();
       |             ^~~~~~~~~~
-In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/x86gprintrin.h:61,
-                 from /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/x86intrin.h:27,
+In file included from /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/x86gprintrin.h:61,
+                 from /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/x86intrin.h:27,
                  from conftest.c:3:
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/lzcntintrin.h:64:1: note: previous definition of ‘_lzcnt_u64’ with type ‘long long unsigned int(long long unsigned int)’
+/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include/lzcntintrin.h:64:1: note: previous definition of ‘_lzcnt_u64’ with type ‘long long unsigned int(long long unsigned int)’
    64 | _lzcnt_u64 (unsigned long long __X)
       | ^~~~~~~~~~
 checked program was:

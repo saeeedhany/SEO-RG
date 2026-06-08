@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}" dir="{{ page.dir | default: 'ltr' }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ page.title }} — {{ site.title }}</title>
+        <meta name="description" content="{{ page.description | default: site.description }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+        <link rel="stylesheet" href="{{ '/assets/css/doc.css' | relative_url }}">
+        <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+        <meta property="og:type"        content="article">
+        <meta property="og:title"       content="{{ page.title }} — {{ site.title }}">
+        <meta property="og:description" content="{{ page.description | default: site.description }}">
+    </head>
+    <body class="font-latin doc-layout">
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <!-- SEARCH OVERLAY -->
+        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                <input id="search-input" class="search-input" type="text" placeholder="{{ page.search_placeholder | default: 'Search this handbook…' }}" autocomplete="off" spellcheck="false">
+                <button id="search-close-btn" class="search-close">ESC</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div id="app-shell" class="app-shell doc-shell">
+
+            <!-- TOP NAV -->
+            <nav class="top-nav">
+                <div class="nav-hamburger-wrap">
+                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <a href="{{ '/' | relative_url }}" class="nav-logo">{{ site.title }}</a>
+                <div class="nav-right">
+                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                    </button>
+                    {% include lang-switcher.html %}
+                </div>
+            </nav>
+
+            <!-- LEFT SIDEBAR (chapter list) -->
+            <aside id="sidebar" class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-header">
+                        <p class="sidebar-title">{{ page.sidebar_title | default: page.title }}</p>
+                    </div>
+                    <nav class="sidebar-section">
+
+                        <p class="sidebar-section-label">Chapters</p>
+                        {% for ch in page.chapters %}
+                        <a class="sidebar-link{% if forloop.first %} active{% endif %}"
+                           href="#{{ ch.id }}"
+                           data-section="{{ ch.id }}"
+                           data-tooltip="{{ ch.label }}">
+                            <span class="link-num">{{ ch.num }}</span>
+                            <span class="link-label">{{ ch.label }}</span>
+                        </a>
+                        {% endfor %}
+
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">All Handbooks</p>
+                        {% for hb in site.data.handbooks %}
+                        <a class="sidebar-link {% if page.url contains hb.id %}active{% endif %}"
+                           href="{{ hb.url | relative_url }}"
+                           data-tooltip="{{ hb.short_title }}">
+                            <span class="link-num">{{ hb.num }}</span>
+                            <span class="link-label">{{ hb.short_title }}</span>
+                        </a>
+                        {% endfor %}
+
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">Reference</p>
+                        <a class="sidebar-link" href="{{ '/downloads/' | relative_url }}" data-tooltip="Download PDFs">
+                            <span class="link-num">↓</span>
+                            <span class="link-label">PDF Downloads</span>
+                            <span class="link-badge">PDF</span>
+                        </a>
+                        <a class="sidebar-link" href="{{ '/' | relative_url }}" data-tooltip="Back to Start Here">
+                            <span class="link-num">←</span>
+                            <span class="link-label">Start Here</span>
+                        </a>
+
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- MAIN DOC AREA (content + right TOC) -->
+            <div class="doc-body">
+
+                <!-- BREADCRUMBS + META HEADER -->
+                <div class="doc-header">
+                    <nav class="doc-breadcrumbs" aria-label="Breadcrumb">
+                        <a href="{{ '/' | relative_url }}" class="doc-crumb">Start Here</a>
+                        <span class="doc-crumb-sep">›</span>
+                        <a href="{{ '/' | relative_url }}#specializations" class="doc-crumb">Handbooks</a>
+                        <span class="doc-crumb-sep">›</span>
+                        <span class="doc-crumb doc-crumb--current">{{ page.sidebar_title | default: page.title }}</span>
+                    </nav>
+                    <div class="doc-meta-bar">
+                        <span class="doc-meta-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            {{ page.chapters | size }} chapters
+                        </span>
+                        {% if page.read_time %}
+                        <span class="doc-meta-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            {{ page.read_time }}
+                        </span>
+                        {% endif %}
+                        {% if page.updated %}
+                        <span class="doc-meta-item">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                            Updated {{ page.updated }}
+                        </span>
+                        {% endif %}
+                        {% if page.pdf_href %}
+                        <a href="{{ '/downloads/' | relative_url }}" class="doc-meta-item doc-meta-link">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            PDF coming soon
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- CONTENT COLUMN -->
+                <article class="doc-content">
+
+                    <!-- HANDBOOK HERO (compact, doc-style) -->
+                    <div id="hero" data-section-id="hero" class="doc-hero">
+                        <p class="doc-hero-eyebrow">{{ page.eyebrow }}</p>
+                        <h1>{{ page.hero_title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
+                        <p class="doc-hero-sub">{{ page.hero_sub }}</p>
+                        <div class="doc-hero-toc-preview">
+                            <span class="doc-hero-toc-label">In this handbook —</span>
+                            {% for ch in page.chapters %}{% unless forloop.first %}<a href="#{{ ch.id }}" class="doc-hero-toc-link">{{ ch.label }}</a>{% if forloop.last == false %}<span class="doc-hero-toc-sep">·</span>{% endif %}{% endunless %}{% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- CHAPTER CONTENT -->
+                    {{ content }}
+
+                    <!-- PREV / NEXT -->
+                    <nav class="doc-prevnext" aria-label="Handbook navigation">
+                        {% assign prev_hb = nil %}
+                        {% assign next_hb = nil %}
+                        {% assign found = false %}
+                        {% for hb in site.data.handbooks %}
+                            {% if found and next_hb == nil %}
+                                {% assign next_hb = hb %}
+                            {% endif %}
+                            {% if page.url contains hb.id %}
+                                {% assign found = true %}
+                            {% endif %}
+                            {% unless found %}
+                                {% assign prev_hb = hb %}
+                            {% endunless %}
+                        {% endfor %}
+
+                        <div class="doc-prevnext-inner">
+                            {% if prev_hb %}
+                            <a href="{{ prev_hb.url | relative_url }}" class="doc-prevnext-btn doc-prevnext-prev">
+                                <span class="doc-prevnext-dir">← Previous Handbook</span>
+                                <span class="doc-prevnext-title">{{ prev_hb.short_title }}</span>
+                            </a>
+                            {% else %}
+                            <a href="{{ '/' | relative_url }}" class="doc-prevnext-btn doc-prevnext-prev">
+                                <span class="doc-prevnext-dir">← Back to</span>
+                                <span class="doc-prevnext-title">Start Here</span>
+                            </a>
+                            {% endif %}
+
+                            {% if next_hb %}
+                            <a href="{{ next_hb.url | relative_url }}" class="doc-prevnext-btn doc-prevnext-next">
+                                <span class="doc-prevnext-dir">Next Handbook →</span>
+                                <span class="doc-prevnext-title">{{ next_hb.short_title }}</span>
+                            </a>
+                            {% else %}
+                            <a href="{{ '/overview/' | relative_url }}" class="doc-prevnext-btn doc-prevnext-next">
+                                <span class="doc-prevnext-dir">Return to →</span>
+                                <span class="doc-prevnext-title">SEO Field Overview</span>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </nav>
+
+                    <!-- FOOTER -->
+                    <footer class="doc-footer">
+                        <p><strong>{{ site.title }}</strong> — {{ page.sidebar_title | default: page.title }}</p>
+                        <p><a href="{{ '/downloads/' | relative_url }}">↓ PDF coming soon</a> · <a href="{{ '/' | relative_url }}">← Start Here</a></p>
+                    </footer>
+
+                </article>
+
+                <!-- RIGHT RAIL — TABLE OF CONTENTS -->
+                <aside class="doc-toc" id="doc-toc" aria-label="Table of contents">
+                    <div class="doc-toc-inner">
+                        <p class="doc-toc-title">On this page</p>
+                        <ol class="doc-toc-list" id="toc-list">
+                            {% for ch in page.chapters %}
+                            <li class="doc-toc-item{% if forloop.first %} active{% endif %}" data-toc-id="{{ ch.id }}">
+                                <a href="#{{ ch.id }}" class="doc-toc-link">
+                                    <span class="doc-toc-num">{{ ch.num }}</span>
+                                    <span class="doc-toc-label">{{ ch.label }}</span>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                        {% if page.pdf_href %}
+                        <div class="doc-toc-pdf">
+                            <a href="{{ '/downloads/' | relative_url }}" class="doc-toc-pdf-link">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download as PDF
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </aside>
+
+            </div><!-- /.doc-body -->
+
+        </div><!-- /#app-shell -->
+
+        <script src="{{ '/assets/js/translations.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/i18n.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/nav.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/search.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/lang-switcher.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/doc-toc.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/doc-anchors.js' | relative_url }}"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+# ─────────────────────────────────────────────────────────────
+# LANGUAGE REGISTRY
+# ─────────────────────────────────────────────────────────────
+
+- code: en
+  label: English
+  short: EN
+  url: /
+  dir: ltr
+  status: live        # live | in-progress | planned
+
+- code: ar
+  label: العربية
+  short: AR
+  url: /ar/
+  dir: rtl
+  status: in-progress
+
+# ── Future languages ───────────────────
+# - code: fr
+#   label: Français
+#   short: FR
+#   url: /fr/
+#   dir: ltr
+#   status: planned
+#
+# - code: tr
+#   label: Türkçe
+#   short: TR
+#   url: /tr/
+#   dir: ltr
+#   status: planned

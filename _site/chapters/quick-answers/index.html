@@ -7,7 +7,7 @@
         <meta name="description" content="Fast, accurate answers to the most common SEO questions — audits, backlinks, algorithms, E-E-A-T, penalties, tools, AI and SEO, and common myths. 40+ questions, 9 topics.">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/SEO-RG/assets/css/style.css">
     </head>
     <body class="font-latin">
 
@@ -30,21 +30,23 @@
                         <span></span><span></span><span></span>
                     </button>
                 </div>
-                <a href="/" class="nav-logo" data-i18n="navTitle">SEO Reference Guide</a>
+                <a href="/SEO-RG/" class="nav-logo" data-i18n="navTitle">SEO Reference Guide</a>
                 <div class="nav-right">
                     <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
                         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
                     </button>
-                    <button id="lang-toggle-btn" class="lang-toggle" aria-label="Switch language">عربي</button>
+                    <a href="/SEO-RG/ar/" class="lang-toggle" title="النسخة العربية">عربي</a>
                 </div>
             </nav>
 
+            <!-- UNIFIED SIDEBAR — same as every other page, plus chapter-specific nav below -->
             <aside id="sidebar" class="sidebar">
                 <div class="sidebar-inner">
                     <div class="sidebar-header">
                         <p class="sidebar-title">Quick Answers</p>
                     </div>
                     <nav class="sidebar-section">
+
                         <p class="sidebar-section-label">Chapters</p>
                         
                         <a class="sidebar-link active" href="#hero" data-section="hero" data-tooltip="Overview">
@@ -97,17 +99,40 @@
                             <span class="link-label">Common Myths</span>
                         </a>
                         
+
                         <div class="sidebar-divider"></div>
-                        <p class="sidebar-section-label">Navigation</p>
-                        <a class="sidebar-link" href="/downloads/" data-tooltip="Download PDFs">
+                        <p class="sidebar-section-label">All Handbooks</p>
+
+                        <a class="sidebar-link " href="/SEO-RG/chapters/content-writing/" data-tooltip="Content Writing">
+                            <span class="link-num">H1</span>
+                            <span class="link-label">Content Writing</span>
+                        </a>
+                        <a class="sidebar-link " href="/SEO-RG/chapters/technical-seo/" data-tooltip="Technical SEO">
+                            <span class="link-num">H2</span>
+                            <span class="link-label">Technical SEO</span>
+                        </a>
+                        <a class="sidebar-link " href="/SEO-RG/chapters/link-building/" data-tooltip="Link Building">
+                            <span class="link-num">H3</span>
+                            <span class="link-label">Link Building</span>
+                        </a>
+                        <a class="sidebar-link " href="/SEO-RG/chapters/local-seo/" data-tooltip="Local SEO">
+                            <span class="link-num">H4</span>
+                            <span class="link-label">Local SEO</span>
+                        </a>
+
+                        <div class="sidebar-divider"></div>
+                        <p class="sidebar-section-label">Downloads</p>
+
+                        <a class="sidebar-link" href="/SEO-RG/downloads/" data-tooltip="Download PDFs">
                             <span class="link-num">↓</span>
-                            <span class="link-label">Downloads</span>
+                            <span class="link-label">PDF Handbooks</span>
                             <span class="link-badge">PDF</span>
                         </a>
-                        <a class="sidebar-link" href="/" data-tooltip="Back to Overview">
+                        <a class="sidebar-link" href="/SEO-RG/" data-tooltip="Back to Overview">
                             <span class="link-num">←</span>
                             <span class="link-label">SEO Overview</span>
                         </a>
+
                     </nav>
                 </div>
             </aside>
@@ -116,7 +141,7 @@
                 <!-- CHAPTER HERO -->
                 <section id="hero" data-section-id="hero" class="chapter-page-hero">
                     <div class="chapter-hero-inner">
-                        <a href="/" class="back-link">← Back to SEO Overview</a>
+                        <a href="/SEO-RG/" class="back-link">← Back to SEO Overview</a>
                         <p class="chapter-hero-eyebrow">Quick Reference — 9 Topics · 40+ Questions</p>
                         <h1>SEO<br /><em>Quick Answers</em>
 </h1>
@@ -383,17 +408,17 @@
 
                 <footer>
                     <p><strong>SEO Reference Guide</strong> — Quick Answers</p>
-                    <p style="margin-top:.4rem;"><a href="/downloads/" style="color:var(--gold);text-decoration:none;">↓ Download as PDF</a></p>
+                    <p style="margin-top:.4rem;"><a href="/SEO-RG/downloads/" style="color:var(--gold);text-decoration:none;">↓ Download as PDF</a></p>
                     <p style="margin-top:.4rem;">Built By <a href="#">Saeed</a></p>
                 </footer>
             </main>
         </div>
 
-        <script src="/assets/js/translations.js"></script>
-        <script src="/assets/js/i18n.js"></script>
-        <script src="/assets/js/nav.js"></script>
-        <script src="/assets/js/main.js"></script>
-        <script src="/assets/js/search.js"></script>
-        <script src="/assets/js/pdf-reader.js"></script>
+        <script src="/SEO-RG/assets/js/translations.js"></script>
+        <script src="/SEO-RG/assets/js/i18n.js"></script>
+        <script src="/SEO-RG/assets/js/nav.js"></script>
+        <script src="/SEO-RG/assets/js/main.js"></script>
+        <script src="/SEO-RG/assets/js/search.js"></script>
+        <script src="/SEO-RG/assets/js/pdf-reader.js"></script>
     </body>
 </html>

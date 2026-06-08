@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How to Think About Search Intent — A Practical Framework — SEO Reference Guide</title>
+        <meta name="description" content="Most content fails to rank not because of technical issues — but because it misreads what the person searching actually wants. A practical framework for gett...">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/SEO-RG/assets/css/style.css">
+        <link rel="canonical" href="http://localhost:4000/SEO-RG/blog/2025/06/08/how-to-think-about-search-intent/">
+        <meta property="og:type"        content="article">
+        <meta property="og:title"       content="How to Think About Search Intent — A Practical Framework — SEO Reference Guide">
+        <meta property="og:description" content="Most content fails to rank not because of technical issues — but because it misreads what the person searching actually wants. A practical framework for gett...">
+        <meta property="article:published_time" content="2025-06-08T00:00:00+03:00">
+    </head>
+    <body class="font-latin">
+
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+        <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search">
+            <div class="search-box">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                <input id="search-input" class="search-input" type="text" placeholder="Search…" autocomplete="off" spellcheck="false">
+                <button id="search-close-btn" class="search-close">ESC</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+
+        <div id="app-shell" class="app-shell">
+
+            <nav class="top-nav">
+                <div class="nav-hamburger-wrap">
+                    <button id="hamburger" class="nav-hamburger" aria-label="Toggle sidebar">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+                <a href="/SEO-RG/" class="nav-logo">SEO Reference Guide</a>
+                <div class="nav-right">
+                    <button id="search-open-btn" class="nav-search-btn" aria-label="Search (Ctrl+K)">
+                        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.5"/><line x1="10.5" y1="10.5" x2="14" y2="14"/></svg>
+                    </button>
+                    <!-- ─────────────────────────────────────────────────────────
+     LANGUAGE SWITCHER
+───────────────────────────────────────────────────────────── -->
+<div class="lang-switcher" id="lang-switcher">
+    <button class="lang-switcher-btn" aria-haspopup="listbox" aria-expanded="false" id="lang-btn">
+        <svg class="lang-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="lang-current" id="lang-current">EN</span>
+        <svg class="lang-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,3.5 5,6.5 8,3.5"/></svg>
+    </button>
+    <ul class="lang-dropdown" role="listbox" id="lang-dropdown" aria-label="Select language">
+        
+        <li role="option" class="lang-option lang-live" data-lang-code="en" data-lang-url="/SEO-RG/">
+            <span class="lang-option-short">EN</span>
+            <span class="lang-option-label">English</span>
+            
+        </li>
+        
+        <li role="option" class="lang-option lang-wip" data-lang-code="ar" data-lang-url="/SEO-RG/ar/">
+            <span class="lang-option-short">AR</span>
+            <span class="lang-option-label">العربية</span>
+            
+            <span class="lang-option-badge">WIP</span>
+            
+        </li>
+        
+    </ul>
+</div>
+
+                </div>
+            </nav>
+
+            <aside id="sidebar" class="sidebar">
+                <!-- ─────────────────────────────────────────────────────────
+     SIDEBAR
+     Driven by _data/nav.yml and _data/handbooks.yml.
+     To add a page: edit those files.
+───────────────────────────────────────────────────────────── -->
+<div class="sidebar-inner">
+    <div class="sidebar-header">
+        <p class="sidebar-title">Navigation</p>
+    </div>
+    <nav class="sidebar-section">
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Start Here</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/"
+               data-tooltip="Start Here">
+                <span class="link-num">00</span>
+                <span class="link-label">Start Here</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/overview/"
+               data-tooltip="SEO Field Overview">
+                <span class="link-num">Ov</span>
+                <span class="link-label">SEO Field Overview</span>
+                
+                <span class="link-badge">Full</span>
+                
+            </a>
+            
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Specialist Handbooks</p>
+
+        
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/content-writing/"
+               data-tooltip="Content Writing">
+                <span class="link-num">H1</span>
+                <span class="link-label">Content Writing</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/technical-seo/"
+               data-tooltip="Technical SEO">
+                <span class="link-num">H2</span>
+                <span class="link-label">Technical SEO</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/link-building/"
+               data-tooltip="Link Building">
+                <span class="link-num">H3</span>
+                <span class="link-label">Link Building</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/local-seo/"
+               data-tooltip="Local SEO">
+                <span class="link-num">H4</span>
+                <span class="link-label">Local SEO</span>
+                
+                <span class="link-badge">Open</span>
+                
+            </a>
+            
+
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Reference</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/chapters/quick-answers/"
+               data-tooltip="Quick Answers">
+                <span class="link-num">?</span>
+                <span class="link-label">Quick Answers</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/glossary/"
+               data-tooltip="Glossary">
+                <span class="link-num">A–Z</span>
+                <span class="link-label">Glossary</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/algorithm-updates/"
+               data-tooltip="Algorithm Updates">
+                <span class="link-num">Δ</span>
+                <span class="link-label">Algorithm Updates</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/checklists/"
+               data-tooltip="Checklists">
+                <span class="link-num">✓</span>
+                <span class="link-label">Checklists</span>
+                
+                <span class="link-badge">Ref</span>
+                
+            </a>
+            
+            
+            
+
+            <a class="sidebar-link "
+               href="/SEO-RG/downloads/"
+               data-tooltip="PDF Downloads">
+                <span class="link-num">↓</span>
+                <span class="link-label">PDF Downloads</span>
+                
+                <span class="link-badge">PDF</span>
+                
+            </a>
+            
+        
+
+        
+
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Blog</p>
+
+        
+            
+            
+            
+
+            <a class="sidebar-link active"
+               href="/SEO-RG/blog/"
+               data-tooltip="Blog">
+                <span class="link-num">✍</span>
+                <span class="link-label">Blog</span>
+                
+            </a>
+            
+        
+
+        
+
+        <!-- Language toggle at bottom -->
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-section-label">Language</p>
+        
+        <a class="sidebar-link "
+           href="/SEO-RG/"
+           data-tooltip="English"
+           >
+            <span class="link-num">EN</span>
+            <span class="link-label">English</span>
+            
+        </a>
+        
+        <a class="sidebar-link "
+           href="/SEO-RG/ar/"
+           data-tooltip="العربية"
+           lang="ar">
+            <span class="link-num">AR</span>
+            <span class="link-label">العربية</span>
+            
+            <span class="link-badge">WIP</span>
+            
+        </a>
+        
+
+    </nav>
+</div>
+
+            </aside>
+
+            <main class="main-content">
+
+                <!-- POST META BAR -->
+                <div class="post-meta-bar">
+                    <nav class="hb-breadcrumbs" aria-label="Breadcrumb">
+                        <a href="/SEO-RG/" class="hb-crumb">Start Here</a>
+                        <span class="hb-crumb-sep">›</span>
+                        <a href="/SEO-RG/blog/" class="hb-crumb">Blog</a>
+                        <span class="hb-crumb-sep">›</span>
+                        <span class="hb-crumb hb-crumb--current">How to Think About Search Intent — A ...</span>
+                    </nav>
+                    <div class="hb-meta-items">
+                        
+                        <span class="hb-meta-item">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            June 8, 2025
+                        </span>
+                        
+                        
+                        <span class="hb-meta-item">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Saeed
+                        </span>
+                        
+                        
+                        <span class="hb-meta-item post-category">On-Page SEO</span>
+                        
+                    </div>
+                </div>
+
+                <!-- POST BODY -->
+                <div class="post-body">
+                    <div class="post-content">
+
+                        
+                        <div class="post-tags">
+                            
+                            <span class="post-tag">search intent</span>
+                            
+                            <span class="post-tag">content strategy</span>
+                            
+                            <span class="post-tag">keyword research</span>
+                            
+                        </div>
+                        
+
+                        <h1 class="post-title">How to Think About Search Intent — A Practical Framework</h1>
+
+                        
+                        <p class="post-subtitle">The four intent categories are the starting point. Here's how to go deeper.</p>
+                        
+
+                        <div class="post-prose">
+                            <p>Most SEO writing about search intent stops at the four categories — informational, navigational, commercial, transactional — and leaves you there. That’s the beginning of a useful framework, not the end of one.</p>
+
+<p>Here’s a more useful way to think about it.</p>
+
+<h2>The four categories are about the destination, not the journey</h2>
+
+<p>When someone searches “best project management software”, they have commercial intent — they’re researching before a purchase decision. But what does that actually mean for the page you’re creating?</p>
+
+<p>It means:</p>
+<ul>
+  <li>They don’t want a product page. They want a comparison.</li>
+  <li>They’re not ready to buy yet. They’re building a shortlist.</li>
+  <li>They want to see someone else make the decision for them, with reasoning they can verify.</li>
+</ul>
+
+<p>The category tells you the <em>type</em> of intent. Reading the actual SERP tells you what Google has determined the most satisfying answer looks like.</p>
+
+<h2>The SERP is the brief</h2>
+
+<p>Before writing a single word, open the SERP for your target query and study the top five results. Ask:</p>
+
+<p><strong>What format won?</strong> Long-form guide, listicle, product landing page, comparison table, video, tool? The format of the top results is Google’s best current guess at what satisfies the intent.</p>
+
+<p><strong>What depth won?</strong> Count the subheadings. Look at word count. Are the top results shallow and scannable, or deep and comprehensive? Matching depth is more important than matching word count.</p>
+
+<p><strong>What angle won?</strong> Is every top result using the same angle (“10 best X”), or is there a differentiated approach in the top 3? This tells you whether there’s room to win with a different angle, or whether you need to execute the expected format better.</p>
+
+<p><strong>What’s missing?</strong> Read the comments on the top articles, the People Also Ask questions, the Reddit threads on the same topic. What question keeps coming up that no top result answers well? That’s your content gap.</p>
+
+<h2>Micro-intent: the question inside the question</h2>
+
+<p>Every query has a micro-intent — the specific, immediate question the person is trying to answer.</p>
+
+<p>For “how to fix slow website”, the macro-intent is informational. But the micro-intents vary enormously depending on where in the problem-solving journey the person is:</p>
+
+<ul>
+  <li>Are they trying to <em>diagnose</em> the problem? (What’s causing it?)</li>
+  <li>Are they trying to <em>prioritise</em>? (What should I fix first?)</li>
+  <li>Are they trying to <em>implement</em> a specific fix? (How do I enable compression?)</li>
+</ul>
+
+<p>A page that tries to answer all three at once often satisfies none of them well. The best-ranking pages tend to be very clear about which micro-intent they’re addressing and deliver on it completely.</p>
+
+<h2>Intent shifts with modifier words</h2>
+
+<p>The same base keyword can have completely different intent depending on the modifier:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Query</th>
+      <th>Intent shift</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“project management software”</td>
+      <td>Informational / broad research</td>
+    </tr>
+    <tr>
+      <td>“best project management software”</td>
+      <td>Commercial — building a shortlist</td>
+    </tr>
+    <tr>
+      <td>“project management software for agencies”</td>
+      <td>Commercial — specific segment needs</td>
+    </tr>
+    <tr>
+      <td>“buy project management software”</td>
+      <td>Transactional — ready to convert</td>
+    </tr>
+    <tr>
+      <td>“project management software review”</td>
+      <td>Commercial — validation seeking</td>
+    </tr>
+    <tr>
+      <td>“monday.com vs asana”</td>
+      <td>Commercial — final comparison</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each of these needs a different page. Targeting “project management software” with a features page will not rank. Targeting “monday.com vs asana” with a general overview will not rank.</p>
+
+<h2>The practical workflow</h2>
+
+<ol>
+  <li><strong>Write the query exactly as a user would type it.</strong> Don’t rephrase it yet.</li>
+  <li><strong>Open the SERP and study the top 5.</strong> Note format, depth, angle.</li>
+  <li><strong>Read the People Also Ask.</strong> These are the micro-intents Google has detected.</li>
+  <li><strong>Read the Reddit / Quora threads</strong> for the same topic. This is raw user voice.</li>
+  <li><strong>Write one sentence</strong> describing what your page will do for the person who searched this. If you can’t write that sentence clearly, you don’t understand the intent yet.</li>
+  <li><strong>Build the content brief</strong> from step 5 — not from a keyword list.</li>
+</ol>
+
+<p>Intent alignment is not a content quality signal in isolation. It is the prerequisite for all other quality signals to matter. A technically perfect page, beautifully written and properly optimised, that answers the wrong question will not rank. Fix intent first.</p>
+
+<hr />
+
+<p><em>This post is a practical companion to Chapter 04 of the <a href="/SEO-RG/chapters/content-writing/#ch04">Content Writer’s Handbook</a> — Search Intent.</em></p>
+
+                        </div>
+
+                        <!-- BACK TO BLOG -->
+                        <div class="post-back">
+                            <a href="/SEO-RG/blog/" class="post-back-link">← All posts</a>
+                        </div>
+
+                    </div>
+
+                    <!-- POST SIDEBAR: related / categories -->
+                    <aside class="post-aside">
+                        <div class="post-aside-inner">
+                            <p class="post-aside-title">In the reference</p>
+                            <div class="post-aside-links">
+                                <a href="/SEO-RG/overview/" class="post-aside-link">SEO Field Overview</a>
+                                <a href="/SEO-RG/glossary/" class="post-aside-link">Glossary</a>
+                                <a href="/SEO-RG/checklists/" class="post-aside-link">Checklists</a>
+                                <a href="/SEO-RG/algorithm-updates/" class="post-aside-link">Algorithm Log</a>
+                            </div>
+                            
+                            <div class="post-aside-handbook">
+                                <p class="post-aside-title" style="margin-top:1.25rem;">Related handbook</p>
+                                
+                                    
+                                    <a href="/SEO-RG/chapters/content-writing/" class="post-aside-hb-link">
+                                        <span class="post-aside-hb-num">H1</span>
+                                        <span>Content Writing</span>
+                                    </a>
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                                    
+                                
+                            </div>
+                            
+                        </div>
+                    </aside>
+
+                </div>
+
+                <footer>
+                    <p><strong>SEO Reference Guide</strong> — Blog</p>
+                    <p style="margin-top:.4rem;"><a href="/SEO-RG/blog/" style="color:var(--gold);text-decoration:none;">← All posts</a> · <a href="/SEO-RG/" style="color:var(--gold);text-decoration:none;">Start Here</a></p>
+                    <p style="margin-top:.4rem;">Built by <a href="#">Saeed</a></p>
+                </footer>
+
+            </main>
+        </div>
+
+        <script src="/SEO-RG/assets/js/translations.js"></script>
+        <script src="/SEO-RG/assets/js/i18n.js"></script>
+        <script src="/SEO-RG/assets/js/nav.js"></script>
+        <script src="/SEO-RG/assets/js/main.js"></script>
+        <script src="/SEO-RG/assets/js/search.js"></script>
+        <script src="/SEO-RG/assets/js/lang-switcher.js"></script>
+    </body>
+</html>
